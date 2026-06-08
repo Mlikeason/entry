@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no">
+<title>Entry</title>
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Entry">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+:root{
+  --bg:#F5F4F0;--card:#fff;--text:#111;--text2:#444;--text3:#888;
+  --border:#DEDDD8;--primary:#2362A8;
+  --w1:#C0501F;--w2:#2362A8;--w3:#7E35A0;--w4:#1A7340;
+  --bad:#B8352A;--bad-bg:#FFF0EE;--good:#1A6B38;--good-bg:#EEFAF2;
+  --warn:#8B6914;--warn-bg:#FFF9E8;
+  --safe-b:env(safe-area-inset-bottom,0px);
+}
+html,body{height:100%;overflow:hidden}
+body{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased}
+#app{height:100%;display:flex;flex-direction:column;max-width:430px;margin:0 auto;position:relative}
+.view{flex:1;overflow-y:auto;padding:0 20px 20px;display:none;-webkit-overflow-scrolling:touch}
+.view.active{display:flex;flex-direction:column}
+.view-head{padding:24px 0 16px;flex-shrink:0}
+.view-head h1{font-size:26px;font-weight:700;letter-spacing:-0.5px}
+
+/* Tab Bar */
+#tabbar{display:flex;background:var(--card);border-top:1px solid var(--border);padding:8px 0 calc(8px + var(--safe-b));flex-shrink:0}
+.tab{flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;background:none;border:none;color:var(--text3);font-size:10px;cursor:pointer;padding:4px 0;transition:color .2s;font-family:inherit}
+.tab svg{width:22px;height:22px}
+.tab.active{color:var(--text)}
+
+/* Today Card */
+.today-card{background:var(--card);padding:24px;margin-bottom:4px;flex:1;overflow-y:auto;min-height:0;position:relative;border:1px solid var(--border)}
+.card-tag{display:inline-block;font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:16px;color:var(--text3)}
+.card-brief{font-size:14px;color:var(--text2);line-height:1.6;margin-bottom:20px}
+.card-divider{height:1px;background:var(--border);margin:0 -24px}
+
+/* Word display with diff highlighting */
+.word-display{font-size:24px;font-weight:600;line-height:1.4;letter-spacing:-0.3px;margin-bottom:8px}
+.word-display .wd{white-space:nowrap}
+.word-display .df{font-weight:700}
+.word-display .wd-sep{color:#ccc;margin:0 6px;font-weight:300}
+
+/* Confusable word items */
+.word-item{padding:16px 0;border-bottom:1px solid var(--border)}
+.word-item:last-child{border-bottom:none}
+.word-item h3{font-size:17px;font-weight:600;margin-bottom:4px}
+.word-def{font-size:13px;color:var(--text2);margin-bottom:4px}
+.word-note{font-size:12px;margin-bottom:8px;font-style:italic}
+.word-examples{list-style:none;display:flex;flex-wrap:wrap;gap:6px}
+.word-examples li{font-size:12px;padding:4px 10px;font-weight:500}
+
+/* Trap */
+.card-trap{margin-top:16px;padding:14px 16px;background:var(--warn-bg);border:1px solid #EDE0B8}
+.trap-label{font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--warn);display:block;margin-bottom:6px}
+.card-trap p{font-size:13px;line-height:1.6;color:#6B5520}
+
+/* Calque */
+.calque-block{margin-top:16px}
+.calque-label{font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--text3);margin-bottom:6px}
+.calque-zh{font-size:15px;color:var(--text);margin-bottom:16px;padding:12px 16px;background:#F5F4F0}
+.calque-bad{font-size:14px;line-height:1.6;padding:12px 16px;background:var(--bad-bg);margin-bottom:8px;color:var(--bad);text-decoration:line-through;text-decoration-color:rgba(184,53,42,0.25)}
+.calque-good{font-size:14px;line-height:1.6;padding:12px 16px;background:var(--good-bg);margin-bottom:16px;color:var(--good);font-weight:600}
+.calque-explain{font-size:13px;line-height:1.8;color:var(--text2);margin-bottom:16px}
+.calque-more{margin-top:12px}
+.calque-more-title{font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--text3);margin-bottom:10px}
+.calque-more-item{margin-bottom:12px;padding:12px;background:#FAFAF7}
+.calque-more-item .zh{font-size:13px;color:var(--text);margin-bottom:4px}
+.calque-more-item .bad{font-size:12px;color:var(--bad);text-decoration:line-through;text-decoration-color:rgba(184,53,42,0.25)}
+.calque-more-item .good{font-size:12px;color:var(--good);font-weight:600}
+
+/* Register */
+.reg-arrow{font-size:24px;font-weight:300;color:var(--text3);margin:6px 0;text-align:center}
+.reg-formal{font-size:22px;text-align:center;color:var(--text3);text-decoration:line-through;text-decoration-color:rgba(0,0,0,0.15)}
+.reg-natural{font-size:26px;text-align:center;font-weight:700;color:var(--primary);margin-bottom:16px}
+.reg-explain{font-size:13px;line-height:1.8;color:var(--text2);margin-bottom:16px}
+.reg-example{padding:14px 16px;margin-bottom:8px;font-size:14px;line-height:1.6}
+.reg-example.bad{background:var(--bad-bg);color:var(--bad);text-decoration:line-through;text-decoration-color:rgba(184,53,42,0.25)}
+.reg-example.good{background:var(--good-bg);color:var(--good);font-weight:600}
+.reg-when{margin-top:12px;padding:12px 16px;background:#F5F4F0;font-size:12px;color:var(--text2);line-height:1.6}
+.reg-when strong{color:var(--text);font-weight:600}
+
+/* Card nav */
+.card-nav{display:flex;align-items:center;justify-content:space-between;padding:12px 0;flex-shrink:0}
+.card-nav-btn{width:40px;height:40px;border:1px solid var(--border);background:var(--card);display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .1s}
+.card-nav-btn:active{background:var(--border);transform:scale(0.95)}
+.card-nav-btn.disabled{opacity:0.25;pointer-events:none}
+.card-nav-btn svg{width:18px;height:18px;stroke:var(--text);fill:none;stroke-width:2;stroke-linecap:round}
+.card-dots{display:flex;gap:6px;align-items:center}
+.card-dot{width:6px;height:6px;background:var(--border);transition:all .2s}
+.card-dot.active{background:var(--text);width:18px}
+.card-save{position:absolute;top:20px;right:20px;width:36px;height:36px;border:none;background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:transform .1s}
+.card-save:active{transform:scale(1.2)}
+.card-save svg{width:20px;height:20px;stroke:var(--text3);fill:none;stroke-width:2;transition:all .2s}
+.card-save.saved svg{fill:#C0501F;stroke:#C0501F}
+
+/* Search */
+.search-wrap{padding:20px 0 12px;flex-shrink:0}
+.search-box{display:flex;align-items:center;gap:10px;background:var(--card);padding:0 16px;border:1px solid var(--border)}
+.search-box svg{width:18px;height:18px;stroke:var(--text3);fill:none;stroke-width:2;flex-shrink:0}
+.search-box input{flex:1;border:none;outline:none;background:none;font-size:15px;padding:14px 0;color:var(--text);font-family:inherit}
+.search-box input::placeholder{color:var(--text3)}
+.filter-bar{display:flex;gap:8px;margin-bottom:16px;flex-shrink:0;overflow-x:auto;padding-bottom:4px}
+.chip{padding:6px 14px;border:1px solid var(--border);background:var(--card);font-size:13px;color:var(--text2);cursor:pointer;white-space:nowrap;transition:all .15s;font-family:inherit}
+.chip.active{background:var(--text);color:#fff;border-color:var(--text)}
+.search-results{flex:1;overflow-y:auto;min-height:0}
+.result-card{background:var(--card);padding:16px;margin-bottom:8px;cursor:pointer;border:1px solid var(--border);transition:transform .1s}
+.result-card:active{transform:scale(0.98)}
+.result-title{font-size:15px;font-weight:600;margin-bottom:4px}
+.result-brief{font-size:12px;color:var(--text2)}
+.result-tag{font-size:10px;font-weight:600;letter-spacing:0.5px;text-transform:uppercase;color:var(--text3);margin-bottom:4px}
+.search-empty{text-align:center;padding:60px 20px;color:var(--text3);font-size:14px;line-height:1.8}
+.search-hint{text-align:center;padding:80px 20px;color:var(--text3);font-size:14px}
+
+/* Library */
+.library-list{flex:1;overflow-y:auto;min-height:0}
+.lib-card{background:var(--card);padding:16px;margin-bottom:8px;display:flex;align-items:center;border:1px solid var(--border);cursor:pointer;transition:transform .1s}
+.lib-card:active{transform:scale(0.98)}
+.lib-card-body{flex:1}
+.lib-card-title{font-size:15px;font-weight:600;margin-bottom:3px}
+.lib-card-brief{font-size:12px;color:var(--text2)}
+.lib-remove{width:32px;height:32px;border:none;background:transparent;cursor:pointer;color:var(--text3);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0}
+.empty-state{text-align:center;padding:80px 20px;color:var(--text3);font-size:14px;line-height:2}
+
+/* Settings */
+.settings-section{padding:20px 0;border-bottom:1px solid var(--border)}
+.settings-section:last-child{border-bottom:none}
+.settings-section label{font-size:12px;font-weight:600;letter-spacing:0.5px;text-transform:uppercase;color:var(--text3);display:block;margin-bottom:8px}
+.settings-section input[type="password"]{width:100%;padding:12px 14px;border:1px solid var(--border);font-size:14px;font-family:inherit;outline:none;background:var(--card);color:var(--text);transition:border-color .2s}
+.settings-section input:focus{border-color:var(--primary)}
+.hint{font-size:11px;color:var(--text3);margin-top:6px;line-height:1.5}
+.settings-section button{width:100%;padding:12px;border:1px solid var(--bad);background:none;color:var(--bad);font-size:14px;font-family:inherit;cursor:pointer;transition:all .15s}
+.settings-section button:active{background:var(--bad-bg)}
+.about{text-align:center;color:var(--text3);font-size:13px;line-height:1.8;border-bottom:none}
+
+/* Modal */
+.modal{position:fixed;inset:0;z-index:100;display:none;flex-direction:column;background:rgba(0,0,0,0);transition:background .3s}
+.modal.open{display:flex;background:rgba(0,0,0,0.3)}
+.modal-sheet{margin-top:auto;background:var(--card);max-height:88vh;display:flex;flex-direction:column;transform:translateY(100%);transition:transform .3s cubic-bezier(0.32,0.72,0,1);max-width:430px;width:100%;align-self:center}
+.modal.open .modal-sheet{transform:translateY(0)}
+.modal-handle{width:36px;height:4px;background:var(--border);margin:10px auto;flex-shrink:0}
+.modal-head{display:flex;align-items:center;justify-content:space-between;padding:4px 20px 12px;flex-shrink:0}
+.modal-close{width:32px;height:32px;background:#EDEDEA;border:none;cursor:pointer;font-size:16px;color:var(--text2);display:flex;align-items:center;justify-content:center}
+.modal-save{width:32px;height:32px;border:none;background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.modal-save svg{width:20px;height:20px;stroke:var(--text3);fill:none;stroke-width:2;transition:all .2s}
+.modal-save.saved svg{fill:#C0501F;stroke:#C0501F}
+.modal-body{overflow-y:auto;padding:0 24px 40px;-webkit-overflow-scrolling:touch;flex:1;min-height:0}
+
+@keyframes fadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.fade-in{animation:fadeIn .25s ease-out}
+</style>
+</head>
+<body>
+<div id="app">
+  <div class="view active" id="v-today">
+    <div class="view-head"><h1>Today</h1></div>
+    <div class="today-card fade-in" id="today-card"></div>
+    <div class="card-nav">
+      <button class="card-nav-btn" id="btn-prev" onclick="prevCard()"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg></button>
+      <div class="card-dots" id="card-dots"></div>
+      <button class="card-nav-btn" id="btn-next" onclick="nextCard()"><svg viewBox="0 0 24 24"><polyline points="9 6 15 12 9 18"/></svg></button>
+    </div>
+  </div>
+  <div class="view" id="v-search">
+    <div class="search-wrap"><div class="search-box">
+      <svg viewBox="0 0 24 24" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+      <input id="search-input" placeholder="搜索单词、短语或中文..." autocomplete="off" autocorrect="off" autocapitalize="off">
+    </div></div>
+    <div class="filter-bar">
+      <button class="chip active" data-filter="all" onclick="setFilter('all',this)">全部</button>
+      <button class="chip" onclick="setFilter('confusable',this)">易混词</button>
+      <button class="chip" onclick="setFilter('calque',this)">中式直译</button>
+      <button class="chip" onclick="setFilter('register',this)">语域</button>
+    </div>
+    <div class="search-results" id="search-results"><div class="search-hint">输入英文单词、中文短语<br>或者你想搞懂的表达</div></div>
+  </div>
+  <div class="view" id="v-library">
+    <div class="view-head"><h1>Library</h1></div>
+    <div class="library-list" id="library-list"></div>
+  </div>
+  <div class="view" id="v-settings">
+    <div class="view-head"><h1>Settings</h1></div>
+    <div class="settings-section">
+      <label>Claude API Key</label>
+      <input type="password" id="api-key" placeholder="sk-ant-..." oninput="saveApiKey(this.value)">
+      <p class="hint">启用 AI 智能搜索。本地词库无结果时，AI 实时分析。需配合本地代理。</p>
+    </div>
+    <div class="settings-section"><button onclick="clearLibrary()">清空所有收藏</button></div>
+    <div class="settings-section about"><p><strong>Entry</strong> v0.1</p><p>给中文母语者的英文词感训练器</p><p style="margin-top:8px;font-size:11px">100 精选词条 · 每日学习 · 个人词库</p></div>
+  </div>
+  <nav id="tabbar">
+    <button class="tab active" onclick="switchView('today',this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18"/><line x1="3" y1="10" x2="21" y2="10"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/></svg><span>Today</span></button>
+    <button class="tab" onclick="switchView('search',this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg><span>Search</span></button>
+    <button class="tab" onclick="switchView('library',this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 21l-7-5-7 5V5a2 2 0 012-2h10a2 2 0 012 2z"/></svg><span>Library</span></button>
+    <button class="tab" onclick="switchView('settings',this)"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="3"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg><span>Settings</span></button>
+  </nav>
+</div>
+<div class="modal" id="modal" onclick="if(event.target===this)closeModal()">
+  <div class="modal-sheet">
+    <div class="modal-handle"></div>
+    <div class="modal-head">
+      <button class="modal-close" onclick="closeModal()">&#x2715;</button>
+      <button class="modal-save" id="modal-save" onclick="toggleSaveModal()"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></button>
+    </div>
+    <div class="modal-body" id="modal-body"></div>
+  </div>
+</div>
+<script>
+const WCOLORS=['#C0501F','#2362A8','#7E35A0','#1A7340'];
+const DB=[
+// ══ CONFUSABLES ══
+{id:'critical-crucial-cruel',type:'confusable',title:'critical · crucial · cruel',brief:'批判 / 关键 / 残忍 — 三个完全不同的方向',words:[
+{word:'critical',def:'批判性的；危急的',note:'强调分析判断或紧急状态',examples:['critical thinking','critical condition','critical of the plan']},
+{word:'crucial',def:'至关重要的，决定性的',note:'缺了就完蛋，不可或缺',examples:['a crucial decision','This is crucial']},
+{word:'cruel',def:'残忍的，冷酷的',note:'跟前两个完全无关，只是长得像',examples:['a cruel joke','Don\'t be cruel']}
+],trap:'"He is critical" = 他情况危急 / 他很挑剔，不是"他很关键"。关键 = crucial 或 key。'},
+{id:'affect-effect',type:'confusable',title:'affect · effect',brief:'动词"影响" vs 名词"效果"',words:[
+{word:'affect',def:'影响（动词）',note:'A for Action — affect 是动作',examples:['The rain affected our plans','How does this affect you?']},
+{word:'effect',def:'效果，结果（名词）',note:'E for End result — effect 是结果',examples:['The effect was immediate','side effects','cause and effect']}
+],trap:'effect 偶尔做动词="实现"（effect change），但极罕见。记住 affect=动词 effect=名词 就够了。'},
+{id:'complement-compliment',type:'confusable',title:'complement · compliment',brief:'补充搭配 vs 赞美恭维',words:[
+{word:'complement',def:'补充，搭配',note:'complement = complete，使完整',examples:['The wine complements the cheese','They complement each other']},
+{word:'compliment',def:'赞美，恭维',note:'说好话',examples:['She complimented my work','Take it as a compliment']}
+],trap:'complimentary = 免费赠送的！complementary = 互补的。形容词也容易混。'},
+{id:'principal-principle',type:'confusable',title:'principal · principle',brief:'主要的 / 校长 vs 原则',words:[
+{word:'principal',def:'主要的（adj）/ 校长（n）',note:'the main one',examples:['the principal reason','school principal']},
+{word:'principle',def:'原则，准则（永远是名词）',note:'a rule',examples:['a matter of principle','design principles','in principle']}
+],trap:'principAL = A person. principLE = a ruLE.'},
+{id:'discrete-discreet',type:'confusable',title:'discrete · discreet',brief:'离散的 vs 谨慎的 — 发音完全一样',words:[
+{word:'discrete',def:'离散的，独立的',note:'数学/技术用语',examples:['discrete data points','discrete components']},
+{word:'discreet',def:'谨慎的，低调的',note:'社交用语，保密不张扬',examples:['Please be discreet','a discreet inquiry']}
+],trap:'发音完全相同 /dɪˈskriːt/。设计师常用 discrete（离散元素），社交场合用 discreet（低调行事）。'},
+{id:'assure-ensure-insure',type:'confusable',title:'assure · ensure · insure',brief:'向人保证 / 确保发生 / 买保险',words:[
+{word:'assure',def:'向某人保证',note:'后面一定跟人',examples:['I assure you it\'s fine','Let me assure you']},
+{word:'ensure',def:'确保某事发生',note:'后面跟事情',examples:['ensure the door is locked','to ensure quality']},
+{word:'insure',def:'投保，上保险',note:'跟钱和风险有关',examples:['Is your car insured?','insure against loss']}
+],trap:'assure 对象是人（让人放心），ensure 对象是事（让事情发生）。'},
+{id:'adapt-adopt',type:'confusable',title:'adapt · adopt',brief:'改造适应 vs 采纳接受',words:[
+{word:'adapt',def:'适应；改编',note:'修改已有的来适应新情况',examples:['adapt to the environment','adapt for mobile']},
+{word:'adopt',def:'采纳；收养',note:'接受全新的东西',examples:['adopt a new strategy','widely adopted']}
+],trap:'adapt = 改（已有的），adopt = 接受（新的）。'},
+{id:'economic-economical',type:'confusable',title:'economic · economical',brief:'经济学的 vs 省钱的',words:[
+{word:'economic',def:'经济的，经济学的',note:'跟经济体系、政策有关',examples:['economic growth','economic crisis']},
+{word:'economical',def:'节约的，划算的',note:'跟省钱效率有关',examples:['an economical car','economical use of space']}
+],trap:'economic crisis ✓（经济危机）economical crisis ✗。省钱用 economical。'},
+{id:'sensible-sensitive',type:'confusable',title:'sensible · sensitive',brief:'明智的 vs 敏感的 — 最容易搞反',words:[
+{word:'sensible',def:'明智的，合理的',note:'形容人靠谱务实',examples:['a sensible decision','Be sensible']},
+{word:'sensitive',def:'敏感的',note:'容易受影响',examples:['sensitive skin','a sensitive topic']}
+],trap:'中文"敏感"= sensitive，"理性/明智"= sensible。sensible = 有sense的 = 明智的。'},
+{id:'continual-continuous',type:'confusable',title:'continual · continuous',brief:'反复发生（有间断）vs 不间断',words:[
+{word:'continual',def:'频繁反复的',note:'有间隔，一次又一次',examples:['continual interruptions','continual complaints']},
+{word:'continuous',def:'持续不断的',note:'没有中断',examples:['continuous noise','continuous monitoring']}
+],trap:'continuous rain = 一直在下。continual rain = 下下停停反复来。'},
+{id:'imply-infer',type:'confusable',title:'imply · infer',brief:'暗示（说者）vs 推断（听者）',words:[
+{word:'imply',def:'暗示，言下之意',note:'说话者的动作',examples:['Are you implying I\'m wrong?','The data implies a trend']},
+{word:'infer',def:'推断，推理',note:'听者的动作',examples:['I inferred from his tone...','What can we infer?']}
+],trap:'方向相反！Speaker implies, Listener infers.'},
+{id:'precede-proceed',type:'confusable',title:'precede · proceed',brief:'在前面 vs 继续进行',words:[
+{word:'precede',def:'在…之前，先于',note:'pre = before',examples:['preceded by a brief intro','the preceding chapter']},
+{word:'proceed',def:'继续，进行',note:'pro = forward',examples:['proceed with the plan','proceed to gate 5']}
+],trap:'precedent（先例）来自 precede。procedure（程序）来自 proceed。'},
+{id:'adverse-averse',type:'confusable',title:'adverse · averse',brief:'不利的（事物）vs 反感的（人）',words:[
+{word:'adverse',def:'不利的，有害的',note:'描述外部条件',examples:['adverse weather','adverse effects']},
+{word:'averse',def:'反感的，不乐意的',note:'描述人的态度',examples:['risk-averse','not averse to the idea']}
+],trap:'risk-averse ✓ risk-adverse ✗。averse 描述人，adverse 描述事。'},
+{id:'elicit-illicit',type:'confusable',title:'elicit · illicit',brief:'引出（动词）vs 非法的（形容词）',words:[
+{word:'elicit',def:'引出，引发',note:'让隐藏的浮出水面',examples:['elicit a response','elicit information']},
+{word:'illicit',def:'非法的，不正当的',note:'= illegal',examples:['illicit drugs','illicit trade']}
+],trap:'词性不同：elicit 是动词，illicit 是形容词。'},
+{id:'comprise-compose',type:'confusable',title:'comprise · compose',brief:'包含（大→小）vs 组成（小→大）',words:[
+{word:'comprise',def:'包含，由…组成',note:'大的 comprise 小的',examples:['The team comprises 5 people','comprises 12 chapters']},
+{word:'compose',def:'组成，构成',note:'小的 compose 大的，常被动',examples:['composed of 5 people','composed of H and O']}
+],trap:'"is comprised of" 有争议。最安全：comprises X 或 is composed of X。'},
+{id:'farther-further',type:'confusable',title:'farther · further',brief:'物理距离 vs 抽象程度',words:[
+{word:'farther',def:'更远（物理距离）',note:'far 的比较级，实际距离',examples:['farther down the road','How much farther?']},
+{word:'further',def:'更进一步（抽象）',note:'程度、进展',examples:['further discussion','further information','look into it further']}
+],trap:'口语中 further 可以通吃两种用法，但 farther 只用于物理距离。'},
+{id:'historic-historical',type:'confusable',title:'historic · historical',brief:'历史性的（重要）vs 历史的（相关）',words:[
+{word:'historic',def:'具有历史意义的',note:'值得被记住的',examples:['a historic moment','a historic victory']},
+{word:'historical',def:'与历史有关的',note:'关于历史这个学科',examples:['historical data','historical research','historical fiction']}
+],trap:'historic event = 改变历史的大事。historical event = 历史上发生过的事。'},
+{id:'stationary-stationery',type:'confusable',title:'stationary · stationery',brief:'静止不动的 vs 文具',words:[
+{word:'stationary',def:'静止的，不动的',note:'站着不动 — stationAry',examples:['remain stationary','a stationary bike']},
+{word:'stationery',def:'文具，信纸',note:'写字用的 — stationEry',examples:['office stationery','stationery shop']}
+],trap:'记忆：stationEry 的 E = Envelope（信封），文具。stationAry 的 A = At rest（静止）。'},
+{id:'personal-personnel',type:'confusable',title:'personal · personnel',brief:'个人的 vs 人事/员工',words:[
+{word:'personal',def:'个人的，私人的',note:'重音在第一音节',examples:['personal opinion','personal space']},
+{word:'personnel',def:'人事部门；全体员工',note:'重音在第三音节',examples:['personnel department','military personnel']}
+],trap:'发音不同！personal /ˈpɜːrsənl/ vs personnel /ˌpɜːrsəˈnel/。很多人读成一样。'},
+{id:'conscience-conscious',type:'confusable',title:'conscience · conscious',brief:'良心（名词）vs 有意识的（形容词）',words:[
+{word:'conscience',def:'良心，道德感',note:'内心的道德判断',examples:['a guilty conscience','in good conscience']},
+{word:'conscious',def:'有意识的，清醒的',note:'aware，知道的',examples:['conscious decision','self-conscious','barely conscious']}
+],trap:'conscience 是名词（良心），conscious 是形容词（有意识的）。词性不同。'},
+{id:'desert-dessert',type:'confusable',title:'desert · dessert',brief:'沙漠 / 抛弃 vs 甜点',words:[
+{word:'desert',def:'沙漠（n）/ 抛弃（v）',note:'一个 s — 沙漠很干，少一个',examples:['the Sahara Desert','desert the army']},
+{word:'dessert',def:'甜点',note:'两个 s — 甜点要多来一份',examples:['What\'s for dessert?','dessert menu']}
+],trap:'记忆：dessert 两个 s，因为甜点（Sweet Stuff）你想要更多。'},
+{id:'loose-lose',type:'confusable',title:'loose · lose',brief:'松的 vs 失去 — 拼写高频错误',words:[
+{word:'loose',def:'松的，宽松的（形容词）',note:'跟 goose 押韵 /luːs/',examples:['loose fit','a loose screw','set loose']},
+{word:'lose',def:'失去，输掉（动词）',note:'跟 choose 押韵 /luːz/',examples:['lose your keys','lose the game','nothing to lose']}
+],trap:'loose 是形容词（松的），lose 是动词（丢失）。发音也不同：s vs z。'},
+{id:'quiet-quite',type:'confusable',title:'quiet · quite',brief:'安静的 vs 相当 — 最后两个字母相反',words:[
+{word:'quiet',def:'安静的',note:'qui-ET，重音在后',examples:['a quiet room','Keep quiet','quiet confidence']},
+{word:'quite',def:'相当，十分',note:'一个音节 /kwaɪt/',examples:['quite good','quite a challenge','not quite']}
+],trap:'拼写对调：quiet = qui+et, quite = qui+te。发音完全不同。'},
+{id:'accept-except',type:'confusable',title:'accept · except',brief:'接受 vs 除了',words:[
+{word:'accept',def:'接受',note:'ac- = toward，迎向',examples:['accept the offer','widely accepted']},
+{word:'except',def:'除了，排除',note:'ex- = out，排出去',examples:['everyone except me','except for the price']}
+],trap:'accept = 收进来，except = 排出去。方向相反。'},
+{id:'advice-advise',type:'confusable',title:'advice · advise',brief:'建议（名词）vs 建议（动词）',words:[
+{word:'advice',def:'建议（名词）',note:'不可数，读 /ədˈvaɪs/',examples:['a piece of advice','take my advice']},
+{word:'advise',def:'建议（动词）',note:'读 /ədˈvaɪz/',examples:['I\'d advise caution','Please advise']}
+],trap:'advice 是名词用 c，advise 是动词用 s。跟 practice/practise 同一规律。'},
+{id:'breath-breathe',type:'confusable',title:'breath · breathe',brief:'呼吸（名词）vs 呼吸（动词）',words:[
+{word:'breath',def:'呼吸（名词）',note:'短元音 /brɛθ/',examples:['take a deep breath','out of breath']},
+{word:'breathe',def:'呼吸（动词）',note:'长元音 /briːð/，多了 e',examples:['breathe deeply','hard to breathe']}
+],trap:'名词 breath 没有 e，动词 breathe 多一个 e。发音也不同。'},
+{id:'eminent-imminent',type:'confusable',title:'eminent · imminent',brief:'杰出的 vs 即将发生的',words:[
+{word:'eminent',def:'杰出的，著名的',note:'E = Excellent',examples:['an eminent scholar','eminent domain']},
+{word:'imminent',def:'即将发生的',note:'I = Incoming',examples:['imminent danger','an imminent deadline']}
+],trap:'eminent 描述人（杰出），imminent 描述事（即将到来）。'},
+{id:'moral-morale',type:'confusable',title:'moral · morale',brief:'道德的 vs 士气',words:[
+{word:'moral',def:'道德的（adj）/ 寓意（n）',note:'重音在第一音节',examples:['moral values','the moral of the story']},
+{word:'morale',def:'士气，精神状态',note:'重音在第二音节 /məˈræl/',examples:['team morale','boost morale']}
+],trap:'moral 讲对错，morale 讲心情。发音重音不同。'},
+{id:'perspective-prospective',type:'confusable',title:'perspective · prospective',brief:'视角 vs 预期的/未来的',words:[
+{word:'perspective',def:'视角，观点',note:'per = through，透过来看',examples:['from my perspective','put things in perspective']},
+{word:'prospective',def:'预期的，未来的',note:'pro = forward，向前看',examples:['prospective clients','prospective buyers']}
+],trap:'perspective = 怎么看（观点），prospective = 将来的（潜在客户）。'},
+{id:'thorough-through-though',type:'confusable',title:'thorough · through · though',brief:'彻底的 vs 通过 vs 虽然',words:[
+{word:'thorough',def:'彻底的，详尽的',note:'/ˈθʌrə/ 两个音节',examples:['a thorough review','thorough research']},
+{word:'through',def:'通过，穿过',note:'/θruː/ 一个音节',examples:['walk through the door','go through the process']},
+{word:'though',def:'虽然，不过',note:'/ðoʊ/ 一个音节',examples:['It\'s hard, though','even though']}
+],trap:'三个词发音完全不同，但拼写让人抓狂。thorough 最长 = 最彻底。'},
+{id:'weather-whether',type:'confusable',title:'weather · whether',brief:'天气 vs 是否',words:[
+{word:'weather',def:'天气',note:'有 a = 有air = 天气',examples:['nice weather','weather forecast']},
+{word:'whether',def:'是否',note:'= if，表示选择',examples:['whether or not','whether to go']}
+],trap:'发音几乎一样。weather 跟天气有关，whether 跟选择有关。'},
+{id:'cite-site-sight',type:'confusable',title:'cite · site · sight',brief:'引用 vs 场地 vs 视觉',words:[
+{word:'cite',def:'引用，举例',note:'学术/法律用语',examples:['cite a source','cite an example']},
+{word:'site',def:'地点，网站',note:'一个地方',examples:['construction site','website']},
+{word:'sight',def:'视力，景象',note:'看见的东西',examples:['a beautiful sight','out of sight','love at first sight']}
+],trap:'三个词发音完全一样 /saɪt/。只能靠语境。'},
+{id:'coarse-course',type:'confusable',title:'coarse · course',brief:'粗糙的 vs 课程/路线',words:[
+{word:'coarse',def:'粗糙的，粗俗的',note:'多了一个 a',examples:['coarse texture','coarse language']},
+{word:'course',def:'课程；路线；当然',note:'of course!',examples:['online course','main course','of course']}
+],trap:'coarse 有 a = 粗糙（rough）。course 没有 a = 课程/路线。'},
+{id:'formerly-formally',type:'confusable',title:'formerly · formally',brief:'以前 vs 正式地',words:[
+{word:'formerly',def:'以前，从前',note:'former + ly',examples:['formerly known as','formerly a teacher']},
+{word:'formally',def:'正式地',note:'formal + ly',examples:['formally announced','formally dressed']}
+],trap:'formerly = 时间上的"从前"。formally = 方式上的"正式"。'},
+{id:'alternate-alternative',type:'confusable',title:'alternate · alternative',brief:'交替的 vs 替代选项',words:[
+{word:'alternate',def:'交替的（adj）/ 交替（v）',note:'轮流、每隔一个',examples:['alternate days','alternate between A and B']},
+{word:'alternative',def:'替代选项（n）/ 另一种的（adj）',note:'另一个选择',examples:['an alternative plan','no alternative']}
+],trap:'alternate = 轮流来（A-B-A-B）。alternative = 另一个选择（A or B?）。'},
+{id:'eligible-illegible',type:'confusable',title:'eligible · illegible',brief:'有资格的 vs 字迹模糊的',words:[
+{word:'eligible',def:'有资格的，符合条件的',note:'E = Entitled（有资格）',examples:['eligible to vote','eligible candidates']},
+{word:'illegible',def:'（字迹）难以辨认的',note:'il + legible = 不可读',examples:['illegible handwriting','almost illegible']}
+],trap:'eligible = 你够格。illegible = 你的字看不清。'},
+{id:'emigrate-immigrate',type:'confusable',title:'emigrate · immigrate',brief:'移出（离开）vs 移入（到达）',words:[
+{word:'emigrate',def:'移居国外，移出',note:'E = Exit，离开原籍',examples:['emigrate from China','emigrated in 2015']},
+{word:'immigrate',def:'移入，迁入',note:'I = Into，进入新国',examples:['immigrate to Singapore','immigrant population']}
+],trap:'emigrate = exit（出去），immigrate = in（进来）。视角问题。'},
+{id:'prescribe-proscribe',type:'confusable',title:'prescribe · proscribe',brief:'开处方/规定 vs 禁止',words:[
+{word:'prescribe',def:'开处方；规定',note:'pre = before，提前安排好',examples:['prescribe medication','prescribed reading']},
+{word:'proscribe',def:'禁止，取缔',note:'pro = against（这里），反对',examples:['proscribed organizations','proscribed behavior']}
+],trap:'prescribe = 叫你做的。proscribe = 叫你别做的。一字之差，意思相反。'},
+{id:'credible-creditable',type:'confusable',title:'credible · creditable',brief:'可信的 vs 值得称赞的',words:[
+{word:'credible',def:'可信的，可靠的',note:'你相不相信',examples:['a credible witness','hardly credible']},
+{word:'creditable',def:'值得称赞的，不错的',note:'做得好不好',examples:['a creditable performance','creditable effort']}
+],trap:'credible = 可信度。creditable = 表现值得认可。两个都是正面词但含义不同。'},
+{id:'contempt-content-contend',type:'confusable',title:'contempt · content · contend',brief:'轻蔑 vs 内容/满意 vs 竞争',words:[
+{word:'contempt',def:'轻蔑，藐视',note:'看不起',examples:['treat with contempt','contempt of court']},
+{word:'content',def:'内容（n）/ 满意的（adj）',note:'两个发音：内容 /ˈkɒntent/，满意 /kənˈtent/',examples:['content strategy','feel content']},
+{word:'contend',def:'竞争；主张',note:'争',examples:['contend for the title','I contend that...']}
+],trap:'三个词拼写相近但领域完全不同。注意 content 的两个发音和两个含义。'},
+
+// ══ CALQUES ══
+{id:'bijiao',type:'calque',title:'"比较" 不需要翻译',brief:'中文语气词 ≠ 英文 relatively',chinese:'这个比较难',chinglish:'This is relatively difficult.',natural:'This is pretty hard.',
+explanation:'"比较"在中文里软化语气，避免太绝对。但英文的 relatively/comparatively 是正式程度副词，口语里反而生硬。',
+more:[{zh:'我比较忙',bad:'I am comparatively busy.',good:'I\'m pretty busy.'},{zh:'这个比较贵',bad:'This is relatively expensive.',good:'This is kind of pricey.'},{zh:'他比较厉害',bad:'He is relatively capable.',good:'He\'s really good.'}]},
+{id:'suiran-danshi',type:'calque',title:'"虽然…但是" 只能选一个',brief:'although 和 but 不能同时出现',chinese:'虽然贵，但是质量好',chinglish:'Although it\'s expensive, but the quality is good.',natural:'Although it\'s expensive, the quality is good.',
+explanation:'中文里"虽然"和"但是"成对使用。英文里 although 和 but 功能重复，只能选一个。',
+more:[{zh:'虽然很累但是值得',bad:'Although tired, but it\'s worth it.',good:'Although I\'m tired, it\'s worth it.'},{zh:'虽然不完美但够用',bad:'Although not perfect, but good enough.',good:'It\'s not perfect, but it\'s good enough.'}]},
+{id:'fangbian',type:'calque',title:'"方便" ≠ convenient',brief:'convenient 太正式，日常有更自然的说法',chinese:'你明天下午方便吗？',chinglish:'Is it convenient for you tomorrow afternoon?',natural:'Does tomorrow afternoon work for you?',
+explanation:'"方便"在中文无处不在，但 convenient 偏正式。日常说 work for you / available / free 更自然。',
+more:[{zh:'什么时候方便？',bad:'When is it convenient?',good:'When works for you?'},{zh:'不方便说话',bad:'It\'s not convenient to talk.',good:'I can\'t really talk right now.'}]},
+{id:'qishi',type:'calque',title:'"其实" 不等于 actually',brief:'actually 暗示纠正，频繁使用像在反驳',chinese:'其实我觉得蓝色更好',chinglish:'Actually, I think blue is better.',natural:'I think blue might work better.',
+explanation:'"其实"在中文引出个人看法，但英文的 actually 带"你说的不对"的纠正意味。频繁使用让人觉得你在不停反驳。',
+more:[{zh:'其实这个不难',bad:'Actually this is not difficult.',good:'This isn\'t that hard, really.'},{zh:'其实我之前做过',bad:'Actually I\'ve done this before.',good:'I\'ve done this before, actually. (放后面语气柔和)'}]},
+{id:'chabuduo',type:'calque',title:'"差不多" 不只是 almost',brief:'英文里每种含义有不同表达',chinese:'这两个方案差不多',chinglish:'These two plans are almost the same.',natural:'These two are pretty similar.',
+explanation:'"差不多"含义丰富：接近完成、大致相同、差不多行了。英文有 nearly done / pretty similar / close enough / roughly。别只用 almost。',
+more:[{zh:'差不多做完了',bad:'Almost finished.',good:'Nearly done. / Just about there.'},{zh:'差不多可以了',bad:'It\'s almost OK.',good:'That\'ll do. / Close enough.'}]},
+{id:'buhaoyisi',type:'calque',title:'"不好意思" ≠ sorry',brief:'过度 sorry 显得没自信',chinese:'不好意思，请问一下',chinglish:'Sorry, can I ask you a question?',natural:'Hey, quick question —',
+explanation:'"不好意思"是社交润滑剂 ≈ 打扰一下。但英文 sorry 是正式道歉，频繁说会传递"我做错了"的信号。用 excuse me / hey / quick question。',
+more:[{zh:'不好意思打扰一下',bad:'Sorry to bother you.',good:'Hey, do you have a sec?'},{zh:'不好意思让你久等了',bad:'Sorry to make you wait.',good:'Thanks for waiting.（道歉转感谢）'}]},
+{id:'bang-wo',type:'calque',title:'"帮我" 不需要 help me',brief:'英文请求不需要经过"帮"',chinese:'你能帮我开一下窗户吗？',chinglish:'Can you help me open the window?',natural:'Could you open the window?',
+explanation:'中文"帮我做X"是客气说法。英文直接说 Could you do X? 就很礼貌了。加 help me 反而像在求人。',
+more:[{zh:'帮我看看这个文件',bad:'Help me look at this file?',good:'Could you take a look at this?'},{zh:'帮我转发一下',bad:'Help me forward this?',good:'Could you forward this?'}]},
+{id:'yiban-laishuo',type:'calque',title:'"一般来说" ≠ generally speaking',brief:'日常口语不需要这么正式的开头',chinese:'一般来说我七点起床',chinglish:'Generally speaking, I wake up at 7.',natural:'I usually wake up at 7.',
+explanation:'"一般来说"在中文是口语，但 generally speaking 在英文很正式。日常用 usually / normally / typically。',
+more:[{zh:'一般来说周五不开会',bad:'Generally speaking, no meetings on Fridays.',good:'We usually skip meetings on Fridays.'},{zh:'一般来说要两天',bad:'Generally speaking, it takes two days.',good:'It usually takes about two days.'}]},
+{id:'yinggai',type:'calque',title:'"应该" ≠ should（给建议时）',brief:'should 比你以为的更强硬',chinese:'你应该试试这家餐厅',chinglish:'You should try this restaurant.',natural:'You might want to try this restaurant.',
+explanation:'"应该"在中文可以是温和建议，但英文 should 有指导/要求意味。给建议时用 might want to / could / have you considered。',
+more:[{zh:'你应该用蓝色',bad:'You should use blue.',good:'What about trying blue?'},{zh:'你应该早点走',bad:'You should leave earlier.',good:'You might want to head out early.'}]},
+{id:'jianyi',type:'calque',title:'"建议你做X" 语法陷阱',brief:'suggest 后面不接 someone to do',chinese:'我建议你改一下颜色',chinglish:'I suggest you to change the color.',natural:'I\'d suggest changing the color.',
+explanation:'suggest 后面不能跟 someone to do。正确：suggest doing / suggest that sb do。更自然：what about / how about / why not。',
+more:[{zh:'我建议你再想想',bad:'I suggest you to think again.',good:'Why not sleep on it?'},{zh:'建议大家提前到',bad:'I suggest everyone to arrive early.',good:'I\'d suggest arriving a bit early.'}]},
+{id:'kaixin',type:'calque',title:'"开心" 不只是 happy',brief:'英文有比 happy 丰富得多的快乐表达',chinese:'听到这个消息我很开心',chinglish:'I\'m very happy to hear this.',natural:'That\'s great to hear!',
+explanation:'glad（礼貌）、pleased（满意）、thrilled（激动）、excited（兴奋）、delighted（很高兴）、stoked（口语超开心）。不要永远用 happy。',
+more:[{zh:'见到你很开心',bad:'I\'m very happy to see you.',good:'So good to see you!'},{zh:'项目做成了很开心',bad:'I\'m happy the project succeeded.',good:'I\'m thrilled about how it turned out.'}]},
+{id:'zenme-shuo',type:'calque',title:'"怎么说" ≠ how to say',brief:'"how to say" 是翻译腔经典标志',chinese:'这个…怎么说…就是很重要',chinglish:'This... how to say... is very important.',natural:'This is... well, it\'s really important.',
+explanation:'"怎么说"是中文的思考填充语。英文对应 um / well / I mean / what\'s the word。说 how to say 像在做翻译练习。',
+more:[{zh:'怎么说呢，不太合适',bad:'How to say, it\'s not suitable.',good:'I mean, it doesn\'t quite work.'},{zh:'这个怎么说…',bad:'This one, how to say...',good:'What\'s the word... / It\'s kind of...'}]},
+{id:'yingwen-buhao',type:'calque',title:'"我的英文不好" 别这么说',brief:'自我贬低在英文文化里不加分',chinese:'不好意思我的英文不好',chinglish:'Sorry, my English is not good.',natural:'Bear with me — English isn\'t my first language.',
+explanation:'中文里谦虚是美德，但英文中过度自我贬低显得不自信。如果确实需要提示对方，用更中性的说法。',
+more:[{zh:'我英文不太好请见谅',bad:'Please forgive my poor English.',good:'English isn\'t my first language, so let me know if anything\'s unclear.'},{zh:'我英文比较差',bad:'My English is very bad.',good:'I\'m still working on my English.'}]},
+{id:'yali-da',type:'calque',title:'"压力大" ≠ pressure is big',brief:'英文的 pressure 不用 big 修饰',chinese:'最近工作压力很大',chinglish:'Recently my work pressure is very big.',natural:'I\'ve been pretty stressed at work lately.',
+explanation:'中文"压力大"直译成 pressure is big 不地道。英文说 stressed / under a lot of pressure / swamped / overwhelmed。',
+more:[{zh:'别给自己太大压力',bad:'Don\'t give yourself too big pressure.',good:'Don\'t put too much pressure on yourself.'},{zh:'压力大到睡不着',bad:'Pressure is so big I can\'t sleep.',good:'I\'m so stressed I can\'t sleep.'}]},
+{id:'jiayou',type:'calque',title:'"加油" 怎么翻译',brief:'没有万能翻译，看语境选表达',chinese:'明天面试加油！',chinglish:'Tomorrow interview, fighting!',natural:'Good luck with your interview tomorrow!',
+explanation:'"加油"是中文万能鼓励语，但英文没有一个词能对应。看语境：鼓励 = You got this / Go for it；加油打气 = Keep it up / Hang in there；祝好运 = Good luck。',
+more:[{zh:'加油你可以的',bad:'Add oil! You can do it!',good:'You got this!'},{zh:'最后一圈了加油',bad:'Last round, fighting!',good:'Last lap — come on!'}]},
+{id:'suibian',type:'calque',title:'"随便" ≠ whatever',brief:'中文的客气在英文里变成了态度差',chinese:'吃什么？随便。',chinglish:'What to eat? Whatever.',natural:'I\'m easy — you pick.',
+explanation:'"随便"在中文是客气（我都行你选），但英文 whatever 是不耐烦/不在乎的语气。说 I\'m easy / I\'m flexible / anything works / you choose。',
+more:[{zh:'坐哪里？随便',bad:'Where to sit? Whatever.',good:'Anywhere\'s fine.'},{zh:'你决定吧，我随便',bad:'You decide, I\'m whatever.',good:'Up to you — I\'m flexible.'}]},
+{id:'mafan-ni',type:'calque',title:'"麻烦你" ≠ trouble you',brief:'trouble 在英文里比"麻烦"重得多',chinese:'麻烦你帮我拿一下',chinglish:'Sorry to trouble you, please help me take this.',natural:'Could you grab this for me?',
+explanation:'"麻烦你"在中文很轻，类似"请"。但 trouble you 在英文里显得很郑重，像在说"我知道这很为难你"。日常直接 Could you...? 就好。',
+more:[{zh:'麻烦传一下盐',bad:'Sorry to trouble you, pass the salt.',good:'Could you pass the salt?'},{zh:'麻烦你签个字',bad:'Trouble you to sign here.',good:'Could you sign here, please?'}]},
+{id:'zhuyi-shenti',type:'calque',title:'"注意身体" ≠ pay attention to your body',brief:'直译听起来很奇怪',chinese:'你要注意身体啊',chinglish:'You should pay attention to your body.',natural:'Take care of yourself.',
+explanation:'"注意身体"是中文常见关心语。英文说 take care / look after yourself / get some rest。"Pay attention to your body" 听起来像医学建议。',
+more:[{zh:'工作忙也要注意身体',bad:'Even if busy, pay attention to body.',good:'Don\'t forget to take care of yourself.'},{zh:'天冷了注意身体',bad:'Weather cold, attention body.',good:'Stay warm out there!'}]},
+{id:'wo-xian-zou',type:'calque',title:'"我先走了" ≠ I go first',brief:'英文的告别方式不同',chinese:'那我先走了啊',chinglish:'Then I go first.',natural:'I should get going. / I\'ll head out.',
+explanation:'"先走"在中文是客气的告别。英文不说 go first（这意味着排队/走前面）。说 head out / get going / take off / make a move。',
+more:[{zh:'不早了我先走了',bad:'It\'s late, I go first.',good:'It\'s getting late — I should head out.'},{zh:'我有事先走一步',bad:'I have things, go first.',good:'I\'ve gotta run. Catch you later!'}]},
+{id:'mei-guanxi',type:'calque',title:'"没关系" 的多种场景',brief:'never mind / it\'s fine / no worries 用法不同',chinese:'没关系没关系',chinglish:'Never mind, never mind.',natural:'No worries! / It\'s all good.',
+explanation:'"没关系"在中文覆盖很多场景。英文要分：别人道歉→ No worries / It\'s fine；安慰→ It\'s okay / Don\'t worry about it；拒绝后客气→ That\'s alright。',
+more:[{zh:'（对方道歉后）没关系',bad:'Never mind.',good:'No worries at all!'},{zh:'（安慰对方）没关系的',bad:'It doesn\'t matter.',good:'Don\'t worry about it — it happens.'}]},
+{id:'xinku-le',type:'calque',title:'"辛苦了" 无法直译',brief:'英文没有对等表达，要换个角度',chinese:'大家辛苦了',chinglish:'Everyone has worked hard.',natural:'Thanks everyone — great work today.',
+explanation:'"辛苦了"是中文独有的体谅语。英文没有直接对应。视场景用：感谢→ Thanks for your hard work；赞赏→ Great job / Well done；关心→ You\'ve earned a break。',
+more:[{zh:'今天辛苦你了',bad:'Today you worked hard.',good:'Thanks for handling that today.'},{zh:'出差辛苦了',bad:'Business trip hard work.',good:'Hope the trip wasn\'t too rough.'}]},
+{id:'youkong',type:'calque',title:'"有空" ≠ have free time',brief:'have free time 太直白，英文有更自然的说法',chinese:'你有空吗？',chinglish:'Do you have free time?',natural:'Are you free? / Are you around?',
+explanation:'"有空"直译成 have free time 不算错但略生硬。英文说 Are you free? / Available? / Got a minute?',
+more:[{zh:'有空一起吃饭',bad:'If you have free time, eat together.',good:'Let\'s grab a meal sometime.'},{zh:'这周有空吗',bad:'This week have free time?',good:'Are you free this week?'}]},
+{id:'qingwen',type:'calque',title:'"请问" 大多数时候不需要',brief:'过度礼貌反而显得生硬',chinese:'请问这个怎么用？',chinglish:'May I ask, how to use this?',natural:'How do I use this?',
+explanation:'"请问"在中文是礼貌开头。英文直接问问题就已经足够礼貌了。除非是很正式的场合，不需要加 May I ask。',
+more:[{zh:'请问洗手间在哪',bad:'May I ask where is the washroom?',good:'Where\'s the restroom?'},{zh:'请问您贵姓',bad:'May I ask your noble surname?',good:'What\'s your name? / And you are...?'}]},
+{id:'ni-mang-ba',type:'calque',title:'"你忙吧" ≠ you be busy',brief:'中文客气话换个角度表达',chinese:'好的那你忙吧',chinglish:'OK then you be busy.',natural:'I\'ll let you go. / I won\'t keep you.',
+explanation:'"你忙吧"是中文礼貌结束对话。英文从"我"的角度说：I\'ll let you go（我放你走）/ I won\'t keep you（我不耽误你了）。',
+more:[{zh:'行那你忙吧不打扰了',bad:'OK you busy, won\'t disturb.',good:'Alright, I\'ll let you get back to it.'}]},
+{id:'dui-bu-dui',type:'calque',title:'"对不对" ≠ right or not right',brief:'英文的附加疑问有更自然的方式',chinese:'这样做对不对？',chinglish:'Doing like this, right or not right?',natural:'Is this right? / Am I on the right track?',
+explanation:'中文"对不对""是不是""好不好"的正反疑问结构英文没有。英文用 tag question：..., right? / ..., isn\'t it? 或者直接问 Is this correct?',
+more:[{zh:'你是说明天对不对',bad:'You mean tomorrow, right or not right?',good:'You mean tomorrow, right?'},{zh:'这样OK不OK',bad:'Like this OK not OK?',good:'Does this work?'}]},
+{id:'liaojie',type:'calque',title:'"了解" ≠ understand（每次都用）',brief:'understand 太重了，轻量确认有更好的词',chinese:'好的了解了',chinglish:'OK, understood.',natural:'Got it. / Makes sense.',
+explanation:'"了解"在中文是轻量确认词。但 understood 在英文偏正式/军事化。日常确认用 Got it / Makes sense / Sure / I see。',
+more:[{zh:'我了解了谢谢',bad:'I understand, thank you.',good:'Got it, thanks!'},{zh:'了解了解',bad:'Understand understand.',good:'Ah I see, I see.'}]},
+{id:'de-hua',type:'calque',title:'"的话" 导致过度使用 if',brief:'不是每个"如果/的话"都需要翻译',chinese:'方便的话帮我看看',chinglish:'If it is convenient, if you can, help me look.',natural:'Could you take a look when you get a chance?',
+explanation:'中文"的话"是条件软化语气词，不一定需要翻译成 if。英文可以用 when you get a chance / if possible / feel free to 等更自然的表达。',
+more:[{zh:'可以的话明天回复我',bad:'If possible, if you can, reply tomorrow.',good:'Could you get back to me by tomorrow?'},{zh:'有兴趣的话可以看看',bad:'If you have interest, you can look.',good:'Check it out if you\'re interested.'}]},
+{id:'hai-hao',type:'calque',title:'"还好" ≠ still OK',brief:'"还好"的真实含义比你以为的复杂',chinese:'工作怎么样？还好吧。',chinglish:'How\'s work? Still OK.',natural:'How\'s work? Not bad. / Can\'t complain.',
+explanation:'"还好"可以表示"马马虎虎""幸好""还行"。英文里 not bad / it\'s alright / can\'t complain / could be worse 更自然。still OK 听起来像在说"目前还没出问题"。',
+more:[{zh:'还好赶上了',bad:'Still OK, caught up.',good:'Good thing I made it in time.'},{zh:'味道还好',bad:'Taste is still OK.',good:'It\'s decent. / Not bad.'}]},
+{id:'neng-bu-neng',type:'calque',title:'"能不能" 不用说两遍',brief:'英文不需要正反疑问',chinese:'你能不能帮个忙？',chinglish:'Can you or cannot help a favor?',natural:'Could you do me a favor?',
+explanation:'中文"能不能""要不要""行不行"的正反结构在英文中不存在。直接用 Can you / Could you / Would you 就好。',
+more:[{zh:'你要不要来',bad:'You want or not want to come?',good:'Want to come?'},{zh:'这样行不行',bad:'Like this can or cannot?',good:'Will this work?'}]},
+{id:'dagai',type:'calque',title:'"大概" 不用每次都说 probably',brief:'probably 的确定程度比"大概"高',chinese:'大概要两个小时',chinglish:'Probably need two hours.',natural:'About two hours. / Roughly two hours.',
+explanation:'"大概"在中文是模糊估计。但 probably 在英文表示70-80%确定，比"大概"确定得多。估计数量用 about / around / roughly。',
+more:[{zh:'大概五点到',bad:'Probably arrive at five.',good:'I\'ll be there around five.'},{zh:'大概花了一百块',bad:'Probably spent 100.',good:'It was about 100 bucks.'}]},
+{id:'youyisi',type:'calque',title:'"有意思" 不全是 interesting',brief:'interesting 用多了像在敷衍',chinese:'这个有意思',chinglish:'This is interesting.',natural:'That\'s cool. / That\'s pretty neat.',
+explanation:'"有意思"在中文是真诚的赞赏。但英文 interesting 用太多会听起来像在敷衍或者不置可否。可以用 cool / neat / fun / fascinating / love that。',
+more:[{zh:'你这个想法有意思',bad:'Your idea is interesting.',good:'That\'s a cool idea. / I love that idea.'},{zh:'这部电影挺有意思的',bad:'This movie is quite interesting.',good:'This movie is really fun.'}]},
+{id:'laidejilaibuji',type:'calque',title:'"来得及" ≠ can make it in time',brief:'英文有更简洁的说法',chinese:'现在出发来得及吗',chinglish:'If leave now, can make it in time?',natural:'Can we still make it if we leave now?',
+explanation:'"来得及/来不及"在中文很常用。英文用 make it（来得及）或 too late（来不及），但句式更简洁。',
+more:[{zh:'来不及了别等了',bad:'Can not make it in time, don\'t wait.',good:'We\'re not gonna make it — let\'s go.'},{zh:'还来得及别急',bad:'Still can make it in time, don\'t rush.',good:'We\'ve got time — no rush.'}]},
+{id:'nage',type:'calque',title:'"那个/这个" 作填充语',brief:'中文的"那个"在英文里有对应的自然填充',chinese:'我觉得那个…就是…',chinglish:'I think that one... just is...',natural:'I think... you know... it\'s basically...',
+explanation:'中文用"那个""这个""就是"做思考时的填充语。英文对应：um / you know / like / I mean / so basically。千万不要说 that one / this one 当填充。',
+more:[{zh:'那个…你知道吗',bad:'That one... you know?',good:'So, um... you know what I mean?'}]},
+{id:'shi-zheyang-de',type:'calque',title:'"是这样的" ≠ it is like this',brief:'中文开场白英文不需要',chinese:'是这样的，我想跟你说个事',chinglish:'It is like this, I want to tell you something.',natural:'So here\'s the thing —',
+explanation:'"是这样的"在中文是引出话题的开场白。英文不需要这个铺垫。直接说 So / Here\'s the thing / The thing is。',
+more:[{zh:'事情是这样的',bad:'The thing is like this.',good:'So here\'s what happened.'},{zh:'情况是这样的',bad:'The situation is like this.',good:'Here\'s the deal.'}]},
+{id:'duo-he-reshui',type:'calque',title:'"多喝热水" 的文化差异',brief:'这句话在英文里没有对应，也不应该直译',chinese:'感冒了？多喝热水',chinglish:'You have a cold? Drink more hot water.',natural:'Hope you feel better soon. Get some rest.',
+explanation:'"多喝热水"是中文关心的默认回复，但在英文文化里会让人困惑（西方人一般不喝热水）。表达关心说 Feel better soon / Get some rest / Take it easy。',
+more:[{zh:'不舒服的话多喝热水',bad:'If uncomfortable, drink more hot water.',good:'Take it easy and get some rest.'}]},
+
+// ══ REGISTER ══
+{id:'utilize-use',type:'register',title:'utilize → use',brief:'99% 场景 use 就够了',formal:'utilize',natural:'use',
+explanation:'utilize 是 use 的书面正式版。日常交流用 use 都更自然。过度使用 utilize 听起来像在念论文。',
+exBad:'We utilize this tool on a daily basis.',exGood:'We use this tool every day.',whenFormal:'学术论文、或强调"充分利用"：utilize resources = 充分利用资源。'},
+{id:'commence-start',type:'register',title:'commence → start',brief:'日常直接说 start',formal:'commence',natural:'start',
+explanation:'commence 极其正式，有仪式感。日常用 start 或 begin。',
+exBad:'The meeting will commence at 10 AM.',exGood:'The meeting starts at 10.',whenFormal:'正式仪式：The ceremony will now commence. 法律：work shall commence on...'},
+{id:'purchase-buy',type:'register',title:'purchase → buy',brief:'日常说 buy 或 get',formal:'purchase',natural:'buy',
+explanation:'purchase 是商务/法律正式用语。日常说 buy，更口语说 get / pick up。',
+exBad:'I purchased a new laptop yesterday.',exGood:'I bought a new laptop yesterday.',whenFormal:'合同发票：purchase order。电商界面：complete your purchase（名词可以）。'},
+{id:'regarding-about',type:'register',title:'regarding → about',brief:'邮件和对话用 about 更自然',formal:'regarding',natural:'about',
+explanation:'regarding 是公文开头的正式用语。口语和普通邮件用 about 更自然。',
+exBad:'I want to discuss regarding the timeline.',exGood:'I want to talk about the timeline.',whenFormal:'正式邮件主题行：Regarding your inquiry of June 1。'},
+{id:'prior-to-before',type:'register',title:'prior to → before',brief:'对话和普通写作用 before',formal:'prior to',natural:'before',
+explanation:'prior to 是 before 的书面正式版。日常完全用 before。',
+exBad:'Prior to the meeting, I reviewed the docs.',exGood:'Before the meeting, I went through the docs.',whenFormal:'法律：prior to execution of this agreement。学术：prior to the experiment。'},
+{id:'obtain-get',type:'register',title:'obtain → get',brief:'日常说 get，口语说 grab',formal:'obtain',natural:'get',
+explanation:'obtain 是正式的"获取"。日常用 get。很口语用 grab。',
+exBad:'I need to obtain approval from my manager.',exGood:'I need to get approval from my manager.',whenFormal:'学术：Data was obtained from participants. 官方：obtain a visa。'},
+{id:'sufficient-enough',type:'register',title:'sufficient → enough',brief:'日常说 enough',formal:'sufficient',natural:'enough',
+explanation:'sufficient 正式书面。口语说 sufficient 像在做报告。',
+exBad:'Do we have sufficient budget for this?',exGood:'Do we have enough budget for this?',whenFormal:'技术文档：sufficient memory allocation。学术：sufficient evidence。'},
+{id:'demonstrate-show',type:'register',title:'demonstrate → show',brief:'日常用 show 或 walk through',formal:'demonstrate',natural:'show',
+explanation:'demonstrate 用于正式演示或学术论证。日常说 show，演示说 walk you through。',
+exBad:'Let me demonstrate the new feature.',exGood:'Let me show you the new feature.',whenFormal:'学术：The data demonstrates a strong correlation. 正式演示会。'},
+{id:'facilitate-help',type:'register',title:'facilitate → help',brief:'corporate jargon 的典型代表',formal:'facilitate',natural:'help / make easier',
+explanation:'facilitate 是企业黑话中最常见的词之一。日常说 help / make easier / support。',
+exBad:'I\'ll facilitate the transition process.',exGood:'I\'ll help with the transition.',whenFormal:'正式提案：facilitate cross-team collaboration。会议记录。'},
+{id:'endeavor-try',type:'register',title:'endeavor → try',brief:'日常说 try 或 work on',formal:'endeavor',natural:'try',
+explanation:'endeavor 极其正式。日常说 try / work on / aim to。',
+exBad:'We endeavor to provide excellent service.',exGood:'We try to give great service.',whenFormal:'公司使命宣言、政府声明。几乎不在口语中使用。'},
+{id:'inquire-ask',type:'register',title:'inquire → ask',brief:'ask 在任何场景都OK',formal:'inquire',natural:'ask',
+explanation:'inquire 是 ask 的书面版。日常邮件和对话用 ask。',
+exBad:'I\'d like to inquire about the status.',exGood:'I wanted to ask about the status.',whenFormal:'客服系统：For inquiries, contact... 正式信函。'},
+{id:'subsequent-next',type:'register',title:'subsequent → next / later',brief:'日常说 next 或 following',formal:'subsequent',natural:'next',
+explanation:'subsequent 是学术/法律用语。日常说 next / following / later。',
+exBad:'In subsequent meetings, we discussed...',exGood:'In later meetings, we talked about...',whenFormal:'学术论文：subsequent analysis revealed... 法律：subsequent to the agreement。'},
+{id:'terminate-end',type:'register',title:'terminate → end / stop',brief:'terminate 听起来很严肃',formal:'terminate',natural:'end / stop',
+explanation:'terminate 带有"强制终止"的意味。日常说 end / stop / wrap up。',
+exBad:'We decided to terminate the project.',exGood:'We decided to end the project.',whenFormal:'法律：terminate the contract。技术：terminate the process。HR：terminate employment。'},
+{id:'transmit-send',type:'register',title:'transmit → send',brief:'日常用 send',formal:'transmit',natural:'send',
+explanation:'transmit 是技术/科学用语（传输信号、传播疾病）。日常传文件用 send / share。',
+exBad:'I\'ll transmit the document to you.',exGood:'I\'ll send you the document.',whenFormal:'技术：transmit data / transmit a signal。医学：transmit the virus。'},
+{id:'approximately-about',type:'register',title:'approximately → about',brief:'日常说 about 或 around',formal:'approximately',natural:'about',
+explanation:'approximately 是精确的学术用语。日常说 about / around / roughly。',
+exBad:'There were approximately 50 people.',exGood:'There were about 50 people.',whenFormal:'科学论文：approximately 3.14。正式报告中需要精确但留余量时。'},
+{id:'acquire-get',type:'register',title:'acquire → get / pick up',brief:'日常说 get 或 learn',formal:'acquire',natural:'get',
+explanation:'acquire 是正式的"获得/习得"。日常说 get / pick up / learn。',
+exBad:'She acquired a new skill last month.',exGood:'She picked up a new skill last month.',whenFormal:'商业：acquire a company。学术：language acquisition。'},
+{id:'numerous-many',type:'register',title:'numerous → many / lots of',brief:'口语说 many 或 a lot of',formal:'numerous',natural:'many',
+explanation:'numerous 是 many 的正式版。口语用 many / a lot of / tons of。',
+exBad:'We received numerous complaints.',exGood:'We got a lot of complaints.',whenFormal:'学术：numerous studies have shown... 正式报告。'},
+{id:'reside-live',type:'register',title:'reside → live',brief:'日常说 live',formal:'reside',natural:'live',
+explanation:'reside 极其正式，法律/官方用语。日常说 live / stay。',
+exBad:'I currently reside in Singapore.',exGood:'I live in Singapore.',whenFormal:'法律文件：the party residing at... 正式表格。'},
+{id:'implement-do',type:'register',title:'implement → do / set up',brief:'根据语境用更具体的动词',formal:'implement',natural:'do / set up / build',
+explanation:'implement 是项目管理常用词，但在很多场景下可以用更具体的词替代：set up / build / put in place / roll out。',
+exBad:'We need to implement this solution.',exGood:'We need to set this up. / Let\'s build this out.',whenFormal:'项目提案：implement the strategy。在商务语境中 implement 比日常对话中更常见，但仍可简化。'},
+{id:'modify-change',type:'register',title:'modify → change / tweak',brief:'日常说 change 或 tweak',formal:'modify',natural:'change',
+explanation:'modify 偏技术/正式。日常说 change / tweak / adjust / update。',
+exBad:'We need to modify the design.',exGood:'We need to tweak the design.',whenFormal:'技术文档：modify the configuration。合同：modify the terms。'},
+{id:'indicate-show',type:'register',title:'indicate → show / suggest',brief:'日常用 show 或 suggest',formal:'indicate',natural:'show',
+explanation:'indicate 是学术/正式写作常用词。日常说 show / suggest / point to。',
+exBad:'The results indicate a problem.',exGood:'The results show there\'s a problem.',whenFormal:'学术：The data indicates a trend. 路标：The sign indicates the exit.'},
+{id:'assist-help',type:'register',title:'assist → help',brief:'help 在任何场景都更自然',formal:'assist',natural:'help',
+explanation:'assist 是 help 的正式版，常见于客服用语。日常说 help / give a hand / pitch in。',
+exBad:'How may I assist you today?',exGood:'How can I help?',whenFormal:'客服：We\'re here to assist you. 医疗：assisted living.'},
+{id:'currently-now',type:'register',title:'currently → now',brief:'口语和邮件说 now 或 right now',formal:'currently',natural:'now',
+explanation:'currently 是 now 的正式版。日常邮件和对话用 now / right now / at the moment。',
+exBad:'I\'m currently working on the report.',exGood:'I\'m working on the report now.',whenFormal:'简历：Currently employed at... 正式通知。'},
+{id:'initiate-start',type:'register',title:'initiate → start / kick off',brief:'日常说 start 或 kick off',formal:'initiate',natural:'start',
+explanation:'initiate 是正式的"发起"。日常说 start / kick off / get going / set up。',
+exBad:'Let\'s initiate the review process.',exGood:'Let\'s kick off the review.',whenFormal:'正式流程：initiate proceedings。技术：initiate a connection。'},
+{id:'possess-have',type:'register',title:'possess → have / own',brief:'日常说 have',formal:'possess',natural:'have',
+explanation:'possess 是 have 的法律/书面版。日常说 have / own / carry。',
+exBad:'She possesses great communication skills.',exGood:'She has great communication skills.',whenFormal:'法律：possess illegal substances。正式评估：possess the required qualifications。'}
+];
+
+// ─── STATE ───
+let currentView='today',dailyCards=[],dailyIndex=0,searchFilter='all';
+let library=JSON.parse(localStorage.getItem('entry_lib')||'[]');
+let modalEntryId=null;
+
+// ─── HIGHLIGHT DIFF ───
+function highlightWords(words){
+  return words.map((w,wi)=>{
+    let h='';
+    for(let i=0;i<w.length;i++){
+      let diff=false;
+      for(let j=0;j<words.length;j++){
+        if(j===wi)continue;
+        if(i>=words[j].length||w[i]!==words[j][i]){diff=true;break;}
+      }
+      h+=diff?`<span class="df" style="color:${WCOLORS[wi%4]}">${w[i]}</span>`:w[i];
+    }
+    return h;
+  });
+}
+
+// ─── DAILY ───
+function getDailySeed(){const d=new Date();return d.getFullYear()*10000+(d.getMonth()+1)*100+d.getDate();}
+function seededShuffle(a,s){const r=[...a];for(let i=r.length-1;i>0;i--){s=(s*1103515245+12345)&0x7fffffff;const j=s%(i+1);[r[i],r[j]]=[r[j],r[i]];}return r;}
+function loadDailyCards(){dailyCards=seededShuffle(DB,getDailySeed()).slice(0,5);dailyIndex=0;renderDailyCard();renderDots();}
+
+// ─── RENDER ───
+function renderDailyCard(){
+  const card=document.getElementById('today-card'),e=dailyCards[dailyIndex];
+  card.setAttribute('data-type',e.type);card.scrollTop=0;
+  const saved=library.includes(e.id);
+  let h=`<button class="card-save ${saved?'saved':''}" onclick="event.stopPropagation();toggleSave('${e.id}')"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg></button>`;
+  h+=renderEntryContent(e);
+  card.innerHTML=h;
+  card.classList.remove('fade-in');void card.offsetWidth;card.classList.add('fade-in');
+  document.getElementById('btn-prev').classList.toggle('disabled',dailyIndex===0);
+  document.getElementById('btn-next').classList.toggle('disabled',dailyIndex===dailyCards.length-1);
+}
+
+function renderEntryContent(e){
+  const typeLabel={confusable:'CONFUSABLE',calque:'CALQUE',register:'REGISTER'};
+  let h=`<span class="card-tag">${typeLabel[e.type]}</span>`;
+  if(e.type==='confusable'){
+    const wl=e.words.map(w=>w.word),hl=highlightWords(wl);
+    h+='<div class="word-display">'+hl.map((hw,i)=>`<span class="wd">${hw}</span>${i<hl.length-1?'<span class="wd-sep">·</span>':''}`).join('')+'</div>';
+    h+=`<p class="card-brief">${e.brief}</p><div class="card-divider"></div>`;
+    e.words.forEach((w,wi)=>{
+      const c=WCOLORS[wi%4];
+      h+=`<div class="word-item"><h3 style="color:${c}">${w.word}</h3>`;
+      h+=`<p class="word-def">${w.def}</p>`;
+      if(w.note)h+=`<p class="word-note" style="color:${c}88">${w.note}</p>`;
+      h+=`<ul class="word-examples">${w.examples.map(x=>`<li style="background:${c}0D;color:${c}">${x}</li>`).join('')}</ul></div>`;
+    });
+    if(e.trap)h+=`<div class="card-trap"><span class="trap-label">WATCH OUT</span><p>${e.trap}</p></div>`;
+  }
+  if(e.type==='calque'){
+    h+=`<h2 class="card-title" style="font-size:22px;font-weight:700;margin-bottom:6px">${e.title}</h2>`;
+    h+=`<p class="card-brief">${e.brief}</p><div class="calque-block">`;
+    h+=`<div class="calque-label">你可能会说</div><div class="calque-bad">${e.chinglish}</div>`;
+    h+=`<div class="calque-label">Native speaker 会说</div><div class="calque-good">${e.natural}</div>`;
+    h+=`<div class="card-divider" style="margin:16px -24px"></div>`;
+    h+=`<div class="calque-explain">${e.explanation}</div>`;
+    if(e.more&&e.more.length){
+      h+=`<div class="calque-more"><div class="calque-more-title">MORE EXAMPLES</div>`;
+      e.more.forEach(m=>{h+=`<div class="calque-more-item"><div class="zh">${m.zh}</div><div class="bad">✗ ${m.bad}</div><div class="good">✓ ${m.good}</div></div>`;});
+      h+='</div>';
+    }
+    h+='</div>';
+  }
+  if(e.type==='register'){
+    h+=`<div style="margin:20px 0"><div class="reg-formal">${e.formal}</div><div class="reg-arrow">↓</div><div class="reg-natural">${e.natural}</div></div>`;
+    h+=`<div class="reg-explain">${e.explanation}</div>`;
+    h+=`<div class="reg-example bad">✗ ${e.exBad}</div>`;
+    h+=`<div class="reg-example good">✓ ${e.exGood}</div>`;
+    if(e.whenFormal)h+=`<div class="reg-when"><strong>什么时候用正式版？</strong><br>${e.whenFormal}</div>`;
+  }
+  return h;
+}
+
+function renderDots(){document.getElementById('card-dots').innerHTML=dailyCards.map((_,i)=>`<div class="card-dot ${i===dailyIndex?'active':''}"></div>`).join('');}
+
+// ─── NAV ───
+function prevCard(){if(dailyIndex>0){dailyIndex--;renderDailyCard();renderDots();}}
+function nextCard(){if(dailyIndex<dailyCards.length-1){dailyIndex++;renderDailyCard();renderDots();}}
+let tx=0,ty=0;
+document.getElementById('today-card').addEventListener('touchstart',e=>{tx=e.touches[0].clientX;ty=e.touches[0].clientY},{passive:true});
+document.getElementById('today-card').addEventListener('touchend',e=>{const dx=e.changedTouches[0].clientX-tx,dy=e.changedTouches[0].clientY-ty;if(Math.abs(dx)>Math.abs(dy)&&Math.abs(dx)>60){dx<0?nextCard():prevCard();}},{passive:true});
+
+// ─── VIEWS ───
+function switchView(name,btn){
+  if(name===currentView)return;currentView=name;
+  document.querySelectorAll('.view').forEach(v=>v.classList.remove('active'));
+  document.getElementById('v-'+name).classList.add('active');
+  document.querySelectorAll('.tab').forEach(t=>t.classList.remove('active'));
+  btn.classList.add('active');
+  if(name==='library')renderLibrary();
+  if(name==='search')document.getElementById('search-input').focus();
+  if(name==='settings')document.getElementById('api-key').value=localStorage.getItem('entry_apikey')||'';
+}
+
+// ─── SAVE ───
+function toggleSave(id){const i=library.indexOf(id);if(i>=0)library.splice(i,1);else library.push(id);localStorage.setItem('entry_lib',JSON.stringify(library));if(currentView==='today')renderDailyCard();if(currentView==='library')renderLibrary();}
+function toggleSaveModal(){if(!modalEntryId)return;toggleSave(modalEntryId);document.getElementById('modal-save').classList.toggle('saved',library.includes(modalEntryId));}
+function renderLibrary(){
+  const list=document.getElementById('library-list');
+  if(!library.length){list.innerHTML='<div class="empty-state"><p>还没有收藏</p><p>浏览 Today 或 Search 时点击 ♡ 收藏</p></div>';return;}
+  list.innerHTML=library.map(id=>{const e=DB.find(x=>x.id===id);if(!e)return'';
+    return`<div class="lib-card" onclick="openModal('${e.id}')"><div class="lib-card-body"><div class="lib-card-title">${e.title}</div><div class="lib-card-brief">${e.brief}</div></div><button class="lib-remove" onclick="event.stopPropagation();toggleSave('${e.id}')">&#x2715;</button></div>`;
+  }).join('');
+}
+
+// ─── SEARCH ───
+function setFilter(f,btn){searchFilter=f;document.querySelectorAll('.chip').forEach(c=>c.classList.remove('active'));btn.classList.add('active');doSearch();}
+let st;document.getElementById('search-input').addEventListener('input',()=>{clearTimeout(st);st=setTimeout(doSearch,200);});
+function doSearch(){
+  const q=document.getElementById('search-input').value.trim().toLowerCase(),box=document.getElementById('search-results');
+  if(!q){box.innerHTML='<div class="search-hint">输入英文单词、中文短语<br>或者你想搞懂的表达</div>';return;}
+  let r=DB.filter(e=>{
+    if(searchFilter!=='all'&&e.type!==searchFilter)return false;
+    const t=[e.title,e.brief,e.id];
+    if(e.words)e.words.forEach(w=>t.push(w.word,w.def,w.note,...w.examples));
+    if(e.chinese)t.push(e.chinese);if(e.chinglish)t.push(e.chinglish);if(e.natural)t.push(e.natural);
+    if(e.explanation)t.push(e.explanation);if(e.formal)t.push(e.formal);
+    if(e.exBad)t.push(e.exBad);if(e.exGood)t.push(e.exGood);
+    if(e.more)e.more.forEach(m=>t.push(m.zh||'',m.bad||'',m.good||''));
+    return t.some(x=>x&&x.toLowerCase().includes(q));
+  });
+  if(!r.length){box.innerHTML=`<div class="search-empty">没有找到 "${q}" 相关内容<br><br><span style="font-size:12px">AI 智能搜索开发中</span></div>`;return;}
+  const tl={confusable:'CONFUSABLE',calque:'CALQUE',register:'REGISTER'};
+  box.innerHTML=r.map(e=>`<div class="result-card" onclick="openModal('${e.id}')"><div class="result-tag">${tl[e.type]}</div><div class="result-title">${e.title}</div><div class="result-brief">${e.brief}</div></div>`).join('');
+}
+
+// ─── MODAL ───
+function openModal(id){
+  const e=DB.find(x=>x.id===id);if(!e)return;modalEntryId=id;
+  document.getElementById('modal-body').innerHTML=renderEntryContent(e);
+  document.getElementById('modal-save').classList.toggle('saved',library.includes(id));
+  document.getElementById('modal').classList.add('open');document.body.style.overflow='hidden';
+}
+function closeModal(){document.getElementById('modal').classList.remove('open');document.body.style.overflow='';modalEntryId=null;}
+
+// ─── SETTINGS ───
+function saveApiKey(v){localStorage.setItem('entry_apikey',v);}
+function clearLibrary(){if(!confirm('确定清空所有收藏？'))return;library=[];localStorage.setItem('entry_lib','[]');renderLibrary();}
+
+// ─── INIT ───
+loadDailyCards();
+</script>
+</body>
+</html>
