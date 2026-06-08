@@ -22,6 +22,7 @@ html,body{height:100%;overflow:hidden}
 body{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased}
 #app{height:100%;display:flex;flex-direction:column;max-width:430px;margin:0 auto;position:relative}
 .view{flex:1;overflow-y:auto;padding:0 20px 20px;display:none;-webkit-overflow-scrolling:touch}
+#v-today{padding-top:20px}
 .view.active{display:flex;flex-direction:column}
 .view-head{padding:24px 0 16px;flex-shrink:0}
 .view-head h1{font-size:26px;font-weight:700;letter-spacing:-0.5px}
@@ -33,10 +34,12 @@ body{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Robot
 .tab.active{color:var(--text)}
 
 /* Today Card */
-.today-card{background:var(--card);padding:24px;margin-bottom:4px;flex:1;overflow-y:auto;min-height:0;position:relative;border:1px solid var(--border)}
+.today-card{background:var(--card);padding:0;margin-bottom:4px;flex:1;overflow-y:auto;min-height:0;position:relative;border:1px solid var(--border)}
+.card-q{padding:24px 24px 20px;background:#E8E7E3}
+.card-a{padding:16px 24px 24px}
 .card-tag{display:inline-block;font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:16px;color:var(--text3)}
-.card-brief{font-size:14px;color:var(--text2);line-height:1.6;margin-bottom:20px}
-.card-divider{height:1px;background:var(--border);margin:0 -24px}
+.card-title{font-size:22px;font-weight:700;line-height:1.3;margin-bottom:8px}
+.card-brief{font-size:13px;color:var(--text2);line-height:1.5}
 
 /* Word display with diff highlighting */
 .word-display{font-size:24px;font-weight:600;line-height:1.4;letter-spacing:-0.3px;margin-bottom:8px}
@@ -54,19 +57,15 @@ body{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Robot
 .word-examples li{font-size:12px;padding:4px 10px;font-weight:500}
 
 /* Trap */
-.card-trap{margin-top:16px;padding:14px 16px;background:var(--warn-bg);border:1px solid #EDE0B8}
-.trap-label{font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--warn);display:block;margin-bottom:6px}
-.card-trap p{font-size:13px;line-height:1.6;color:#6B5520}
+.card-trap{margin-top:16px;padding:12px 16px;background:var(--warn-bg);border:1px solid #EDE0B8;display:flex;gap:10px;align-items:flex-start}
+.card-trap svg{flex-shrink:0;width:16px;height:16px;margin-top:1px;stroke:var(--warn);fill:none;stroke-width:2.5;stroke-linecap:round;stroke-linejoin:round}
+.card-trap p{font-size:13px;line-height:1.6;color:#6B5520;flex:1}
 
 /* Calque */
-.calque-block{margin-top:16px}
-.calque-label{font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--text3);margin-bottom:6px}
-.calque-zh{font-size:15px;color:var(--text);margin-bottom:16px;padding:12px 16px;background:#F5F4F0}
-.calque-bad{font-size:14px;line-height:1.6;padding:12px 16px;background:var(--bad-bg);margin-bottom:8px;color:var(--bad);text-decoration:line-through;text-decoration-color:rgba(184,53,42,0.25)}
+.calque-bad{font-size:14px;line-height:1.6;padding:12px 16px;background:var(--bad-bg);color:var(--bad);text-decoration:line-through;text-decoration-color:rgba(184,53,42,0.25)}
 .calque-good{font-size:14px;line-height:1.6;padding:12px 16px;background:var(--good-bg);margin-bottom:16px;color:var(--good);font-weight:600}
-.calque-explain{font-size:13px;line-height:1.8;color:var(--text2);margin-bottom:16px}
-.calque-more{margin-top:12px}
-.calque-more-title{font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:var(--text3);margin-bottom:10px}
+.calque-explain{font-size:13px;line-height:1.7;color:var(--text2);margin-bottom:8px}
+.calque-more{padding-top:12px;border-top:1px solid var(--border)}
 .calque-more-item{margin-bottom:12px;padding:12px;background:#FAFAF7}
 .calque-more-item .zh{font-size:13px;color:var(--text);margin-bottom:4px}
 .calque-more-item .bad{font-size:12px;color:var(--bad);text-decoration:line-through;text-decoration-color:rgba(184,53,42,0.25)}
@@ -80,8 +79,9 @@ body{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Robot
 .reg-example{padding:14px 16px;margin-bottom:8px;font-size:14px;line-height:1.6}
 .reg-example.bad{background:var(--bad-bg);color:var(--bad);text-decoration:line-through;text-decoration-color:rgba(184,53,42,0.25)}
 .reg-example.good{background:var(--good-bg);color:var(--good);font-weight:600}
-.reg-when{margin-top:12px;padding:12px 16px;background:#F5F4F0;font-size:12px;color:var(--text2);line-height:1.6}
-.reg-when strong{color:var(--text);font-weight:600}
+.reg-when{margin-top:12px;padding:12px 16px;background:#F5F4F0;font-size:12px;color:var(--text2);line-height:1.6;display:flex;gap:10px;align-items:flex-start}
+.reg-when svg{flex-shrink:0;width:14px;height:14px;margin-top:2px;stroke:var(--text3);fill:none;stroke-width:2;stroke-linecap:round}
+.reg-when p{flex:1}
 
 /* Card nav */
 .card-nav{display:flex;align-items:center;justify-content:space-between;padding:12px 0;flex-shrink:0}
@@ -147,7 +147,9 @@ body{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Robot
 .modal-save{width:32px;height:32px;border:none;background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center}
 .modal-save svg{width:20px;height:20px;stroke:var(--text3);fill:none;stroke-width:2;transition:all .2s}
 .modal-save.saved svg{fill:#C0501F;stroke:#C0501F}
-.modal-body{overflow-y:auto;padding:0 24px 40px;-webkit-overflow-scrolling:touch;flex:1;min-height:0}
+.modal-body{overflow-y:auto;padding:0;-webkit-overflow-scrolling:touch;flex:1;min-height:0}
+.modal-body .card-q{padding:20px 24px 16px}
+.modal-body .card-a{padding:16px 24px 40px}
 
 @keyframes fadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
 .fade-in{animation:fadeIn .25s ease-out}
@@ -156,7 +158,6 @@ body{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Robot
 <body>
 <div id="app">
   <div class="view active" id="v-today">
-    <div class="view-head"><h1>Today</h1></div>
     <div class="today-card fade-in" id="today-card"></div>
     <div class="card-nav">
       <button class="card-nav-btn" id="btn-prev" onclick="prevCard()"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg></button>
@@ -604,42 +605,41 @@ function renderDailyCard(){
 
 function renderEntryContent(e){
   const typeLabel={confusable:'CONFUSABLE',calque:'CALQUE',register:'REGISTER'};
-  let h=`<span class="card-tag">${typeLabel[e.type]}</span>`;
+  const warnSvg='<svg viewBox="0 0 24 24"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>';
+  const bookSvg='<svg viewBox="0 0 24 24"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg>';
+  let q=`<span class="card-tag">${typeLabel[e.type]}</span>`,a='';
   if(e.type==='confusable'){
     const wl=e.words.map(w=>w.word),hl=highlightWords(wl);
-    h+='<div class="word-display">'+hl.map((hw,i)=>`<span class="wd">${hw}</span>${i<hl.length-1?'<span class="wd-sep">·</span>':''}`).join('')+'</div>';
-    h+=`<p class="card-brief">${e.brief}</p><div class="card-divider"></div>`;
+    q+='<div class="word-display">'+hl.map((hw,i)=>`<span class="wd">${hw}</span>${i<hl.length-1?'<span class="wd-sep">·</span>':''}`).join('')+'</div>';
+    q+=`<p class="card-brief">${e.brief}</p>`;
     e.words.forEach((w,wi)=>{
       const c=WCOLORS[wi%4];
-      h+=`<div class="word-item"><h3 style="color:${c}">${w.word}</h3>`;
-      h+=`<p class="word-def">${w.def}</p>`;
-      if(w.note)h+=`<p class="word-note" style="color:${c}88">${w.note}</p>`;
-      h+=`<ul class="word-examples">${w.examples.map(x=>`<li style="background:${c}0D;color:${c}">${x}</li>`).join('')}</ul></div>`;
+      a+=`<div class="word-item"><h3 style="color:${c}">${w.word}</h3>`;
+      a+=`<p class="word-def">${w.def}</p>`;
+      if(w.note)a+=`<p class="word-note" style="color:${c}88">${w.note}</p>`;
+      a+=`<ul class="word-examples">${w.examples.map(x=>`<li style="background:${c}0D;color:${c}">${x}</li>`).join('')}</ul></div>`;
     });
-    if(e.trap)h+=`<div class="card-trap"><span class="trap-label">WATCH OUT</span><p>${e.trap}</p></div>`;
+    if(e.trap)a+=`<div class="card-trap">${warnSvg}<p>${e.trap}</p></div>`;
   }
   if(e.type==='calque'){
-    h+=`<h2 class="card-title" style="font-size:22px;font-weight:700;margin-bottom:6px">${e.title}</h2>`;
-    h+=`<p class="card-brief">${e.brief}</p><div class="calque-block">`;
-    h+=`<div class="calque-label">你可能会说</div><div class="calque-bad">${e.chinglish}</div>`;
-    h+=`<div class="calque-label">Native speaker 会说</div><div class="calque-good">${e.natural}</div>`;
-    h+=`<div class="card-divider" style="margin:16px -24px"></div>`;
-    h+=`<div class="calque-explain">${e.explanation}</div>`;
+    q+=`<h2 class="card-title">${e.title}</h2>`;
+    q+=`<div class="calque-bad">✗ ${e.chinglish}</div>`;
+    a+=`<div class="calque-good">✓ ${e.natural}</div>`;
+    a+=`<div class="calque-explain">${e.explanation}</div>`;
     if(e.more&&e.more.length){
-      h+=`<div class="calque-more"><div class="calque-more-title">MORE EXAMPLES</div>`;
-      e.more.forEach(m=>{h+=`<div class="calque-more-item"><div class="zh">${m.zh}</div><div class="bad">✗ ${m.bad}</div><div class="good">✓ ${m.good}</div></div>`;});
-      h+='</div>';
+      a+='<div class="calque-more">';
+      e.more.forEach(m=>{a+=`<div class="calque-more-item"><div class="zh">${m.zh}</div><div class="bad">✗ ${m.bad}</div><div class="good">✓ ${m.good}</div></div>`;});
+      a+='</div>';
     }
-    h+='</div>';
   }
   if(e.type==='register'){
-    h+=`<div style="margin:20px 0"><div class="reg-formal">${e.formal}</div><div class="reg-arrow">↓</div><div class="reg-natural">${e.natural}</div></div>`;
-    h+=`<div class="reg-explain">${e.explanation}</div>`;
-    h+=`<div class="reg-example bad">✗ ${e.exBad}</div>`;
-    h+=`<div class="reg-example good">✓ ${e.exGood}</div>`;
-    if(e.whenFormal)h+=`<div class="reg-when"><strong>什么时候用正式版？</strong><br>${e.whenFormal}</div>`;
+    q+=`<div style="margin:8px 0"><div class="reg-formal">${e.formal}</div><div class="reg-arrow">↓</div><div class="reg-natural">${e.natural}</div></div>`;
+    a+=`<div class="reg-explain">${e.explanation}</div>`;
+    a+=`<div class="reg-example bad">✗ ${e.exBad}</div>`;
+    a+=`<div class="reg-example good">✓ ${e.exGood}</div>`;
+    if(e.whenFormal)a+=`<div class="reg-when">${bookSvg}<p>${e.whenFormal}</p></div>`;
   }
-  return h;
+  return `<div class="card-q">${q}</div><div class="card-a">${a}</div>`;
 }
 
 function renderDots(){document.getElementById('card-dots').innerHTML=dailyCards.map((_,i)=>`<div class="card-dot ${i===dailyIndex?'active':''}"></div>`).join('');}
