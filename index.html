@@ -16,26 +16,25 @@
   --w1:#C0501F;--w2:#2362A8;--w3:#7E35A0;--w4:#1A7340;
   --bad:#B8352A;--bad-bg:#FFF0EE;--good:#1A6B38;--good-bg:#EEFAF2;
   --warn:#8B6914;--warn-bg:#FFF9E8;
-  --safe-b:env(safe-area-inset-bottom,0px);
 }
-html,body{height:100%;overflow:hidden}
-body{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased}
+html{height:100%}
+body{height:100%;overflow:hidden;padding-top:env(safe-area-inset-top);font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased}
 #app{height:100%;display:flex;flex-direction:column;max-width:430px;margin:0 auto;position:relative}
 .view{flex:1;overflow-y:auto;padding:0 20px 20px;display:none;-webkit-overflow-scrolling:touch}
-#v-today{padding-top:20px}
+#v-today{padding-top:12px}
 .view.active{display:flex;flex-direction:column}
 .view-head{padding:24px 0 16px;flex-shrink:0}
 .view-head h1{font-size:26px;font-weight:700;letter-spacing:-0.5px}
 
 /* Tab Bar */
-#tabbar{display:flex;background:var(--card);border-top:1px solid var(--border);padding:8px 0 calc(8px + var(--safe-b));flex-shrink:0}
+#tabbar{display:flex;background:var(--card);border-top:1px solid var(--border);padding:8px 0;padding-bottom:max(8px, env(safe-area-inset-bottom));flex-shrink:0}
 .tab{flex:1;display:flex;flex-direction:column;align-items:center;gap:2px;background:none;border:none;color:var(--text3);font-size:10px;cursor:pointer;padding:4px 0;transition:color .2s;font-family:inherit}
 .tab svg{width:22px;height:22px}
 .tab.active{color:var(--text)}
 
 /* Today Card */
 .today-card{background:var(--card);padding:0;margin-bottom:4px;flex:1;overflow-y:auto;min-height:0;position:relative;border:1px solid var(--border)}
-.card-q{padding:24px 24px 20px;background:#E8E7E3}
+.card-q{padding:24px 24px 20px;background:#EDE8DF}
 .card-a{padding:16px 24px 24px}
 .card-tag{display:inline-block;font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase;margin-bottom:16px;color:var(--text3)}
 .card-title{font-size:22px;font-weight:700;line-height:1.3;margin-bottom:8px}
