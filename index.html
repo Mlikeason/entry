@@ -19,7 +19,7 @@
 }
 html,body{margin:0;padding:0;height:100%;overflow:hidden}
 body{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased}
-#app{position:fixed;top:0;left:0;right:0;bottom:0;display:flex;flex-direction:column;max-width:430px;margin:0 auto;padding-top:env(safe-area-inset-top)}
+#app{display:flex;flex-direction:column;max-width:430px;margin:0 auto;padding-top:env(safe-area-inset-top);height:var(--app-h,100vh);overflow:hidden}
 .view{flex:1;overflow-y:auto;padding:0 20px 20px;display:none;-webkit-overflow-scrolling:touch}
 #v-today{padding-top:12px}
 .view.active{display:flex;flex-direction:column}
@@ -209,6 +209,8 @@ body{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Robot
   </div>
 </div>
 <script>
+function setH(){document.documentElement.style.setProperty('--app-h',window.innerHeight+'px')}
+window.addEventListener('resize',setH);setH();
 const WCOLORS=['#C0501F','#2362A8','#7E35A0','#1A7340'];
 const DB=[
 // ══ CONFUSABLES ══
