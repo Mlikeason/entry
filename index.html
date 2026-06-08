@@ -49,7 +49,8 @@ body{font-family:-apple-system,BlinkMacSystemFont,"SF Pro Text","Segoe UI",Robot
 /* Confusable word items */
 .word-item{padding:16px 0;border-bottom:1px solid var(--border)}
 .word-item:last-child{border-bottom:none}
-.word-item h3{font-size:17px;font-weight:600;margin-bottom:4px}
+.word-item h3{font-size:17px;font-weight:600;margin-bottom:4px;display:flex;align-items:baseline;gap:8px}
+.word-pron{font-size:13px;font-weight:400;color:var(--text3);font-style:italic}
 .word-def{font-size:13px;color:var(--text2);margin-bottom:4px}
 .word-note{font-size:12px;margin-bottom:8px;font-style:italic}
 .word-examples{list-style:none;display:flex;flex-wrap:wrap;gap:6px}
@@ -262,7 +263,7 @@ function renderEntryContent(e){
     q+=`<p class="card-brief">${e.brief}</p>`;
     e.words.forEach((w,wi)=>{
       const c=WCOLORS[wi%4];
-      a+=`<div class="word-item"><h3 style="color:${c}">${w.word}</h3>`;
+      a+=`<div class="word-item"><h3 style="color:${c}">${w.word}${w.pron?`<span class="word-pron">${w.pron}</span>`:''}</h3>`;
       a+=`<p class="word-def">${w.def}</p>`;
       if(w.note)a+=`<p class="word-note" style="color:${c}88">${w.note}</p>`;
       a+=`<ul class="word-examples">${w.examples.map(x=>`<li style="background:${c}0D;color:${c}">${x}</li>`).join('')}</ul></div>`;

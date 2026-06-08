@@ -3,261 +3,261 @@ const DB=[
 // CONFUSABLES (70)
 // ══════════════════════════════════════
 {id:'critical-crucial-cruel',type:'confusable',title:'critical · crucial · cruel',brief:'批判 / 关键 / 残忍 — 三个完全不同的方向',words:[
-{word:'critical',def:'批判性的；危急的',note:'强调分析判断或紧急状态',examples:['critical thinking','critical condition','critical of the plan']},
-{word:'crucial',def:'至关重要的，决定性的',note:'缺了就完蛋，不可或缺',examples:['a crucial decision','This is crucial']},
-{word:'cruel',def:'残忍的，冷酷的',note:'跟前两个完全无关，只是长得像',examples:['a cruel joke','Don\'t be cruel']}
+{word:'critical',pron:'/ˈkrɪtɪkəl/',def:'批判性的；危急的',note:'强调分析判断或紧急状态',examples:['critical thinking','critical condition','critical of the plan']},
+{word:'crucial',pron:'/ˈkruːʃəl/',def:'至关重要的，决定性的',note:'缺了就完蛋，不可或缺',examples:['a crucial decision','This is crucial']},
+{word:'cruel',pron:'/ˈkruːəl/',def:'残忍的，冷酷的',note:'跟前两个完全无关，只是长得像',examples:['a cruel joke','Don\'t be cruel']}
 ],trap:'"He is critical" = 他情况危急 / 他很挑剔，不是"他很关键"。关键 = crucial 或 key。'},
 {id:'affect-effect',type:'confusable',title:'affect · effect',brief:'动词"影响" vs 名词"效果"',words:[
-{word:'affect',def:'影响（动词）',note:'A for Action — affect 是动作',examples:['The rain affected our plans','How does this affect you?']},
-{word:'effect',def:'效果，结果（名词）',note:'E for End result — effect 是结果',examples:['The effect was immediate','side effects','cause and effect']}
+{word:'affect',pron:'/əˈfɛkt/',def:'影响（动词）',note:'A for Action — affect 是动作',examples:['The rain affected our plans','How does this affect you?']},
+{word:'effect',pron:'/ɪˈfɛkt/',def:'效果，结果（名词）',note:'E for End result — effect 是结果',examples:['The effect was immediate','side effects','cause and effect']}
 ],trap:'effect 偶尔做动词="实现"（effect change），但极罕见。记住 affect=动词 effect=名词 就够了。'},
 {id:'complement-compliment',type:'confusable',title:'complement · compliment',brief:'补充搭配 vs 赞美恭维',words:[
-{word:'complement',def:'补充，搭配',note:'complement = complete，使完整',examples:['The wine complements the cheese','They complement each other']},
-{word:'compliment',def:'赞美，恭维',note:'说好话',examples:['She complimented my work','Take it as a compliment']}
+{word:'complement',pron:'/ˈkɑːmpləmənt/',def:'补充，搭配',note:'complement = complete，使完整',examples:['The wine complements the cheese','They complement each other']},
+{word:'compliment',pron:'/ˈkɑːmpləmənt/',def:'赞美，恭维',note:'说好话',examples:['She complimented my work','Take it as a compliment']}
 ],trap:'complimentary = 免费赠送的！complementary = 互补的。形容词也容易混。'},
 {id:'principal-principle',type:'confusable',title:'principal · principle',brief:'主要的 / 校长 vs 原则',words:[
-{word:'principal',def:'主要的（adj）/ 校长（n）',note:'the main one',examples:['the principal reason','school principal']},
-{word:'principle',def:'原则，准则（永远是名词）',note:'a rule',examples:['a matter of principle','design principles','in principle']}
+{word:'principal',pron:'/ˈprɪnsəpəl/',def:'主要的（adj）/ 校长（n）',note:'the main one',examples:['the principal reason','school principal']},
+{word:'principle',pron:'/ˈprɪnsəpəl/',def:'原则，准则（永远是名词）',note:'a rule',examples:['a matter of principle','design principles','in principle']}
 ],trap:'principAL = A person. principLE = a ruLE.'},
 {id:'discrete-discreet',type:'confusable',title:'discrete · discreet',brief:'离散的 vs 谨慎的 — 发音完全一样',words:[
-{word:'discrete',def:'离散的，独立的',note:'数学/技术用语',examples:['discrete data points','discrete components']},
-{word:'discreet',def:'谨慎的，低调的',note:'社交用语，保密不张扬',examples:['Please be discreet','a discreet inquiry']}
+{word:'discrete',pron:'/dɪˈskriːt/',def:'离散的，独立的',note:'数学/技术用语',examples:['discrete data points','discrete components']},
+{word:'discreet',pron:'/dɪˈskriːt/',def:'谨慎的，低调的',note:'社交用语，保密不张扬',examples:['Please be discreet','a discreet inquiry']}
 ],trap:'发音完全相同 /dɪˈskriːt/。设计师常用 discrete（离散元素），社交场合用 discreet（低调行事）。'},
 {id:'assure-ensure-insure',type:'confusable',title:'assure · ensure · insure',brief:'向人保证 / 确保发生 / 买保险',words:[
-{word:'assure',def:'向某人保证',note:'后面一定跟人',examples:['I assure you it\'s fine','Let me assure you']},
-{word:'ensure',def:'确保某事发生',note:'后面跟事情',examples:['ensure the door is locked','to ensure quality']},
-{word:'insure',def:'投保，上保险',note:'跟钱和风险有关',examples:['Is your car insured?','insure against loss']}
+{word:'assure',pron:'/əˈʃʊr/',def:'向某人保证',note:'后面一定跟人',examples:['I assure you it\'s fine','Let me assure you']},
+{word:'ensure',pron:'/ɪnˈʃʊr/',def:'确保某事发生',note:'后面跟事情',examples:['ensure the door is locked','to ensure quality']},
+{word:'insure',pron:'/ɪnˈʃʊr/',def:'投保，上保险',note:'跟钱和风险有关',examples:['Is your car insured?','insure against loss']}
 ],trap:'assure 对象是人（让人放心），ensure 对象是事（让事情发生）。'},
 {id:'adapt-adopt',type:'confusable',title:'adapt · adopt',brief:'改造适应 vs 采纳接受',words:[
-{word:'adapt',def:'适应；改编',note:'修改已有的来适应新情况',examples:['adapt to the environment','adapt for mobile']},
-{word:'adopt',def:'采纳；收养',note:'接受全新的东西',examples:['adopt a new strategy','widely adopted']}
+{word:'adapt',pron:'/əˈdæpt/',def:'适应；改编',note:'修改已有的来适应新情况',examples:['adapt to the environment','adapt for mobile']},
+{word:'adopt',pron:'/əˈdɑːpt/',def:'采纳；收养',note:'接受全新的东西',examples:['adopt a new strategy','widely adopted']}
 ],trap:'adapt = 改（已有的），adopt = 接受（新的）。'},
 {id:'economic-economical',type:'confusable',title:'economic · economical',brief:'经济学的 vs 省钱的',words:[
-{word:'economic',def:'经济的，经济学的',note:'跟经济体系、政策有关',examples:['economic growth','economic crisis']},
-{word:'economical',def:'节约的，划算的',note:'跟省钱效率有关',examples:['an economical car','economical use of space']}
+{word:'economic',pron:'/ˌɛkəˈnɑːmɪk/',def:'经济的，经济学的',note:'跟经济体系、政策有关',examples:['economic growth','economic crisis']},
+{word:'economical',pron:'/ˌɛkəˈnɑːmɪkəl/',def:'节约的，划算的',note:'跟省钱效率有关',examples:['an economical car','economical use of space']}
 ],trap:'economic crisis ✓（经济危机）economical crisis ✗。省钱用 economical。'},
 {id:'sensible-sensitive',type:'confusable',title:'sensible · sensitive',brief:'明智的 vs 敏感的 — 最容易搞反',words:[
-{word:'sensible',def:'明智的，合理的',note:'形容人靠谱务实',examples:['a sensible decision','Be sensible']},
-{word:'sensitive',def:'敏感的',note:'容易受影响',examples:['sensitive skin','a sensitive topic']}
+{word:'sensible',pron:'/ˈsɛnsəbəl/',def:'明智的，合理的',note:'形容人靠谱务实',examples:['a sensible decision','Be sensible']},
+{word:'sensitive',pron:'/ˈsɛnsətɪv/',def:'敏感的',note:'容易受影响',examples:['sensitive skin','a sensitive topic']}
 ],trap:'中文"敏感"= sensitive，"理性/明智"= sensible。sensible = 有sense的 = 明智的。'},
 {id:'continual-continuous',type:'confusable',title:'continual · continuous',brief:'反复发生（有间断）vs 不间断',words:[
-{word:'continual',def:'频繁反复的',note:'有间隔，一次又一次',examples:['continual interruptions','continual complaints']},
-{word:'continuous',def:'持续不断的',note:'没有中断',examples:['continuous noise','continuous monitoring']}
+{word:'continual',pron:'/kənˈtɪnjuəl/',def:'频繁反复的',note:'有间隔，一次又一次',examples:['continual interruptions','continual complaints']},
+{word:'continuous',pron:'/kənˈtɪnjuəs/',def:'持续不断的',note:'没有中断',examples:['continuous noise','continuous monitoring']}
 ],trap:'continuous rain = 一直在下。continual rain = 下下停停反复来。'},
 {id:'imply-infer',type:'confusable',title:'imply · infer',brief:'暗示（说者）vs 推断（听者）',words:[
-{word:'imply',def:'暗示，言下之意',note:'说话者的动作',examples:['Are you implying I\'m wrong?','The data implies a trend']},
-{word:'infer',def:'推断，推理',note:'听者的动作',examples:['I inferred from his tone...','What can we infer?']}
+{word:'imply',pron:'/ɪmˈplaɪ/',def:'暗示，言下之意',note:'说话者的动作',examples:['Are you implying I\'m wrong?','The data implies a trend']},
+{word:'infer',pron:'/ɪnˈfɜːr/',def:'推断，推理',note:'听者的动作',examples:['I inferred from his tone...','What can we infer?']}
 ],trap:'方向相反！Speaker implies, Listener infers.'},
 {id:'precede-proceed',type:'confusable',title:'precede · proceed',brief:'在前面 vs 继续进行',words:[
-{word:'precede',def:'在…之前，先于',note:'pre = before',examples:['preceded by a brief intro','the preceding chapter']},
-{word:'proceed',def:'继续，进行',note:'pro = forward',examples:['proceed with the plan','proceed to gate 5']}
+{word:'precede',pron:'/prɪˈsiːd/',def:'在…之前，先于',note:'pre = before',examples:['preceded by a brief intro','the preceding chapter']},
+{word:'proceed',pron:'/prəˈsiːd/',def:'继续，进行',note:'pro = forward',examples:['proceed with the plan','proceed to gate 5']}
 ],trap:'precedent（先例）来自 precede。procedure（程序）来自 proceed。'},
 {id:'adverse-averse',type:'confusable',title:'adverse · averse',brief:'不利的（事物）vs 反感的（人）',words:[
-{word:'adverse',def:'不利的，有害的',note:'描述外部条件',examples:['adverse weather','adverse effects']},
-{word:'averse',def:'反感的，不乐意的',note:'描述人的态度',examples:['risk-averse','not averse to the idea']}
+{word:'adverse',pron:'/ˈædvɜːrs/',def:'不利的，有害的',note:'描述外部条件',examples:['adverse weather','adverse effects']},
+{word:'averse',pron:'/əˈvɜːrs/',def:'反感的，不乐意的',note:'描述人的态度',examples:['risk-averse','not averse to the idea']}
 ],trap:'risk-averse ✓ risk-adverse ✗。averse 描述人，adverse 描述事。'},
 {id:'elicit-illicit',type:'confusable',title:'elicit · illicit',brief:'引出（动词）vs 非法的（形容词）',words:[
-{word:'elicit',def:'引出，引发',note:'让隐藏的浮出水面',examples:['elicit a response','elicit information']},
-{word:'illicit',def:'非法的，不正当的',note:'= illegal',examples:['illicit drugs','illicit trade']}
+{word:'elicit',pron:'/ɪˈlɪsɪt/',def:'引出，引发',note:'让隐藏的浮出水面',examples:['elicit a response','elicit information']},
+{word:'illicit',pron:'/ɪˈlɪsɪt/',def:'非法的，不正当的',note:'= illegal',examples:['illicit drugs','illicit trade']}
 ],trap:'词性不同：elicit 是动词，illicit 是形容词。'},
 {id:'comprise-compose',type:'confusable',title:'comprise · compose',brief:'包含（大→小）vs 组成（小→大）',words:[
-{word:'comprise',def:'包含，由…组成',note:'大的 comprise 小的',examples:['The team comprises 5 people','comprises 12 chapters']},
-{word:'compose',def:'组成，构成',note:'小的 compose 大的，常被动',examples:['composed of 5 people','composed of H and O']}
+{word:'comprise',pron:'/kəmˈpraɪz/',def:'包含，由…组成',note:'大的 comprise 小的',examples:['The team comprises 5 people','comprises 12 chapters']},
+{word:'compose',pron:'/kəmˈpoʊz/',def:'组成，构成',note:'小的 compose 大的，常被动',examples:['composed of 5 people','composed of H and O']}
 ],trap:'"is comprised of" 有争议。最安全：comprises X 或 is composed of X。'},
 {id:'farther-further',type:'confusable',title:'farther · further',brief:'物理距离 vs 抽象程度',words:[
-{word:'farther',def:'更远（物理距离）',note:'far 的比较级，实际距离',examples:['farther down the road','How much farther?']},
-{word:'further',def:'更进一步（抽象）',note:'程度、进展',examples:['further discussion','further information','look into it further']}
+{word:'farther',pron:'/ˈfɑːrðər/',def:'更远（物理距离）',note:'far 的比较级，实际距离',examples:['farther down the road','How much farther?']},
+{word:'further',pron:'/ˈfɜːrðər/',def:'更进一步（抽象）',note:'程度、进展',examples:['further discussion','further information','look into it further']}
 ],trap:'口语中 further 可以通吃两种用法，但 farther 只用于物理距离。'},
 {id:'historic-historical',type:'confusable',title:'historic · historical',brief:'历史性的（重要）vs 历史的（相关）',words:[
-{word:'historic',def:'具有历史意义的',note:'值得被记住的',examples:['a historic moment','a historic victory']},
-{word:'historical',def:'与历史有关的',note:'关于历史这个学科',examples:['historical data','historical research','historical fiction']}
+{word:'historic',pron:'/hɪˈstɔːrɪk/',def:'具有历史意义的',note:'值得被记住的',examples:['a historic moment','a historic victory']},
+{word:'historical',pron:'/hɪˈstɔːrɪkəl/',def:'与历史有关的',note:'关于历史这个学科',examples:['historical data','historical research','historical fiction']}
 ],trap:'historic event = 改变历史的大事。historical event = 历史上发生过的事。'},
 {id:'stationary-stationery',type:'confusable',title:'stationary · stationery',brief:'静止不动的 vs 文具',words:[
-{word:'stationary',def:'静止的，不动的',note:'站着不动 — stationAry',examples:['remain stationary','a stationary bike']},
-{word:'stationery',def:'文具，信纸',note:'写字用的 — stationEry',examples:['office stationery','stationery shop']}
+{word:'stationary',pron:'/ˈsteɪʃənɛri/',def:'静止的，不动的',note:'站着不动 — stationAry',examples:['remain stationary','a stationary bike']},
+{word:'stationery',pron:'/ˈsteɪʃənɛri/',def:'文具，信纸',note:'写字用的 — stationEry',examples:['office stationery','stationery shop']}
 ],trap:'记忆：stationEry 的 E = Envelope（信封），文具。stationAry 的 A = At rest（静止）。'},
 {id:'personal-personnel',type:'confusable',title:'personal · personnel',brief:'个人的 vs 人事/员工',words:[
-{word:'personal',def:'个人的，私人的',note:'重音在第一音节',examples:['personal opinion','personal space']},
-{word:'personnel',def:'人事部门；全体员工',note:'重音在第三音节',examples:['personnel department','military personnel']}
+{word:'personal',pron:'/ˈpɜːrsənəl/',def:'个人的，私人的',note:'重音在第一音节',examples:['personal opinion','personal space']},
+{word:'personnel',pron:'/ˌpɜːrsəˈnɛl/',def:'人事部门；全体员工',note:'重音在第三音节',examples:['personnel department','military personnel']}
 ],trap:'发音不同！personal /ˈpɜːrsənl/ vs personnel /ˌpɜːrsəˈnel/。很多人读成一样。'},
 {id:'conscience-conscious',type:'confusable',title:'conscience · conscious',brief:'良心（名词）vs 有意识的（形容词）',words:[
-{word:'conscience',def:'良心，道德感',note:'内心的道德判断',examples:['a guilty conscience','in good conscience']},
-{word:'conscious',def:'有意识的，清醒的',note:'aware，知道的',examples:['conscious decision','self-conscious','barely conscious']}
+{word:'conscience',pron:'/ˈkɑːnʃəns/',def:'良心，道德感',note:'内心的道德判断',examples:['a guilty conscience','in good conscience']},
+{word:'conscious',pron:'/ˈkɑːnʃəs/',def:'有意识的，清醒的',note:'aware，知道的',examples:['conscious decision','self-conscious','barely conscious']}
 ],trap:'conscience 是名词（良心），conscious 是形容词（有意识的）。词性不同。'},
 {id:'desert-dessert',type:'confusable',title:'desert · dessert',brief:'沙漠 / 抛弃 vs 甜点',words:[
-{word:'desert',def:'沙漠（n）/ 抛弃（v）',note:'一个 s — 沙漠很干，少一个',examples:['the Sahara Desert','desert the army']},
-{word:'dessert',def:'甜点',note:'两个 s — 甜点要多来一份',examples:['What\'s for dessert?','dessert menu']}
+{word:'desert',pron:'/ˈdɛzərt/',def:'沙漠（n）/ 抛弃（v）',note:'一个 s — 沙漠很干，少一个',examples:['the Sahara Desert','desert the army']},
+{word:'dessert',pron:'/dɪˈzɜːrt/',def:'甜点',note:'两个 s — 甜点要多来一份',examples:['What\'s for dessert?','dessert menu']}
 ],trap:'记忆：dessert 两个 s，因为甜点（Sweet Stuff）你想要更多。'},
 {id:'loose-lose',type:'confusable',title:'loose · lose',brief:'松的 vs 失去 — 拼写高频错误',words:[
-{word:'loose',def:'松的，宽松的（形容词）',note:'跟 goose 押韵 /luːs/',examples:['loose fit','a loose screw','set loose']},
-{word:'lose',def:'失去，输掉（动词）',note:'跟 choose 押韵 /luːz/',examples:['lose your keys','lose the game','nothing to lose']}
+{word:'loose',pron:'/luːs/',def:'松的，宽松的（形容词）',note:'跟 goose 押韵 /luːs/',examples:['loose fit','a loose screw','set loose']},
+{word:'lose',pron:'/luːz/',def:'失去，输掉（动词）',note:'跟 choose 押韵 /luːz/',examples:['lose your keys','lose the game','nothing to lose']}
 ],trap:'loose 是形容词（松的），lose 是动词（丢失）。发音也不同：s vs z。'},
 {id:'quiet-quite',type:'confusable',title:'quiet · quite',brief:'安静的 vs 相当 — 最后两个字母相反',words:[
-{word:'quiet',def:'安静的',note:'qui-ET，重音在后',examples:['a quiet room','Keep quiet','quiet confidence']},
-{word:'quite',def:'相当，十分',note:'一个音节 /kwaɪt/',examples:['quite good','quite a challenge','not quite']}
+{word:'quiet',pron:'/ˈkwaɪət/',def:'安静的',note:'qui-ET，重音在后',examples:['a quiet room','Keep quiet','quiet confidence']},
+{word:'quite',pron:'/kwaɪt/',def:'相当，十分',note:'一个音节 /kwaɪt/',examples:['quite good','quite a challenge','not quite']}
 ],trap:'拼写对调：quiet = qui+et, quite = qui+te。发音完全不同。'},
 {id:'accept-except',type:'confusable',title:'accept · except',brief:'接受 vs 除了',words:[
-{word:'accept',def:'接受',note:'ac- = toward，迎向',examples:['accept the offer','widely accepted']},
-{word:'except',def:'除了，排除',note:'ex- = out，排出去',examples:['everyone except me','except for the price']}
+{word:'accept',pron:'/ækˈsɛpt/',def:'接受',note:'ac- = toward，迎向',examples:['accept the offer','widely accepted']},
+{word:'except',pron:'/ɪkˈsɛpt/',def:'除了，排除',note:'ex- = out，排出去',examples:['everyone except me','except for the price']}
 ],trap:'accept = 收进来，except = 排出去。方向相反。'},
 {id:'advice-advise',type:'confusable',title:'advice · advise',brief:'建议（名词）vs 建议（动词）',words:[
-{word:'advice',def:'建议（名词）',note:'不可数，读 /ədˈvaɪs/',examples:['a piece of advice','take my advice']},
-{word:'advise',def:'建议（动词）',note:'读 /ədˈvaɪz/',examples:['I\'d advise caution','Please advise']}
+{word:'advice',pron:'/ədˈvaɪs/',def:'建议（名词）',note:'不可数，读 /ədˈvaɪs/',examples:['a piece of advice','take my advice']},
+{word:'advise',pron:'/ədˈvaɪz/',def:'建议（动词）',note:'读 /ədˈvaɪz/',examples:['I\'d advise caution','Please advise']}
 ],trap:'advice 是名词用 c，advise 是动词用 s。跟 practice/practise 同一规律。'},
 {id:'breath-breathe',type:'confusable',title:'breath · breathe',brief:'呼吸（名词）vs 呼吸（动词）',words:[
-{word:'breath',def:'呼吸（名词）',note:'短元音 /brɛθ/',examples:['take a deep breath','out of breath']},
-{word:'breathe',def:'呼吸（动词）',note:'长元音 /briːð/，多了 e',examples:['breathe deeply','hard to breathe']}
+{word:'breath',pron:'/brɛθ/',def:'呼吸（名词）',note:'短元音 /brɛθ/',examples:['take a deep breath','out of breath']},
+{word:'breathe',pron:'/briːð/',def:'呼吸（动词）',note:'长元音 /briːð/，多了 e',examples:['breathe deeply','hard to breathe']}
 ],trap:'名词 breath 没有 e，动词 breathe 多一个 e。发音也不同。'},
 {id:'eminent-imminent',type:'confusable',title:'eminent · imminent',brief:'杰出的 vs 即将发生的',words:[
-{word:'eminent',def:'杰出的，著名的',note:'E = Excellent',examples:['an eminent scholar','eminent domain']},
-{word:'imminent',def:'即将发生的',note:'I = Incoming',examples:['imminent danger','an imminent deadline']}
+{word:'eminent',pron:'/ˈɛmɪnənt/',def:'杰出的，著名的',note:'E = Excellent',examples:['an eminent scholar','eminent domain']},
+{word:'imminent',pron:'/ˈɪmɪnənt/',def:'即将发生的',note:'I = Incoming',examples:['imminent danger','an imminent deadline']}
 ],trap:'eminent 描述人（杰出），imminent 描述事（即将到来）。'},
 {id:'moral-morale',type:'confusable',title:'moral · morale',brief:'道德的 vs 士气',words:[
-{word:'moral',def:'道德的（adj）/ 寓意（n）',note:'重音在第一音节',examples:['moral values','the moral of the story']},
-{word:'morale',def:'士气，精神状态',note:'重音在第二音节 /məˈræl/',examples:['team morale','boost morale']}
+{word:'moral',pron:'/ˈmɔːrəl/',def:'道德的（adj）/ 寓意（n）',note:'重音在第一音节',examples:['moral values','the moral of the story']},
+{word:'morale',pron:'/məˈræl/',def:'士气，精神状态',note:'重音在第二音节 /məˈræl/',examples:['team morale','boost morale']}
 ],trap:'moral 讲对错，morale 讲心情。发音重音不同。'},
 {id:'perspective-prospective',type:'confusable',title:'perspective · prospective',brief:'视角 vs 预期的/未来的',words:[
-{word:'perspective',def:'视角，观点',note:'per = through，透过来看',examples:['from my perspective','put things in perspective']},
-{word:'prospective',def:'预期的，未来的',note:'pro = forward，向前看',examples:['prospective clients','prospective buyers']}
+{word:'perspective',pron:'/pərˈspɛktɪv/',def:'视角，观点',note:'per = through，透过来看',examples:['from my perspective','put things in perspective']},
+{word:'prospective',pron:'/prəˈspɛktɪv/',def:'预期的，未来的',note:'pro = forward，向前看',examples:['prospective clients','prospective buyers']}
 ],trap:'perspective = 怎么看（观点），prospective = 将来的（潜在客户）。'},
 {id:'thorough-through-though',type:'confusable',title:'thorough · through · though',brief:'彻底的 vs 通过 vs 虽然',words:[
-{word:'thorough',def:'彻底的，详尽的',note:'/ˈθʌrə/ 两个音节',examples:['a thorough review','thorough research']},
-{word:'through',def:'通过，穿过',note:'/θruː/ 一个音节',examples:['walk through the door','go through the process']},
-{word:'though',def:'虽然，不过',note:'/ðoʊ/ 一个音节',examples:['It\'s hard, though','even though']}
+{word:'thorough',pron:'/ˈθɜːroʊ/',def:'彻底的，详尽的',note:'/ˈθʌrə/ 两个音节',examples:['a thorough review','thorough research']},
+{word:'through',pron:'/θruː/',def:'通过，穿过',note:'/θruː/ 一个音节',examples:['walk through the door','go through the process']},
+{word:'though',pron:'/ðoʊ/',def:'虽然，不过',note:'/ðoʊ/ 一个音节',examples:['It\'s hard, though','even though']}
 ],trap:'三个词发音完全不同，但拼写让人抓狂。thorough 最长 = 最彻底。'},
 {id:'weather-whether',type:'confusable',title:'weather · whether',brief:'天气 vs 是否',words:[
-{word:'weather',def:'天气',note:'有 a = 有air = 天气',examples:['nice weather','weather forecast']},
-{word:'whether',def:'是否',note:'= if，表示选择',examples:['whether or not','whether to go']}
+{word:'weather',pron:'/ˈwɛðər/',def:'天气',note:'有 a = 有air = 天气',examples:['nice weather','weather forecast']},
+{word:'whether',pron:'/ˈwɛðər/',def:'是否',note:'= if，表示选择',examples:['whether or not','whether to go']}
 ],trap:'发音几乎一样。weather 跟天气有关，whether 跟选择有关。'},
 {id:'cite-site-sight',type:'confusable',title:'cite · site · sight',brief:'引用 vs 场地 vs 视觉',words:[
-{word:'cite',def:'引用，举例',note:'学术/法律用语',examples:['cite a source','cite an example']},
-{word:'site',def:'地点，网站',note:'一个地方',examples:['construction site','website']},
-{word:'sight',def:'视力，景象',note:'看见的东西',examples:['a beautiful sight','out of sight','love at first sight']}
+{word:'cite',pron:'/saɪt/',def:'引用，举例',note:'学术/法律用语',examples:['cite a source','cite an example']},
+{word:'site',pron:'/saɪt/',def:'地点，网站',note:'一个地方',examples:['construction site','website']},
+{word:'sight',pron:'/saɪt/',def:'视力，景象',note:'看见的东西',examples:['a beautiful sight','out of sight','love at first sight']}
 ],trap:'三个词发音完全一样 /saɪt/。只能靠语境。'},
 {id:'coarse-course',type:'confusable',title:'coarse · course',brief:'粗糙的 vs 课程/路线',words:[
-{word:'coarse',def:'粗糙的，粗俗的',note:'多了一个 a',examples:['coarse texture','coarse language']},
-{word:'course',def:'课程；路线；当然',note:'of course!',examples:['online course','main course','of course']}
+{word:'coarse',pron:'/kɔːrs/',def:'粗糙的，粗俗的',note:'多了一个 a',examples:['coarse texture','coarse language']},
+{word:'course',pron:'/kɔːrs/',def:'课程；路线；当然',note:'of course!',examples:['online course','main course','of course']}
 ],trap:'coarse 有 a = 粗糙（rough）。course 没有 a = 课程/路线。'},
 {id:'formerly-formally',type:'confusable',title:'formerly · formally',brief:'以前 vs 正式地',words:[
-{word:'formerly',def:'以前，从前',note:'former + ly',examples:['formerly known as','formerly a teacher']},
-{word:'formally',def:'正式地',note:'formal + ly',examples:['formally announced','formally dressed']}
+{word:'formerly',pron:'/ˈfɔːrmərli/',def:'以前，从前',note:'former + ly',examples:['formerly known as','formerly a teacher']},
+{word:'formally',pron:'/ˈfɔːrməli/',def:'正式地',note:'formal + ly',examples:['formally announced','formally dressed']}
 ],trap:'formerly = 时间上的"从前"。formally = 方式上的"正式"。'},
 {id:'alternate-alternative',type:'confusable',title:'alternate · alternative',brief:'交替的 vs 替代选项',words:[
-{word:'alternate',def:'交替的（adj）/ 交替（v）',note:'轮流、每隔一个',examples:['alternate days','alternate between A and B']},
-{word:'alternative',def:'替代选项（n）/ 另一种的（adj）',note:'另一个选择',examples:['an alternative plan','no alternative']}
+{word:'alternate',pron:'/ˈɔːltərneɪt/',def:'交替的（adj）/ 交替（v）',note:'轮流、每隔一个',examples:['alternate days','alternate between A and B']},
+{word:'alternative',pron:'/ɔːlˈtɜːrnətɪv/',def:'替代选项（n）/ 另一种的（adj）',note:'另一个选择',examples:['an alternative plan','no alternative']}
 ],trap:'alternate = 轮流来（A-B-A-B）。alternative = 另一个选择（A or B?）。'},
 {id:'eligible-illegible',type:'confusable',title:'eligible · illegible',brief:'有资格的 vs 字迹模糊的',words:[
-{word:'eligible',def:'有资格的，符合条件的',note:'E = Entitled（有资格）',examples:['eligible to vote','eligible candidates']},
-{word:'illegible',def:'（字迹）难以辨认的',note:'il + legible = 不可读',examples:['illegible handwriting','almost illegible']}
+{word:'eligible',pron:'/ˈɛlɪdʒəbəl/',def:'有资格的，符合条件的',note:'E = Entitled（有资格）',examples:['eligible to vote','eligible candidates']},
+{word:'illegible',pron:'/ɪˈlɛdʒəbəl/',def:'（字迹）难以辨认的',note:'il + legible = 不可读',examples:['illegible handwriting','almost illegible']}
 ],trap:'eligible = 你够格。illegible = 你的字看不清。'},
 {id:'emigrate-immigrate',type:'confusable',title:'emigrate · immigrate',brief:'移出（离开）vs 移入（到达）',words:[
-{word:'emigrate',def:'移居国外，移出',note:'E = Exit，离开原籍',examples:['emigrate from China','emigrated in 2015']},
-{word:'immigrate',def:'移入，迁入',note:'I = Into，进入新国',examples:['immigrate to Singapore','immigrant population']}
+{word:'emigrate',pron:'/ˈɛmɪɡreɪt/',def:'移居国外，移出',note:'E = Exit，离开原籍',examples:['emigrate from China','emigrated in 2015']},
+{word:'immigrate',pron:'/ˈɪmɪɡreɪt/',def:'移入，迁入',note:'I = Into，进入新国',examples:['immigrate to Singapore','immigrant population']}
 ],trap:'emigrate = exit（出去），immigrate = in（进来）。视角问题。'},
 {id:'prescribe-proscribe',type:'confusable',title:'prescribe · proscribe',brief:'开处方/规定 vs 禁止',words:[
-{word:'prescribe',def:'开处方；规定',note:'pre = before，提前安排好',examples:['prescribe medication','prescribed reading']},
-{word:'proscribe',def:'禁止，取缔',note:'pro = against（这里），反对',examples:['proscribed organizations','proscribed behavior']}
+{word:'prescribe',pron:'/prɪˈskraɪb/',def:'开处方；规定',note:'pre = before，提前安排好',examples:['prescribe medication','prescribed reading']},
+{word:'proscribe',pron:'/proʊˈskraɪb/',def:'禁止，取缔',note:'pro = against（这里），反对',examples:['proscribed organizations','proscribed behavior']}
 ],trap:'prescribe = 叫你做的。proscribe = 叫你别做的。一字之差，意思相反。'},
 {id:'credible-creditable',type:'confusable',title:'credible · creditable',brief:'可信的 vs 值得称赞的',words:[
-{word:'credible',def:'可信的，可靠的',note:'你相不相信',examples:['a credible witness','hardly credible']},
-{word:'creditable',def:'值得称赞的，不错的',note:'做得好不好',examples:['a creditable performance','creditable effort']}
+{word:'credible',pron:'/ˈkrɛdəbəl/',def:'可信的，可靠的',note:'你相不相信',examples:['a credible witness','hardly credible']},
+{word:'creditable',pron:'/ˈkrɛdɪtəbəl/',def:'值得称赞的，不错的',note:'做得好不好',examples:['a creditable performance','creditable effort']}
 ],trap:'credible = 可信度。creditable = 表现值得认可。两个都是正面词但含义不同。'},
 {id:'contempt-content-contend',type:'confusable',title:'contempt · content · contend',brief:'轻蔑 vs 内容/满意 vs 竞争',words:[
-{word:'contempt',def:'轻蔑，藐视',note:'看不起',examples:['treat with contempt','contempt of court']},
-{word:'content',def:'内容（n）/ 满意的（adj）',note:'两个发音：内容 /ˈkɒntent/，满意 /kənˈtent/',examples:['content strategy','feel content']},
-{word:'contend',def:'竞争；主张',note:'争',examples:['contend for the title','I contend that...']}
+{word:'contempt',pron:'/kənˈtɛmpt/',def:'轻蔑，藐视',note:'看不起',examples:['treat with contempt','contempt of court']},
+{word:'content',pron:'/ˈkɑːntɛnt/',def:'内容（n）/ 满意的（adj）',note:'两个发音：内容 /ˈkɒntent/，满意 /kənˈtent/',examples:['content strategy','feel content']},
+{word:'contend',pron:'/kənˈtɛnd/',def:'竞争；主张',note:'争',examples:['contend for the title','I contend that...']}
 ],trap:'三个词拼写相近但领域完全不同。注意 content 的两个发音和两个含义。'},
 
 // ── NEW CONFUSABLES ──
 {id:'lay-lie',type:'confusable',title:'lay · lie',brief:'放置（及物）vs 躺下（不及物）— 英语母语者也搞混',words:[
-{word:'lay',def:'放置，搁下（及物，需要宾语）',note:'lay-laid-laid',examples:['Lay the book on the table','She laid her coat down']},
-{word:'lie',def:'躺下（不及物）/ 说谎',note:'lie-lay-lain（躺）/ lie-lied-lied（说谎）',examples:['I need to lie down','He lay on the grass yesterday']}
+{word:'lay',pron:'/leɪ/',def:'放置，搁下（及物，需要宾语）',note:'lay-laid-laid',examples:['Lay the book on the table','She laid her coat down']},
+{word:'lie',pron:'/laɪ/',def:'躺下（不及物）/ 说谎',note:'lie-lay-lain（躺）/ lie-lied-lied（说谎）',examples:['I need to lie down','He lay on the grass yesterday']}
 ],trap:'最坑的地方：lie 的过去式是 lay！所以 "He lay down" = 他躺下了（过去式），不是放下。'},
 {id:'allusion-illusion-delusion',type:'confusable',title:'allusion · illusion · delusion',brief:'暗指 vs 幻觉 vs 妄想',words:[
-{word:'allusion',def:'暗指，典故',note:'allude to = 含蓄提到',examples:['an allusion to Shakespeare','make an allusion']},
-{word:'illusion',def:'幻觉，错觉',note:'看上去是但其实不是',examples:['optical illusion','an illusion of control']},
-{word:'delusion',def:'妄想，错误信念',note:'真的相信了那个假象',examples:['delusions of grandeur','under the delusion that']}
+{word:'allusion',pron:'/əˈluːʒən/',def:'暗指，典故',note:'allude to = 含蓄提到',examples:['an allusion to Shakespeare','make an allusion']},
+{word:'illusion',pron:'/ɪˈluːʒən/',def:'幻觉，错觉',note:'看上去是但其实不是',examples:['optical illusion','an illusion of control']},
+{word:'delusion',pron:'/dɪˈluːʒən/',def:'妄想，错误信念',note:'真的相信了那个假象',examples:['delusions of grandeur','under the delusion that']}
 ],trap:'illusion = 你知道是假的（错觉）。delusion = 你以为是真的（妄想）。'},
 {id:'flout-flaunt',type:'confusable',title:'flout · flaunt',brief:'蔑视规则 vs 炫耀',words:[
-{word:'flout',def:'公然违反，蔑视',note:'无视规则',examples:['flout the rules','flout convention']},
-{word:'flaunt',def:'炫耀，卖弄',note:'故意展示',examples:['flaunt your wealth','if you\'ve got it, flaunt it']}
+{word:'flout',pron:'/flaʊt/',def:'公然违反，蔑视',note:'无视规则',examples:['flout the rules','flout convention']},
+{word:'flaunt',pron:'/flɔːnt/',def:'炫耀，卖弄',note:'故意展示',examples:['flaunt your wealth','if you\'ve got it, flaunt it']}
 ],trap:'flout = 违反（规则），flaunt = 炫耀（财富）。flout the law ✓，flaunt the law ✗。'},
 {id:'wary-weary',type:'confusable',title:'wary · weary',brief:'警惕的 vs 疲惫的',words:[
-{word:'wary',def:'警惕的，小心的',note:'= cautious，提防着',examples:['wary of strangers','be wary of scams']},
-{word:'weary',def:'疲惫的，厌倦的',note:'= tired，累了',examples:['weary travelers','grow weary of the routine']}
+{word:'wary',pron:'/ˈwɛri/',def:'警惕的，小心的',note:'= cautious，提防着',examples:['wary of strangers','be wary of scams']},
+{word:'weary',pron:'/ˈwɪri/',def:'疲惫的，厌倦的',note:'= tired，累了',examples:['weary travelers','grow weary of the routine']}
 ],trap:'wary = 小心（带防备），weary = 很累（带厌倦）。一个字母之差。'},
 {id:'ingenious-ingenuous',type:'confusable',title:'ingenious · ingenuous',brief:'巧妙的 vs 天真坦率的',words:[
-{word:'ingenious',def:'巧妙的，有独创性的',note:'genius 在里面',examples:['an ingenious solution','ingenious design']},
-{word:'ingenuous',def:'天真的，坦率的',note:'没有城府',examples:['an ingenuous smile','too ingenuous for politics']}
+{word:'ingenious',pron:'/ɪnˈdʒiːniəs/',def:'巧妙的，有独创性的',note:'genius 在里面',examples:['an ingenious solution','ingenious design']},
+{word:'ingenuous',pron:'/ɪnˈdʒɛnjuəs/',def:'天真的，坦率的',note:'没有城府',examples:['an ingenuous smile','too ingenuous for politics']}
 ],trap:'ingenious = 聪明巧妙。ingenuous = 天真单纯。disingenuous = 不真诚的。'},
 {id:'uninterested-disinterested',type:'confusable',title:'uninterested · disinterested',brief:'没兴趣 vs 公正无私',words:[
-{word:'uninterested',def:'没兴趣的，不感兴趣的',note:'= bored，不想了解',examples:['uninterested in politics','completely uninterested']},
-{word:'disinterested',def:'公正的，无私的',note:'没有利益关系 = impartial',examples:['a disinterested observer','disinterested advice']}
+{word:'uninterested',pron:'/ʌnˈɪntrəstɪd/',def:'没兴趣的，不感兴趣的',note:'= bored，不想了解',examples:['uninterested in politics','completely uninterested']},
+{word:'disinterested',pron:'/dɪsˈɪntrəstɪd/',def:'公正的，无私的',note:'没有利益关系 = impartial',examples:['a disinterested observer','disinterested advice']}
 ],trap:'disinterested ≠ 不感兴趣！disinterested = 没有利益冲突，公正客观。'},
 {id:'practical-practicable',type:'confusable',title:'practical · practicable',brief:'实际的 vs 可行的',words:[
-{word:'practical',def:'实际的，务实的',note:'接地气，不是理论的',examples:['practical experience','a practical person']},
-{word:'practicable',def:'可行的，行得通的',note:'技术上能做到',examples:['as soon as practicable','a practicable solution']}
+{word:'practical',pron:'/ˈpræktɪkəl/',def:'实际的，务实的',note:'接地气，不是理论的',examples:['practical experience','a practical person']},
+{word:'practicable',pron:'/ˈpræktɪkəbəl/',def:'可行的，行得通的',note:'技术上能做到',examples:['as soon as practicable','a practicable solution']}
 ],trap:'practical 描述态度和方法。practicable 描述方案能不能做。'},
 {id:'incredible-incredulous',type:'confusable',title:'incredible · incredulous',brief:'难以置信的（事）vs 怀疑的（人）',words:[
-{word:'incredible',def:'难以置信的，惊人的',note:'形容事情本身',examples:['incredible speed','an incredible story']},
-{word:'incredulous',def:'怀疑的，不信的',note:'形容人的反应',examples:['an incredulous look','she was incredulous']}
+{word:'incredible',pron:'/ɪnˈkrɛdəbəl/',def:'难以置信的，惊人的',note:'形容事情本身',examples:['incredible speed','an incredible story']},
+{word:'incredulous',pron:'/ɪnˈkrɛdʒələs/',def:'怀疑的，不信的',note:'形容人的反应',examples:['an incredulous look','she was incredulous']}
 ],trap:'incredible = 这件事太惊人了。incredulous = 这个人表示不信。'},
 {id:'industrial-industrious',type:'confusable',title:'industrial · industrious',brief:'工业的 vs 勤奋的',words:[
-{word:'industrial',def:'工业的',note:'跟制造、工厂有关',examples:['industrial design','industrial revolution']},
-{word:'industrious',def:'勤奋的，勤劳的',note:'形容人努力',examples:['an industrious worker','industrious students']}
+{word:'industrial',pron:'/ɪnˈdʌstriəl/',def:'工业的',note:'跟制造、工厂有关',examples:['industrial design','industrial revolution']},
+{word:'industrious',pron:'/ɪnˈdʌstriəs/',def:'勤奋的，勤劳的',note:'形容人努力',examples:['an industrious worker','industrious students']}
 ],trap:'industrial 描述行业，industrious 描述人。工业设计 = industrial design。'},
 {id:'explicit-implicit',type:'confusable',title:'explicit · implicit',brief:'明确的 vs 含蓄的 — 方向相反',words:[
-{word:'explicit',def:'明确的，直白的',note:'说出来了，不留模糊',examples:['explicit instructions','explicit content']},
-{word:'implicit',def:'含蓄的，暗示的',note:'没说但暗含的',examples:['implicit trust','implicit bias','implicit agreement']}
+{word:'explicit',pron:'/ɪkˈsplɪsɪt/',def:'明确的，直白的',note:'说出来了，不留模糊',examples:['explicit instructions','explicit content']},
+{word:'implicit',pron:'/ɪmˈplɪsɪt/',def:'含蓄的，暗示的',note:'没说但暗含的',examples:['implicit trust','implicit bias','implicit agreement']}
 ],trap:'explicit = 白纸黑字说清楚。implicit = 没说但心里都懂。'},
 {id:'defuse-diffuse',type:'confusable',title:'defuse · diffuse',brief:'化解紧张 vs 扩散',words:[
-{word:'defuse',def:'化解（紧张局势）；拆弹',note:'de + fuse = 去掉引信',examples:['defuse the situation','defuse a bomb']},
-{word:'diffuse',def:'扩散（v）/ 分散的（adj）',note:'散开来',examples:['diffuse light','diffuse the scent','diffuse knowledge']}
+{word:'defuse',pron:'/diːˈfjuːz/',def:'化解（紧张局势）；拆弹',note:'de + fuse = 去掉引信',examples:['defuse the situation','defuse a bomb']},
+{word:'diffuse',pron:'/dɪˈfjuːz/',def:'扩散（v）/ 分散的（adj）',note:'散开来',examples:['diffuse light','diffuse the scent','diffuse knowledge']}
 ],trap:'defuse = 让事情不爆炸。diffuse = 让东西散开。'},
 {id:'device-devise',type:'confusable',title:'device · devise',brief:'设备（名词）vs 想出（动词）',words:[
-{word:'device',def:'设备，装置（名词）',note:'读 /dɪˈvaɪs/',examples:['mobile device','a clever device']},
-{word:'devise',def:'想出，设计（动词）',note:'读 /dɪˈvaɪz/',examples:['devise a plan','devise a strategy']}
+{word:'device',pron:'/dɪˈvaɪs/',def:'设备，装置（名词）',note:'读 /dɪˈvaɪs/',examples:['mobile device','a clever device']},
+{word:'devise',pron:'/dɪˈvaɪz/',def:'想出，设计（动词）',note:'读 /dɪˈvaɪz/',examples:['devise a plan','devise a strategy']}
 ],trap:'device 名词用 c，devise 动词用 s。跟 advice/advise 同一规律。'},
 {id:'judicial-judicious',type:'confusable',title:'judicial · judicious',brief:'司法的 vs 明智的',words:[
-{word:'judicial',def:'司法的，法律的',note:'跟法院法官有关',examples:['judicial review','judicial system']},
-{word:'judicious',def:'明智的，审慎的',note:'有判断力的',examples:['a judicious decision','judicious use of resources']}
+{word:'judicial',pron:'/dʒuːˈdɪʃəl/',def:'司法的，法律的',note:'跟法院法官有关',examples:['judicial review','judicial system']},
+{word:'judicious',pron:'/dʒuːˈdɪʃəs/',def:'明智的，审慎的',note:'有判断力的',examples:['a judicious decision','judicious use of resources']}
 ],trap:'judicial = 法院的（制度层面）。judicious = 有判断力的（个人层面）。'},
 {id:'persecute-prosecute',type:'confusable',title:'persecute · prosecute',brief:'迫害 vs 起诉',words:[
-{word:'persecute',def:'迫害，骚扰',note:'不公正地对待',examples:['persecute minorities','persecuted for beliefs']},
-{word:'prosecute',def:'起诉，检控',note:'法律程序',examples:['prosecute the offender','will be prosecuted']}
+{word:'persecute',pron:'/ˈpɜːrsɪkjuːt/',def:'迫害，骚扰',note:'不公正地对待',examples:['persecute minorities','persecuted for beliefs']},
+{word:'prosecute',pron:'/ˈprɑːsɪkjuːt/',def:'起诉，检控',note:'法律程序',examples:['prosecute the offender','will be prosecuted']}
 ],trap:'persecute = 非法迫害。prosecute = 合法起诉。'},
 {id:'militate-mitigate',type:'confusable',title:'militate · mitigate',brief:'不利于 vs 缓解',words:[
-{word:'militate',def:'对…不利，妨碍',note:'militate against = 构成不利因素',examples:['militate against success','factors that militate against']},
-{word:'mitigate',def:'缓解，减轻',note:'让坏事没那么坏',examples:['mitigate risk','mitigate the damage']}
+{word:'militate',pron:'/ˈmɪlɪteɪt/',def:'对…不利，妨碍',note:'militate against = 构成不利因素',examples:['militate against success','factors that militate against']},
+{word:'mitigate',pron:'/ˈmɪtɪɡeɪt/',def:'缓解，减轻',note:'让坏事没那么坏',examples:['mitigate risk','mitigate the damage']}
 ],trap:'militate against = 产生不利影响。mitigate = 减轻影响。方向相反。'},
 {id:'council-counsel',type:'confusable',title:'council · counsel',brief:'议会/委员会 vs 建议/律师',words:[
-{word:'council',def:'委员会，议会',note:'一群人组成的组织',examples:['city council','student council']},
-{word:'counsel',def:'建议（n/v）/ 律师',note:'给指导',examples:['legal counsel','counsel someone','seek counsel']}
+{word:'council',pron:'/ˈkaʊnsəl/',def:'委员会，议会',note:'一群人组成的组织',examples:['city council','student council']},
+{word:'counsel',pron:'/ˈkaʊnsəl/',def:'建议（n/v）/ 律师',note:'给指导',examples:['legal counsel','counsel someone','seek counsel']}
 ],trap:'council = 组织（理事会）。counsel = 建议或律师。发音一样。'},
 {id:'assent-ascent',type:'confusable',title:'assent · ascent',brief:'同意 vs 上升',words:[
-{word:'assent',def:'同意，赞成',note:'点头说好',examples:['nod in assent','give your assent','royal assent']},
-{word:'ascent',def:'上升，攀登',note:'往上走',examples:['the ascent of Everest','a steep ascent']}
+{word:'assent',pron:'/əˈsɛnt/',def:'同意，赞成',note:'点头说好',examples:['nod in assent','give your assent','royal assent']},
+{word:'ascent',pron:'/əˈsɛnt/',def:'上升，攀登',note:'往上走',examples:['the ascent of Everest','a steep ascent']}
 ],trap:'assent = 同意（跟 consent 近义）。ascent = 上升（跟 descent 反义）。'},
 {id:'flammable-inflammable',type:'confusable',title:'flammable · inflammable',brief:'两个都是"可燃的"！',words:[
-{word:'flammable',def:'可燃的',note:'会着火',examples:['flammable materials','highly flammable']},
-{word:'inflammable',def:'可燃的（= flammable）',note:'in- 这里不是否定！是加强',examples:['inflammable gases','inflammable liquids']}
+{word:'flammable',pron:'/ˈflæməbəl/',def:'可燃的',note:'会着火',examples:['flammable materials','highly flammable']},
+{word:'inflammable',pron:'/ɪnˈflæməbəl/',def:'可燃的（= flammable）',note:'in- 这里不是否定！是加强',examples:['inflammable gases','inflammable liquids']}
 ],trap:'最坑的一对：inflammable 不是"不可燃"！in- 在这里是加强语气。不可燃 = non-flammable。'},
 {id:'famous-infamous-notorious',type:'confusable',title:'famous · infamous · notorious',brief:'著名 vs 臭名昭著',words:[
-{word:'famous',def:'著名的',note:'中性偏正面',examples:['a famous actor','world-famous']},
-{word:'infamous',def:'声名狼藉的',note:'因为坏事出名',examples:['an infamous criminal','the infamous incident']},
-{word:'notorious',def:'臭名昭著的',note:'因负面特征广为人知',examples:['notorious for being late','a notorious liar']}
+{word:'famous',pron:'/ˈfeɪməs/',def:'著名的',note:'中性偏正面',examples:['a famous actor','world-famous']},
+{word:'infamous',pron:'/ˈɪnfəməs/',def:'声名狼藉的',note:'因为坏事出名',examples:['an infamous criminal','the infamous incident']},
+{word:'notorious',pron:'/noʊˈtɔːriəs/',def:'臭名昭著的',note:'因负面特征广为人知',examples:['notorious for being late','a notorious liar']}
 ],trap:'famous = 好的出名。infamous/notorious = 坏的出名。'},
 {id:'amiable-amicable',type:'confusable',title:'amiable · amicable',brief:'友善的（人）vs 友好的（关系/协议）',words:[
-{word:'amiable',def:'友善的，和蔼的',note:'描述人的性格',examples:['an amiable host','always amiable']},
-{word:'amicable',def:'友好的，和睦的',note:'描述关系/安排',examples:['an amicable divorce','amicable settlement']}
+{word:'amiable',pron:'/ˈeɪmiəbəl/',def:'友善的，和蔼的',note:'描述人的性格',examples:['an amiable host','always amiable']},
+{word:'amicable',pron:'/ˈæmɪkəbəl/',def:'友好的，和睦的',note:'描述关系/安排',examples:['an amicable divorce','amicable settlement']}
 ],trap:'amiable 描述人。amicable 描述双方关系或协议。'},
 {id:'luxuriant-luxurious',type:'confusable',title:'luxuriant · luxurious',brief:'茂盛的 vs 奢华的',words:[
-{word:'luxuriant',def:'茂盛的，繁茂的',note:'生长旺盛',examples:['luxuriant vegetation','luxuriant hair']},
-{word:'luxurious',def:'奢华的，豪华的',note:'expensive，享受型',examples:['a luxurious hotel','luxurious lifestyle']}
+{word:'luxuriant',pron:'/lʌɡˈʒʊriənt/',def:'茂盛的，繁茂的',note:'生长旺盛',examples:['luxuriant vegetation','luxuriant hair']},
+{word:'luxurious',pron:'/lʌɡˈʒʊriəs/',def:'奢华的，豪华的',note:'expensive，享受型',examples:['a luxurious hotel','luxurious lifestyle']}
 ],trap:'luxuriant = 植物/头发很茂盛。luxurious = 东西很贵很享受。'},
 {id:'coherent-cohesive',type:'confusable',title:'coherent · cohesive',brief:'连贯的 vs 有凝聚力的',words:[
-{word:'coherent',def:'连贯的，条理清晰的',note:'逻辑说得通',examples:['a coherent argument','barely coherent']},
-{word:'cohesive',def:'有凝聚力的，团结的',note:'紧密结合在一起',examples:['a cohesive team','cohesive design']}
+{word:'coherent',pron:'/koʊˈhɪrənt/',def:'连贯的，条理清晰的',note:'逻辑说得通',examples:['a coherent argument','barely coherent']},
+{word:'cohesive',pron:'/koʊˈhiːsɪv/',def:'有凝聚力的，团结的',note:'紧密结合在一起',examples:['a cohesive team','cohesive design']}
 ],trap:'coherent = 逻辑通顺（写作/说话）。cohesive = 紧密团结（团队/设计）。'},
 
 // ══════════════════════════════════════
@@ -634,28 +634,28 @@ exBad:'We will inaugurate the new office next week.',exGood:'We\'re opening the 
 
 // ── FINAL ADDITIONS ──
 {id:'appraise-apprise',type:'confusable',title:'appraise · apprise',brief:'评估 vs 通知',words:[
-{word:'appraise',def:'评估，鉴定',note:'judge the value',examples:['appraise the property','performance appraisal']},
-{word:'apprise',def:'通知，告知',note:'let someone know',examples:['apprise them of the situation','keep me apprised']}
+{word:'appraise',pron:'/əˈpreɪz/',def:'评估，鉴定',note:'judge the value',examples:['appraise the property','performance appraisal']},
+{word:'apprise',pron:'/əˈpraɪz/',def:'通知，告知',note:'let someone know',examples:['apprise them of the situation','keep me apprised']}
 ],trap:'appraise = 给出评价。apprise = 给出信息。'},
 {id:'censor-censure',type:'confusable',title:'censor · censure',brief:'审查删减 vs 公开谴责',words:[
-{word:'censor',def:'审查，删改',note:'删掉不合适的内容',examples:['censor the press','censored content']},
-{word:'censure',def:'谴责，正式批评',note:'公开表示反对',examples:['a vote of censure','censured by the committee']}
+{word:'censor',pron:'/ˈsɛnsər/',def:'审查，删改',note:'删掉不合适的内容',examples:['censor the press','censored content']},
+{word:'censure',pron:'/ˈsɛnʃər/',def:'谴责，正式批评',note:'公开表示反对',examples:['a vote of censure','censured by the committee']}
 ],trap:'censor = 动剪刀（删改）。censure = 动嘴巴（批评）。'},
 {id:'compliant-complacent',type:'confusable',title:'compliant · complacent',brief:'合规服从的 vs 自满的',words:[
-{word:'compliant',def:'合规的，服从的',note:'按规矩来',examples:['fully compliant','GDPR-compliant']},
-{word:'complacent',def:'自满的，沾沾自喜的',note:'觉得已经够好了',examples:['don\'t get complacent','complacent about safety']}
+{word:'compliant',pron:'/kəmˈplaɪənt/',def:'合规的，服从的',note:'按规矩来',examples:['fully compliant','GDPR-compliant']},
+{word:'complacent',pron:'/kəmˈpleɪsənt/',def:'自满的，沾沾自喜的',note:'觉得已经够好了',examples:['don\'t get complacent','complacent about safety']}
 ],trap:'compliant = 好的（遵守规则）。complacent = 危险的（放松警惕）。'},
 {id:'canvas-canvass',type:'confusable',title:'canvas · canvass',brief:'帆布/画布 vs 拉票/征求意见',words:[
-{word:'canvas',def:'帆布，画布',note:'物理材料',examples:['canvas bag','oil on canvas']},
-{word:'canvass',def:'征求意见，拉票',note:'到处去问',examples:['canvass for votes','canvass opinions']}
+{word:'canvas',pron:'/ˈkænvəs/',def:'帆布，画布',note:'物理材料',examples:['canvas bag','oil on canvas']},
+{word:'canvass',pron:'/ˈkænvəs/',def:'征求意见，拉票',note:'到处去问',examples:['canvass for votes','canvass opinions']}
 ],trap:'canvas 少一个 s = 布料。canvass 多一个 s = 到处拉票。'},
 {id:'tortuous-torturous',type:'confusable',title:'tortuous · torturous',brief:'曲折的 vs 折磨人的',words:[
-{word:'tortuous',def:'曲折的，复杂的',note:'弯弯绕绕',examples:['a tortuous path','tortuous negotiations']},
-{word:'torturous',def:'折磨人的，痛苦的',note:'= like torture',examples:['a torturous experience','torturous heat']}
+{word:'tortuous',pron:'/ˈtɔːrtʃuəs/',def:'曲折的，复杂的',note:'弯弯绕绕',examples:['a tortuous path','tortuous negotiations']},
+{word:'torturous',pron:'/ˈtɔːrtʃərəs/',def:'折磨人的，痛苦的',note:'= like torture',examples:['a torturous experience','torturous heat']}
 ],trap:'tortuous = 路很弯（复杂）。torturous = 人很惨（折磨）。'},
 {id:'dependable-dependent',type:'confusable',title:'dependable · dependent',brief:'可靠的 vs 依赖的',words:[
-{word:'dependable',def:'可靠的，靠得住的',note:'你可以依赖他',examples:['a dependable colleague','dependable service']},
-{word:'dependent',def:'依赖的，取决于的',note:'需要依赖别人',examples:['dependent on funding','a dependent child']}
+{word:'dependable',pron:'/dɪˈpɛndəbəl/',def:'可靠的，靠得住的',note:'你可以依赖他',examples:['a dependable colleague','dependable service']},
+{word:'dependent',pron:'/dɪˈpɛndənt/',def:'依赖的，取决于的',note:'需要依赖别人',examples:['dependent on funding','a dependent child']}
 ],trap:'dependable = 别人可以靠你（褒义）。dependent = 你得靠别人（中性）。'},
 
 {id:'kan-bu-chulai',type:'calque',title:'"看不出来" ≠ look not out come',brief:'英文表达看不出区别用 can\'t tell',chinese:'完全看不出来',chinglish:'Totally look not out come.',natural:'I can\'t even tell. / You can\'t tell at all.',
@@ -999,414 +999,414 @@ exBad:'She\'s a very diligent student.',exGood:'She works really hard.',whenForm
 
 // ── CONFUSABLES BATCH 2 (100) ──
 {id:'beside-besides',type:'confusable',title:'beside · besides',brief:'在旁边 vs 除…之外',words:[
-{word:'beside',def:'在…旁边（介词，表位置）',note:'beside = by the side，旁边',examples:['Come sit beside me.','The printer is beside the window.']},
-{word:'besides',def:'除…之外（还有）；而且',note:'besides 多了 s，多了一层意思——"还有"',examples:['Besides English, she speaks French.','Besides, we don\'t have the budget for it.']}
+{word:'beside',pron:'/bɪˈsaɪd/',def:'在…旁边（介词，表位置）',note:'beside = by the side，旁边',examples:['Come sit beside me.','The printer is beside the window.']},
+{word:'besides',pron:'/bɪˈsaɪdz/',def:'除…之外（还有）；而且',note:'besides 多了 s，多了一层意思——"还有"',examples:['Besides English, she speaks French.','Besides, we don\'t have the budget for it.']}
 ],trap:'beside 只表物理位置，besides 表"此外/除了"。写邮件说"除了这个问题还有…"用 besides，不要用 beside。'},
 {id:'rise-raise',type:'confusable',title:'rise · raise',brief:'自己升起 vs 举起/提高',words:[
-{word:'rise',def:'上升，升起（不及物动词，无需宾语）',note:'太阳自己 rise，不需要谁举它',examples:['The sun rises in the east.','Prices have risen sharply this quarter.']},
-{word:'raise',def:'举起，提高，抚养（及物动词，需要宾语）',note:'raise 需要对象：raise your hand / raise a child',examples:['Please raise your hand if you have questions.','They raised the price by 10%.']}
+{word:'rise',pron:'/raɪz/',def:'上升，升起（不及物动词，无需宾语）',note:'太阳自己 rise，不需要谁举它',examples:['The sun rises in the east.','Prices have risen sharply this quarter.']},
+{word:'raise',pron:'/reɪz/',def:'举起，提高，抚养（及物动词，需要宾语）',note:'raise 需要对象：raise your hand / raise a child',examples:['Please raise your hand if you have questions.','They raised the price by 10%.']}
 ],trap:'中文"涨价"既可以是自涨（rise）也可以是人为涨（raise），注意区分主语是否施加动作。'},
 {id:'costume-custom',type:'confusable',title:'costume · custom',brief:'服装 vs 习俗/定制',words:[
-{word:'costume',def:'（特定场合的）服装，戏服',note:'costume → 联想 cosplay，穿的衣服',examples:['She wore a Halloween costume to the office party.','The actors are trying on their costumes.']},
-{word:'custom',def:'习俗；惯例；（形容词）定制的',note:'custom = 习惯做的事，引申为定制',examples:['It\'s a local custom to remove shoes indoors.','We ordered custom furniture for the new office.']}
+{word:'costume',pron:'/ˈkɑːstuːm/',def:'（特定场合的）服装，戏服',note:'costume → 联想 cosplay，穿的衣服',examples:['She wore a Halloween costume to the office party.','The actors are trying on their costumes.']},
+{word:'custom',pron:'/ˈkʌstəm/',def:'习俗；惯例；（形容词）定制的',note:'custom = 习惯做的事，引申为定制',examples:['It\'s a local custom to remove shoes indoors.','We ordered custom furniture for the new office.']}
 ],trap:'costume 是名词（衣服），custom 是名词（习俗）或形容词（定制的）。中国学生容易拼混，注意 costume 有 -ume 结尾。'},
 {id:'efficient-effective',type:'confusable',title:'efficient · effective',brief:'高效率的 vs 有效果的',words:[
-{word:'efficient',def:'效率高的，省时省力的',note:'efficient 强调过程——花最少的资源',examples:['She\'s an efficient worker who never wastes time.','This engine is more fuel-efficient.']},
-{word:'effective',def:'有效的，能达到预期效果的',note:'effective 强调结果——能不能达到目的',examples:['The new policy was effective in reducing costs.','This medicine is effective against headaches.']}
+{word:'efficient',pron:'/ɪˈfɪʃənt/',def:'效率高的，省时省力的',note:'efficient 强调过程——花最少的资源',examples:['She\'s an efficient worker who never wastes time.','This engine is more fuel-efficient.']},
+{word:'effective',pron:'/ɪˈfɛktɪv/',def:'有效的，能达到预期效果的',note:'effective 强调结果——能不能达到目的',examples:['The new policy was effective in reducing costs.','This medicine is effective against headaches.']}
 ],trap:'efficient 看过程（怎么做），effective 看结果（有没有用）。一个方案可以 effective 但不 efficient（有用但费劲）。'},
 {id:'electric-electronic-electrical',type:'confusable',title:'electric · electronic · electrical',brief:'用电的 · 电子的 · 电气的',words:[
-{word:'electric',def:'用电的，电动的（直接用电驱动）',note:'electric = 直接靠电跑的：electric car',examples:['We bought an electric car last month.','The stage had an electric atmosphere.']},
-{word:'electronic',def:'电子的（含芯片、电路等）',note:'electronic = 有电子元件的：electronic device',examples:['Please submit the electronic version of the report.','Electronic payments are widely accepted here.']},
-{word:'electrical',def:'与电相关的（泛指电气领域）',note:'electrical = 跟电这个领域有关的：electrical engineer',examples:['He studied electrical engineering in college.','There\'s an electrical fault in the building.']}
+{word:'electric',pron:'/ɪˈlɛktrɪk/',def:'用电的，电动的（直接用电驱动）',note:'electric = 直接靠电跑的：electric car',examples:['We bought an electric car last month.','The stage had an electric atmosphere.']},
+{word:'electronic',pron:'/ɪˌlɛkˈtrɑːnɪk/',def:'电子的（含芯片、电路等）',note:'electronic = 有电子元件的：electronic device',examples:['Please submit the electronic version of the report.','Electronic payments are widely accepted here.']},
+{word:'electrical',pron:'/ɪˈlɛktrɪkəl/',def:'与电相关的（泛指电气领域）',note:'electrical = 跟电这个领域有关的：electrical engineer',examples:['He studied electrical engineering in college.','There\'s an electrical fault in the building.']}
 ],trap:'electric 强调"用电驱动"，electronic 强调"含电子芯片"，electrical 是最宽泛的"与电有关的"。'},
 {id:'exhausted-exhaustive',type:'confusable',title:'exhausted · exhaustive',brief:'筋疲力尽的 vs 详尽的',words:[
-{word:'exhausted',def:'精疲力竭的；用尽的',note:'exhaust 耗尽 → exhausted 被耗尽了 → 累坏了',examples:['I\'m exhausted after the 12-hour flight.','Our budget is completely exhausted.']},
-{word:'exhaustive',def:'详尽的，彻底的，无遗漏的',note:'-ive 表"具有…性质的" → 把所有可能都穷尽',examples:['We conducted an exhaustive review of all candidates.','The report provides an exhaustive list of risks.']}
+{word:'exhausted',pron:'/ɪɡˈzɔːstɪd/',def:'精疲力竭的；用尽的',note:'exhaust 耗尽 → exhausted 被耗尽了 → 累坏了',examples:['I\'m exhausted after the 12-hour flight.','Our budget is completely exhausted.']},
+{word:'exhaustive',pron:'/ɪɡˈzɔːstɪv/',def:'详尽的，彻底的，无遗漏的',note:'-ive 表"具有…性质的" → 把所有可能都穷尽',examples:['We conducted an exhaustive review of all candidates.','The report provides an exhaustive list of risks.']}
 ],trap:'exhausted 是"累坏了"，exhaustive 是"面面俱到"。写邮件说"详细的调查"用 exhaustive，不是 exhausted。'},
 {id:'respectable-respective-respectful',type:'confusable',title:'respectable · respective · respectful',brief:'体面的 · 各自的 · 恭敬的',words:[
-{word:'respectable',def:'值得尊敬的；体面的；相当不错的',note:'-able = 值得…的 → 值得尊敬的',examples:['He comes from a respectable family.','She earned a respectable score on the exam.']},
-{word:'respective',def:'各自的，分别的',note:'respective = re-spect-ive，各人回头看自己的',examples:['Please return to your respective departments.','They went to their respective offices after the meeting.']},
-{word:'respectful',def:'恭敬的，有礼貌的',note:'-ful = 充满…的 → 充满尊敬的',examples:['Students should be respectful to their teachers.','He maintained a respectful tone throughout the debate.']}
+{word:'respectable',pron:'/rɪˈspɛktəbəl/',def:'值得尊敬的；体面的；相当不错的',note:'-able = 值得…的 → 值得尊敬的',examples:['He comes from a respectable family.','She earned a respectable score on the exam.']},
+{word:'respective',pron:'/rɪˈspɛktɪv/',def:'各自的，分别的',note:'respective = re-spect-ive，各人回头看自己的',examples:['Please return to your respective departments.','They went to their respective offices after the meeting.']},
+{word:'respectful',pron:'/rɪˈspɛktfəl/',def:'恭敬的，有礼貌的',note:'-ful = 充满…的 → 充满尊敬的',examples:['Students should be respectful to their teachers.','He maintained a respectful tone throughout the debate.']}
 ],trap:'respective 最常被误用。它表示"各自的"，跟"尊敬"无关。Please go to your respective seats = 请各回各的座位。'},
 {id:'considerable-considerate',type:'confusable',title:'considerable · considerate',brief:'相当大的 vs 体贴的',words:[
-{word:'considerable',def:'相当大的，相当多的',note:'-able = 值得考虑的 → 大到值得注意',examples:['We spent a considerable amount on marketing.','There has been considerable improvement this quarter.']},
-{word:'considerate',def:'体贴的，考虑周到的',note:'-ate = 具有…特质的 → 为别人着想的',examples:['It was considerate of you to hold the door.','She\'s always considerate of other people\'s feelings.']}
+{word:'considerable',pron:'/kənˈsɪdərəbəl/',def:'相当大的，相当多的',note:'-able = 值得考虑的 → 大到值得注意',examples:['We spent a considerable amount on marketing.','There has been considerable improvement this quarter.']},
+{word:'considerate',pron:'/kənˈsɪdərət/',def:'体贴的，考虑周到的',note:'-ate = 具有…特质的 → 为别人着想的',examples:['It was considerate of you to hold the door.','She\'s always considerate of other people\'s feelings.']}
 ],trap:'considerable 说"量大"，considerate 说"人好"。a considerable person 是"重要人物"不是"体贴的人"。'},
 {id:'imaginary-imaginative',type:'confusable',title:'imaginary · imaginative',brief:'虚构的 vs 有想象力的',words:[
-{word:'imaginary',def:'虚构的，想象中的，不存在的',note:'imaginary = 只在脑子里的，不真实的',examples:['The child has an imaginary friend.','The threat turned out to be imaginary.']},
-{word:'imaginative',def:'有想象力的，有创意的',note:'imaginative = 擅长想象的，褒义',examples:['She proposed an imaginative solution to the problem.','The designer is known for imaginative use of color.']}
+{word:'imaginary',pron:'/ɪˈmædʒɪnɛri/',def:'虚构的，想象中的，不存在的',note:'imaginary = 只在脑子里的，不真实的',examples:['The child has an imaginary friend.','The threat turned out to be imaginary.']},
+{word:'imaginative',pron:'/ɪˈmædʒɪnətɪv/',def:'有想象力的，有创意的',note:'imaginative = 擅长想象的，褒义',examples:['She proposed an imaginative solution to the problem.','The designer is known for imaginative use of color.']}
 ],trap:'imaginary 是贬义/中性（不真实），imaginative 是褒义（有创造力）。说人有创意用 imaginative，不要用 imaginary。'},
 {id:'comparable-comparative',type:'confusable',title:'comparable · comparative',brief:'可比较的 vs 比较的/相对的',words:[
-{word:'comparable',def:'可比较的；类似的，相当的',note:'comparable = 可以放在一起比的',examples:['The two products are comparable in quality.','She earns a salary comparable to her peers.']},
-{word:'comparative',def:'比较的；相对的',note:'comparative = 用来做比较的（学术/分析用语）',examples:['We did a comparative analysis of both vendors.','He\'s a comparative newcomer to the industry.']}
+{word:'comparable',pron:'/ˈkɑːmpərəbəl/',def:'可比较的；类似的，相当的',note:'comparable = 可以放在一起比的',examples:['The two products are comparable in quality.','She earns a salary comparable to her peers.']},
+{word:'comparative',pron:'/kəmˈpærətɪv/',def:'比较的；相对的',note:'comparative = 用来做比较的（学术/分析用语）',examples:['We did a comparative analysis of both vendors.','He\'s a comparative newcomer to the industry.']}
 ],trap:'comparable 强调"水平相当，可以类比"，comparative 强调"比较这个动作/方法"。'},
 {id:'literal-literary-literate',type:'confusable',title:'literal · literary · literate',brief:'字面的 · 文学的 · 有读写能力的',words:[
-{word:'literal',def:'字面的，逐字的；确实的',note:'literal = letter（字母）→ 按字面意思来',examples:['That\'s the literal translation from Chinese.','It was a literal disaster—the building collapsed.']},
-{word:'literary',def:'文学的，文学性的',note:'literary = literature → 跟文学有关的',examples:['She has a literary writing style.','He won a prestigious literary award.']},
-{word:'literate',def:'有读写能力的；精通的',note:'literate = 能读能写的 → 有文化的',examples:['Most adults in Singapore are literate in at least two languages.','You need to be digitally literate in today\'s workplace.']}
+{word:'literal',pron:'/ˈlɪtərəl/',def:'字面的，逐字的；确实的',note:'literal = letter（字母）→ 按字面意思来',examples:['That\'s the literal translation from Chinese.','It was a literal disaster—the building collapsed.']},
+{word:'literary',pron:'/ˈlɪtərɛri/',def:'文学的，文学性的',note:'literary = literature → 跟文学有关的',examples:['She has a literary writing style.','He won a prestigious literary award.']},
+{word:'literate',pron:'/ˈlɪtərət/',def:'有读写能力的；精通的',note:'literate = 能读能写的 → 有文化的',examples:['Most adults in Singapore are literate in at least two languages.','You need to be digitally literate in today\'s workplace.']}
 ],trap:'literal 是"字面的"，literary 是"文学的"，literate 是"识字/精通的"。三个词都源自 liter-（字母），但含义差异大。'},
 {id:'classic-classical',type:'confusable',title:'classic · classical',brief:'经典的 vs 古典的',words:[
-{word:'classic',def:'经典的，一流的，典型的',note:'classic = 经久不衰的好东西',examples:['That\'s a classic mistake beginners make.','The movie is a classic—everyone should watch it.']},
-{word:'classical',def:'古典的（尤指古希腊罗马或古典音乐）',note:'classical = 古典时代/古典风格的',examples:['She studied classical music at the conservatory.','The building features classical architecture.']}
+{word:'classic',pron:'/ˈklæsɪk/',def:'经典的，一流的，典型的',note:'classic = 经久不衰的好东西',examples:['That\'s a classic mistake beginners make.','The movie is a classic—everyone should watch it.']},
+{word:'classical',pron:'/ˈklæsɪkəl/',def:'古典的（尤指古希腊罗马或古典音乐）',note:'classical = 古典时代/古典风格的',examples:['She studied classical music at the conservatory.','The building features classical architecture.']}
 ],trap:'classic car 是"经典老爷车"（好东西），classical music 是"古典音乐"（时代风格）。'},
 {id:'confident-confidential',type:'confusable',title:'confident · confidential',brief:'自信的 vs 机密的',words:[
-{word:'confident',def:'自信的，有把握的',note:'confident = confide + -ent → 对自己有信心',examples:['I\'m confident we\'ll meet the deadline.','She gave a confident presentation to the board.']},
-{word:'confidential',def:'机密的，保密的',note:'confidential = confide + -ential → 私下说的 → 保密的',examples:['This document is strictly confidential.','Please treat this information as confidential.']}
+{word:'confident',pron:'/ˈkɑːnfɪdənt/',def:'自信的，有把握的',note:'confident = confide + -ent → 对自己有信心',examples:['I\'m confident we\'ll meet the deadline.','She gave a confident presentation to the board.']},
+{word:'confidential',pron:'/ˌkɑːnfɪˈdɛnʃəl/',def:'机密的，保密的',note:'confidential = confide + -ential → 私下说的 → 保密的',examples:['This document is strictly confidential.','Please treat this information as confidential.']}
 ],trap:'confident 说人（自信的），confidential 说信息（保密的）。邮件标 confidential 表示"机密"，别写成 confident。'},
 {id:'convenient-conventional',type:'confusable',title:'convenient · conventional',brief:'方便的 vs 传统的',words:[
-{word:'convenient',def:'方便的，便利的',note:'convenient = 来（ven）到一起 → 凑手，方便',examples:['Is 3 PM convenient for you?','The hotel is in a convenient location near the station.']},
-{word:'conventional',def:'传统的，常规的',note:'conventional = convention（惯例）→ 按老规矩来的',examples:['We should explore options beyond conventional methods.','He has a rather conventional approach to management.']}
+{word:'convenient',pron:'/kənˈviːniənt/',def:'方便的，便利的',note:'convenient = 来（ven）到一起 → 凑手，方便',examples:['Is 3 PM convenient for you?','The hotel is in a convenient location near the station.']},
+{word:'conventional',pron:'/kənˈvɛnʃənəl/',def:'传统的，常规的',note:'conventional = convention（惯例）→ 按老规矩来的',examples:['We should explore options beyond conventional methods.','He has a rather conventional approach to management.']}
 ],trap:'convenient 是"方便的"，conventional 是"传统的"。两个词拼写接近但意思完全不同。'},
 {id:'temporary-contemporary',type:'confusable',title:'temporary · contemporary',brief:'临时的 vs 当代的/同时代的',words:[
-{word:'temporary',def:'临时的，暂时的',note:'tempor（时间）+ ary → 只持续一段时间的',examples:['This is a temporary solution until we find a better one.','She got a temporary job during the summer.']},
-{word:'contemporary',def:'当代的；同时代的',note:'con（共同）+ tempor（时间）→ 同一时代的',examples:['The gallery features contemporary art.','Shakespeare and Cervantes were contemporaries.']}
+{word:'temporary',pron:'/ˈtɛmpərɛri/',def:'临时的，暂时的',note:'tempor（时间）+ ary → 只持续一段时间的',examples:['This is a temporary solution until we find a better one.','She got a temporary job during the summer.']},
+{word:'contemporary',pron:'/kənˈtɛmpərɛri/',def:'当代的；同时代的',note:'con（共同）+ tempor（时间）→ 同一时代的',examples:['The gallery features contemporary art.','Shakespeare and Cervantes were contemporaries.']}
 ],trap:'temporary 强调"短暂/临时"，contemporary 强调"当代/同期"。contemporary design 是"当代设计"不是"临时设计"。'},
 {id:'worthless-worthwhile',type:'confusable',title:'worthless · worthwhile',brief:'毫无价值的 vs 值得的',words:[
-{word:'worthless',def:'毫无价值的，没用的',note:'worth + less（没有）→ 没有价值的',examples:['The old currency is now worthless.','Don\'t waste time on worthless arguments.']},
-{word:'worthwhile',def:'值得的，有价值的',note:'worth + while（时间）→ 值得花时间的',examples:['It\'s a worthwhile investment for the long term.','The training was worthwhile—I learned a lot.']}
+{word:'worthless',pron:'/ˈwɜːrθləs/',def:'毫无价值的，没用的',note:'worth + less（没有）→ 没有价值的',examples:['The old currency is now worthless.','Don\'t waste time on worthless arguments.']},
+{word:'worthwhile',pron:'/ˌwɜːrθˈwaɪl/',def:'值得的，有价值的',note:'worth + while（时间）→ 值得花时间的',examples:['It\'s a worthwhile investment for the long term.','The training was worthwhile—I learned a lot.']}
 ],trap:'worthless 和 worthwhile 意思完全相反！worthless = 没价值，worthwhile = 很值得。'},
 {id:'price-prize',type:'confusable',title:'price · prize',brief:'价格 vs 奖品',words:[
-{word:'price',def:'价格，代价',note:'price = 要你付多少钱',examples:['What\'s the price of this laptop?','We paid a high price for that mistake.']},
-{word:'prize',def:'奖品，奖赏',note:'prize = 赢了才拿到的好东西',examples:['She won first prize in the design competition.','The Nobel Prize is the highest honor in science.']}
+{word:'price',pron:'/praɪs/',def:'价格，代价',note:'price = 要你付多少钱',examples:['What\'s the price of this laptop?','We paid a high price for that mistake.']},
+{word:'prize',pron:'/praɪz/',def:'奖品，奖赏',note:'prize = 赢了才拿到的好东西',examples:['She won first prize in the design competition.','The Nobel Prize is the highest honor in science.']}
 ],trap:'price 是你要付的（价格），prize 是你能赢的（奖品）。中国学生容易拼混 -ice 和 -ize。'},
 {id:'shade-shadow',type:'confusable',title:'shade · shadow',brief:'荫凉 vs 影子',words:[
-{word:'shade',def:'阴凉处；遮光物；色度',note:'shade = 大面积的阴凉，让你凉快的地方',examples:['Let\'s sit in the shade of that tree.','This shade of blue matches our brand color.']},
-{word:'shadow',def:'影子，阴影；跟踪',note:'shadow = 特定物体投下的轮廓形状',examples:['His shadow grew longer as the sun set.','The scandal cast a shadow over his career.']}
+{word:'shade',pron:'/ʃeɪd/',def:'阴凉处；遮光物；色度',note:'shade = 大面积的阴凉，让你凉快的地方',examples:['Let\'s sit in the shade of that tree.','This shade of blue matches our brand color.']},
+{word:'shadow',pron:'/ˈʃædoʊ/',def:'影子，阴影；跟踪',note:'shadow = 特定物体投下的轮廓形状',examples:['His shadow grew longer as the sun set.','The scandal cast a shadow over his career.']}
 ],trap:'shade 是大面积"荫凉"（sit in the shade），shadow 是物体投下的"影子"（轮廓）。'},
 {id:'acquire-inquire',type:'confusable',title:'acquire · inquire',brief:'获得 vs 询问',words:[
-{word:'acquire',def:'获得，取得，收购',note:'ac（去）+ quire（寻求）→ 去找来 → 获得',examples:['The company acquired a startup last year.','She acquired fluency in English through years of practice.']},
-{word:'inquire',def:'询问，调查',note:'in（向内）+ quire（寻求）→ 深入问 → 询问',examples:['I\'d like to inquire about the job opening.','She inquired whether the meeting had been rescheduled.']}
+{word:'acquire',pron:'/əˈkwaɪər/',def:'获得，取得，收购',note:'ac（去）+ quire（寻求）→ 去找来 → 获得',examples:['The company acquired a startup last year.','She acquired fluency in English through years of practice.']},
+{word:'inquire',pron:'/ɪnˈkwaɪər/',def:'询问，调查',note:'in（向内）+ quire（寻求）→ 深入问 → 询问',examples:['I\'d like to inquire about the job opening.','She inquired whether the meeting had been rescheduled.']}
 ],trap:'acquire 是"拿到手"，inquire 是"张嘴问"。写邮件 I\'d like to inquire about... 是询问，不是获取。'},
 {id:'assume-presume',type:'confusable',title:'assume · presume',brief:'假设（无依据）vs 推测（有依据）',words:[
-{word:'assume',def:'假设，假定（没有证据）；承担',note:'assume = 没证据就当真了',examples:['Don\'t assume everyone agrees with you.','She assumed the role of team lead last month.']},
-{word:'presume',def:'推测，推定（基于一定证据）',note:'pre（预先）+ sume → 有理由提前判断',examples:['I presume you\'ve read the report since you were at the meeting.','Dr. Livingstone, I presume?']}
+{word:'assume',pron:'/əˈsuːm/',def:'假设，假定（没有证据）；承担',note:'assume = 没证据就当真了',examples:['Don\'t assume everyone agrees with you.','She assumed the role of team lead last month.']},
+{word:'presume',pron:'/prɪˈzuːm/',def:'推测，推定（基于一定证据）',note:'pre（预先）+ sume → 有理由提前判断',examples:['I presume you\'ve read the report since you were at the meeting.','Dr. Livingstone, I presume?']}
 ],trap:'assume 是"无根据地假定"（常含贬义），presume 是"有理由地推测"。assume the worst = 往最坏了想。'},
 {id:'bare-bear',type:'confusable',title:'bare · bear',brief:'赤裸的 vs 承受/熊',words:[
-{word:'bare',def:'赤裸的，光秃秃的；仅仅的',note:'bare = 什么都没穿/没覆盖的',examples:['He walked on the beach with bare feet.','The room was bare—no furniture at all.']},
-{word:'bear',def:'承受，忍受；携带；熊',note:'bear = 扛住 / 忍住 / 那个大动物',examples:['I can\'t bear the noise anymore.','Please bear in mind that the deadline is Friday.']}
+{word:'bare',pron:'/bɛr/',def:'赤裸的，光秃秃的；仅仅的',note:'bare = 什么都没穿/没覆盖的',examples:['He walked on the beach with bare feet.','The room was bare—no furniture at all.']},
+{word:'bear',pron:'/bɛr/',def:'承受，忍受；携带；熊',note:'bear = 扛住 / 忍住 / 那个大动物',examples:['I can\'t bear the noise anymore.','Please bear in mind that the deadline is Friday.']}
 ],trap:'bare 是"赤裸/光秃"，bear 是"承受/忍受"。bare with me 是错的，应该是 bear with me（请多包涵）。'},
 {id:'deny-refuse-decline',type:'confusable',title:'deny · refuse · decline',brief:'否认 · 拒绝 · 婉拒',words:[
-{word:'deny',def:'否认，否定（事实或指控）',note:'deny = 说"那不是真的"',examples:['He denied any involvement in the scandal.','She denied the accusation firmly.']},
-{word:'refuse',def:'拒绝（态度较强硬）',note:'refuse = 说"我不干"，比较直接',examples:['He refused to sign the contract.','She refused the offer without hesitation.']},
-{word:'decline',def:'婉拒，谢绝（较礼貌）；下降',note:'decline = 优雅地说"不"',examples:['I\'m afraid I must decline your invitation.','Sales declined by 15% last quarter.']}
+{word:'deny',pron:'/dɪˈnaɪ/',def:'否认，否定（事实或指控）',note:'deny = 说"那不是真的"',examples:['He denied any involvement in the scandal.','She denied the accusation firmly.']},
+{word:'refuse',pron:'/rɪˈfjuːz/',def:'拒绝（态度较强硬）',note:'refuse = 说"我不干"，比较直接',examples:['He refused to sign the contract.','She refused the offer without hesitation.']},
+{word:'decline',pron:'/dɪˈklaɪn/',def:'婉拒，谢绝（较礼貌）；下降',note:'decline = 优雅地说"不"',examples:['I\'m afraid I must decline your invitation.','Sales declined by 15% last quarter.']}
 ],trap:'deny 否认事实，refuse 硬拒，decline 婉拒。职场邮件推荐用 decline（更礼貌）。'},
 {id:'expand-extend-expend',type:'confusable',title:'expand · extend · expend',brief:'扩大 · 延伸 · 花费',words:[
-{word:'expand',def:'扩大，扩展（体积、规模变大）',note:'expand = 向外膨胀',examples:['We plan to expand our team next quarter.','The company is expanding into Asian markets.']},
-{word:'extend',def:'延伸，延长（长度、时间拉长）',note:'extend = 往外拉长',examples:['Can we extend the deadline by one week?','The contract has been extended for another year.']},
-{word:'expend',def:'花费，消耗（资源、精力）',note:'expend = expense 的动词，花钱/花精力',examples:['We expended a lot of energy on this project.','Don\'t expend resources on low-priority tasks.']}
+{word:'expand',pron:'/ɪkˈspænd/',def:'扩大，扩展（体积、规模变大）',note:'expand = 向外膨胀',examples:['We plan to expand our team next quarter.','The company is expanding into Asian markets.']},
+{word:'extend',pron:'/ɪkˈstɛnd/',def:'延伸，延长（长度、时间拉长）',note:'extend = 往外拉长',examples:['Can we extend the deadline by one week?','The contract has been extended for another year.']},
+{word:'expend',pron:'/ɪkˈspɛnd/',def:'花费，消耗（资源、精力）',note:'expend = expense 的动词，花钱/花精力',examples:['We expended a lot of energy on this project.','Don\'t expend resources on low-priority tasks.']}
 ],trap:'expand 是面积/规模变大，extend 是长度/时间变长，expend 是花费/消耗。'},
 {id:'preserve-reserve-conserve',type:'confusable',title:'preserve · reserve · conserve',brief:'保存 · 预留 · 节约',words:[
-{word:'preserve',def:'保存，保护（使不被破坏）',note:'pre（预先）+ serve（保持）→ 提前保护好',examples:['We must preserve these historical buildings.','The museum works to preserve ancient artifacts.']},
-{word:'reserve',def:'预留，预订；储备',note:'re（再）+ serve（保持）→ 留着以后用',examples:['I\'d like to reserve a table for two.','We should reserve some budget for emergencies.']},
-{word:'conserve',def:'节约，保护（自然资源）',note:'con（共同）+ serve → 大家一起省着用',examples:['We need to conserve water during the drought.','Please conserve energy by turning off lights.']}
+{word:'preserve',pron:'/prɪˈzɜːrv/',def:'保存，保护（使不被破坏）',note:'pre（预先）+ serve（保持）→ 提前保护好',examples:['We must preserve these historical buildings.','The museum works to preserve ancient artifacts.']},
+{word:'reserve',pron:'/rɪˈzɜːrv/',def:'预留，预订；储备',note:'re（再）+ serve（保持）→ 留着以后用',examples:['I\'d like to reserve a table for two.','We should reserve some budget for emergencies.']},
+{word:'conserve',pron:'/kənˈsɜːrv/',def:'节约，保护（自然资源）',note:'con（共同）+ serve → 大家一起省着用',examples:['We need to conserve water during the drought.','Please conserve energy by turning off lights.']}
 ],trap:'preserve 侧重"保护不被毁"，reserve 侧重"留着备用"，conserve 侧重"节约使用"。'},
 {id:'propose-suppose',type:'confusable',title:'propose · suppose',brief:'提议 vs 假设/认为',words:[
-{word:'propose',def:'提议，建议；求婚',note:'pro（向前）+ pose → 摆到前面 → 提出来',examples:['I propose we postpone the launch by two weeks.','He proposed to her on Valentine\'s Day.']},
-{word:'suppose',def:'假设，认为；（be supposed to）应该',note:'sup（下面）+ pose → 放在下面当基础 → 假设',examples:['I suppose you\'re right about the timeline.','You\'re supposed to submit the report by Friday.']}
+{word:'propose',pron:'/prəˈpoʊz/',def:'提议，建议；求婚',note:'pro（向前）+ pose → 摆到前面 → 提出来',examples:['I propose we postpone the launch by two weeks.','He proposed to her on Valentine\'s Day.']},
+{word:'suppose',pron:'/səˈpoʊz/',def:'假设，认为；（be supposed to）应该',note:'sup（下面）+ pose → 放在下面当基础 → 假设',examples:['I suppose you\'re right about the timeline.','You\'re supposed to submit the report by Friday.']}
 ],trap:'propose 是主动"提议"，suppose 是"假设/认为"。be supposed to = 应该做某事。'},
 {id:'recall-remind',type:'confusable',title:'recall · remind',brief:'回忆起 vs 提醒',words:[
-{word:'recall',def:'回忆起，记起；召回',note:'re（再）+ call（叫）→ 再叫回来 → 想起来',examples:['I can\'t recall his name at the moment.','The manufacturer recalled the defective products.']},
-{word:'remind',def:'提醒（某人某事）',note:'re + mind → 让你再想起来 → 提醒你',examples:['Please remind me to call the client at 3 PM.','This reminds me of a similar project we did.']},
+{word:'recall',pron:'/rɪˈkɔːl/',def:'回忆起，记起；召回',note:'re（再）+ call（叫）→ 再叫回来 → 想起来',examples:['I can\'t recall his name at the moment.','The manufacturer recalled the defective products.']},
+{word:'remind',pron:'/rɪˈmaɪnd/',def:'提醒（某人某事）',note:'re + mind → 让你再想起来 → 提醒你',examples:['Please remind me to call the client at 3 PM.','This reminds me of a similar project we did.']},
 ],trap:'recall 是自己想起来，remind 是别人让你想起来。I recall = 我记起来了，remind me = 提醒我。'},
 {id:'access-assess',type:'confusable',title:'access · assess',brief:'进入/获取 vs 评估',words:[
-{word:'access',def:'进入，获取；通道，权限',note:'access = 走进去 / 拿到',examples:['You need a badge to access the server room.','Do you have access to the shared drive?']},
-{word:'assess',def:'评估，评定',note:'assess = 坐下来仔细看看值多少 / 怎么样',examples:['We need to assess the risks before proceeding.','The manager will assess your performance quarterly.']}
+{word:'access',pron:'/ˈæksɛs/',def:'进入，获取；通道，权限',note:'access = 走进去 / 拿到',examples:['You need a badge to access the server room.','Do you have access to the shared drive?']},
+{word:'assess',pron:'/əˈsɛs/',def:'评估，评定',note:'assess = 坐下来仔细看看值多少 / 怎么样',examples:['We need to assess the risks before proceeding.','The manager will assess your performance quarterly.']}
 ],trap:'access 是"进入/获取"（一个 s），assess 是"评估"（两个 s）。发音和拼写都容易混。'},
 {id:'aboard-abroad',type:'confusable',title:'aboard · abroad',brief:'在船/飞机上 vs 在国外',words:[
-{word:'aboard',def:'在（船、飞机、火车）上',note:'a + board → 上了板（船板）→ 上了车/船',examples:['Welcome aboard Flight SQ321.','All passengers are now aboard.']},
-{word:'abroad',def:'在国外，到国外',note:'a + broad → 到广阔的地方 → 出国',examples:['She studied abroad in the UK for two years.','Our company has operations abroad.']}
+{word:'aboard',pron:'/əˈbɔːrd/',def:'在（船、飞机、火车）上',note:'a + board → 上了板（船板）→ 上了车/船',examples:['Welcome aboard Flight SQ321.','All passengers are now aboard.']},
+{word:'abroad',pron:'/əˈbrɔːd/',def:'在国外，到国外',note:'a + broad → 到广阔的地方 → 出国',examples:['She studied abroad in the UK for two years.','Our company has operations abroad.']}
 ],trap:'aboard 是"上了交通工具"，abroad 是"在国外"。go aboard = 登船，go abroad = 出国。'},
 {id:'angel-angle',type:'confusable',title:'angel · angle',brief:'天使 vs 角度',words:[
-{word:'angel',def:'天使',note:'angel 中间是 gel，天使像果冻一样软萌',examples:['She\'s been an angel—helping us with everything.','The painting depicts an angel with golden wings.']},
-{word:'angle',def:'角度，角；观点',note:'angle 中间是 gle，像一个尖角',examples:['Let\'s approach this problem from a different angle.','The two lines meet at a 90-degree angle.']}
+{word:'angel',pron:'/ˈeɪndʒəl/',def:'天使',note:'angel 中间是 gel，天使像果冻一样软萌',examples:['She\'s been an angel—helping us with everything.','The painting depicts an angel with golden wings.']},
+{word:'angle',pron:'/ˈæŋɡəl/',def:'角度，角；观点',note:'angle 中间是 gle，像一个尖角',examples:['Let\'s approach this problem from a different angle.','The two lines meet at a 90-degree angle.']}
 ],trap:'angel（天使）和 angle（角度）只是字母 e 和 l 位置互换，中国学生打字时经常拼错。'},
 {id:'dairy-diary',type:'confusable',title:'dairy · diary',brief:'乳制品 vs 日记',words:[
-{word:'dairy',def:'乳制品；乳品店',note:'dairy = d + airy，奶牛在空旷（airy）的牧场',examples:['She avoids dairy products due to lactose intolerance.','The dairy section is at the back of the supermarket.']},
-{word:'diary',def:'日记；日程本',note:'diary = di + ary，每日（di = day）记录',examples:['She writes in her diary every night.','Let me check my diary for available slots.']}
+{word:'dairy',pron:'/ˈdɛri/',def:'乳制品；乳品店',note:'dairy = d + airy，奶牛在空旷（airy）的牧场',examples:['She avoids dairy products due to lactose intolerance.','The dairy section is at the back of the supermarket.']},
+{word:'diary',pron:'/ˈdaɪəri/',def:'日记；日程本',note:'diary = di + ary，每日（di = day）记录',examples:['She writes in her diary every night.','Let me check my diary for available slots.']}
 ],trap:'dairy（乳制品）和 diary（日记）字母顺序不同。dairy = ai 在前，diary = ia 在前。'},
 {id:'dose-doze',type:'confusable',title:'dose · doze',brief:'剂量 vs 打盹',words:[
-{word:'dose',def:'（药的）剂量，一剂',note:'dose 有 s → 吃 s（药）',examples:['Take one dose of this medicine after each meal.','A small dose of humor helps in presentations.']},
-{word:'doze',def:'打盹，小睡',note:'doze 有 z → zzz 打瞌睡',examples:['He dozed off during the afternoon meeting.','I had a quick doze on the sofa.']}
+{word:'dose',pron:'/doʊs/',def:'（药的）剂量，一剂',note:'dose 有 s → 吃 s（药）',examples:['Take one dose of this medicine after each meal.','A small dose of humor helps in presentations.']},
+{word:'doze',pron:'/doʊz/',def:'打盹，小睡',note:'doze 有 z → zzz 打瞌睡',examples:['He dozed off during the afternoon meeting.','I had a quick doze on the sofa.']}
 ],trap:'dose 是药的剂量（s 像药片），doze 是打瞌睡（z 像打呼 zzz）。'},
 {id:'crash-crush',type:'confusable',title:'crash · crush',brief:'撞毁 vs 压碎/迷恋',words:[
-{word:'crash',def:'碰撞，坠毁；崩溃；速成',note:'crash = 猛烈撞上去，砰！',examples:['The app crashed again during the demo.','He took a crash course in Python before the project.']},
-{word:'crush',def:'压碎，碾碎；迷恋',note:'crush = 慢慢压扁',examples:['Don\'t crush the box—there are fragile items inside.','She has a crush on the new colleague.']}
+{word:'crash',pron:'/kræʃ/',def:'碰撞，坠毁；崩溃；速成',note:'crash = 猛烈撞上去，砰！',examples:['The app crashed again during the demo.','He took a crash course in Python before the project.']},
+{word:'crush',pron:'/krʌʃ/',def:'压碎，碾碎；迷恋',note:'crush = 慢慢压扁',examples:['Don\'t crush the box—there are fragile items inside.','She has a crush on the new colleague.']}
 ],trap:'crash 是猛烈撞击（车祸、系统崩溃），crush 是用力压碎（或对人心动）。'},
 {id:'wander-wonder',type:'confusable',title:'wander · wonder',brief:'闲逛 vs 想知道/惊叹',words:[
-{word:'wander',def:'闲逛，漫步；走神',note:'wander = w + and + er，这里那里走',examples:['We wandered around the old town for hours.','Sorry, my mind wandered during the meeting.']},
-{word:'wonder',def:'想知道；惊叹；奇迹',note:'wonder = 心里画问号，好奇',examples:['I wonder if we could move the meeting to Tuesday.','The Great Wall is one of the wonders of the world.']}
+{word:'wander',pron:'/ˈwɑːndər/',def:'闲逛，漫步；走神',note:'wander = w + and + er，这里那里走',examples:['We wandered around the old town for hours.','Sorry, my mind wandered during the meeting.']},
+{word:'wonder',pron:'/ˈwʌndər/',def:'想知道；惊叹；奇迹',note:'wonder = 心里画问号，好奇',examples:['I wonder if we could move the meeting to Tuesday.','The Great Wall is one of the wonders of the world.']}
 ],trap:'wander 是用脚走（闲逛），wonder 是用脑想（好奇）。I wonder... 是邮件中委婉提问的好用句式。'},
 {id:'later-latter',type:'confusable',title:'later · latter',brief:'后来 vs 后者',words:[
-{word:'later',def:'后来，稍后（时间上的晚）',note:'later = late 的比较级 → 更晚',examples:['Let\'s discuss this later.','She arrived later than expected.']},
-{word:'latter',def:'后者（两者中的第二个）',note:'latter 对应 former（前者）',examples:['Between React and Vue, I prefer the latter.','The latter half of the year was more profitable.']}
+{word:'later',pron:'/ˈleɪtər/',def:'后来，稍后（时间上的晚）',note:'later = late 的比较级 → 更晚',examples:['Let\'s discuss this later.','She arrived later than expected.']},
+{word:'latter',pron:'/ˈlætər/',def:'后者（两者中的第二个）',note:'latter 对应 former（前者）',examples:['Between React and Vue, I prefer the latter.','The latter half of the year was more profitable.']}
 ],trap:'later 是时间上的"稍后"，latter 是顺序上的"后者"（与 former 前者对应）。'},
 {id:'attend-attain',type:'confusable',title:'attend · attain',brief:'出席 vs 达到',words:[
-{word:'attend',def:'出席，参加；注意',note:'attend = 到场 → 出席',examples:['Will you attend the conference next week?','Please attend to this urgent matter.']},
-{word:'attain',def:'达到，获得（目标、水平）',note:'attain = at + tain（拿住）→ 够到了 → 达成',examples:['She attained a senior position within five years.','Very few people attain true mastery of a second language.']}
+{word:'attend',pron:'/əˈtɛnd/',def:'出席，参加；注意',note:'attend = 到场 → 出席',examples:['Will you attend the conference next week?','Please attend to this urgent matter.']},
+{word:'attain',pron:'/əˈteɪn/',def:'达到，获得（目标、水平）',note:'attain = at + tain（拿住）→ 够到了 → 达成',examples:['She attained a senior position within five years.','Very few people attain true mastery of a second language.']}
 ],trap:'attend 是"出席/参加"，attain 是"达到/获得"。attend a goal 是错的，应该是 attain a goal。'},
 {id:'contact-contract-contrast',type:'confusable',title:'contact · contract · contrast',brief:'联系 · 合同 · 对比',words:[
-{word:'contact',def:'联系，接触；联系人',note:'con + tact（触碰）→ 碰到一起 → 联系',examples:['Please contact me if you have any questions.','She\'s my main contact at the client company.']},
-{word:'contract',def:'合同，合约；收缩',note:'con + tract（拉）→ 拉到一起签字 → 合同',examples:['We signed a two-year contract with the vendor.','The deadline is stated in the contract.']},
-{word:'contrast',def:'对比，对照；反差',note:'contra（相反）+ st → 相反地站 → 对比',examples:['The report contrasts Q1 and Q2 performance.','In contrast to last year, sales are up.']}
+{word:'contact',pron:'/ˈkɑːntækt/',def:'联系，接触；联系人',note:'con + tact（触碰）→ 碰到一起 → 联系',examples:['Please contact me if you have any questions.','She\'s my main contact at the client company.']},
+{word:'contract',pron:'/ˈkɑːntrækt/',def:'合同，合约；收缩',note:'con + tract（拉）→ 拉到一起签字 → 合同',examples:['We signed a two-year contract with the vendor.','The deadline is stated in the contract.']},
+{word:'contrast',pron:'/ˈkɑːntræst/',def:'对比，对照；反差',note:'contra（相反）+ st → 相反地站 → 对比',examples:['The report contrasts Q1 and Q2 performance.','In contrast to last year, sales are up.']}
 ],trap:'三个词长得像但意思完全不同：contact 联系，contract 合同，contrast 对比。'},
 {id:'medal-metal',type:'confusable',title:'medal · metal',brief:'奖牌 vs 金属',words:[
-{word:'medal',def:'奖牌，奖章',note:'medal = 比赛赢了挂脖子上的那块牌',examples:['She won a gold medal at the Olympics.','The team received medals for their achievement.']},
-{word:'metal',def:'金属',note:'metal = 铁、铜、铝这类材料',examples:['The frame is made of metal.','Heavy metal music isn\'t for everyone.']}
+{word:'medal',pron:'/ˈmɛdəl/',def:'奖牌，奖章',note:'medal = 比赛赢了挂脖子上的那块牌',examples:['She won a gold medal at the Olympics.','The team received medals for their achievement.']},
+{word:'metal',pron:'/ˈmɛtəl/',def:'金属',note:'metal = 铁、铜、铝这类材料',examples:['The frame is made of metal.','Heavy metal music isn\'t for everyone.']}
 ],trap:'medal（奖牌）和 metal（金属）只差一个字母。奖牌是 medal，金属是 metal。'},
 {id:'causal-casual',type:'confusable',title:'causal · casual',brief:'因果的 vs 随意的',words:[
-{word:'causal',def:'因果的，有因果关系的',note:'causal = cause（原因）+ al → 跟原因有关的',examples:['There\'s no causal relationship between the two variables.','We need to establish a causal link before drawing conclusions.']},
-{word:'casual',def:'随意的，休闲的；临时的',note:'casual = 没那么正式的',examples:['Friday is casual dress day at our office.','It was just a casual remark—don\'t read too much into it.']}
+{word:'causal',pron:'/ˈkɔːzəl/',def:'因果的，有因果关系的',note:'causal = cause（原因）+ al → 跟原因有关的',examples:['There\'s no causal relationship between the two variables.','We need to establish a causal link before drawing conclusions.']},
+{word:'casual',pron:'/ˈkæʒuəl/',def:'随意的，休闲的；临时的',note:'casual = 没那么正式的',examples:['Friday is casual dress day at our office.','It was just a casual remark—don\'t read too much into it.']}
 ],trap:'causal 是学术词（因果关系），casual 是日常词（休闲随意）。两词发音拼写极近，注意 u 的位置。'},
 {id:'career-carrier',type:'confusable',title:'career · carrier',brief:'职业 vs 运营商/搬运者',words:[
-{word:'career',def:'职业，事业',note:'career = 你这辈子干的事',examples:['She\'s building a career in UX design.','A career change at 40 takes courage.']},
-{word:'carrier',def:'运营商；搬运工具；携带者',note:'carrier = carry 的名词 → 搬东西的',examples:['Which mobile carrier do you use?','The aircraft carrier arrived at port.']}
+{word:'career',pron:'/kəˈrɪr/',def:'职业，事业',note:'career = 你这辈子干的事',examples:['She\'s building a career in UX design.','A career change at 40 takes courage.']},
+{word:'carrier',pron:'/ˈkæriər/',def:'运营商；搬运工具；携带者',note:'carrier = carry 的名词 → 搬东西的',examples:['Which mobile carrier do you use?','The aircraft carrier arrived at port.']}
 ],trap:'career 是职业生涯，carrier 是运送/承载的东西。mobile carrier = 运营商，不是 mobile career。'},
 {id:'cease-seize',type:'confusable',title:'cease · seize',brief:'停止 vs 抓住',words:[
-{word:'cease',def:'停止，终止',note:'cease = 一切都静下来了 → 停',examples:['The factory will cease operations next month.','They agreed to cease hostilities immediately.']},
-{word:'seize',def:'抓住，夺取；没收',note:'seize = 猛地抓住',examples:['We must seize this opportunity before it\'s gone.','Customs officers seized the illegal goods.']}
+{word:'cease',pron:'/siːs/',def:'停止，终止',note:'cease = 一切都静下来了 → 停',examples:['The factory will cease operations next month.','They agreed to cease hostilities immediately.']},
+{word:'seize',pron:'/siːz/',def:'抓住，夺取；没收',note:'seize = 猛地抓住',examples:['We must seize this opportunity before it\'s gone.','Customs officers seized the illegal goods.']}
 ],trap:'cease 是"停"，seize 是"抓"。意思完全相反的力度——一个松手，一个抓紧。'},
 {id:'idle-idol',type:'confusable',title:'idle · idol',brief:'空闲的 vs 偶像',words:[
-{word:'idle',def:'空闲的，闲置的；懒散的',note:'idle = 没事干，闲着',examples:['The machine has been idle for two weeks.','Don\'t leave your computer idle—log out.']},
-{word:'idol',def:'偶像，崇拜对象',note:'idol = 你崇拜的人',examples:['Steve Jobs is her idol in the design world.','The pop idol has millions of fans.']}
+{word:'idle',pron:'/ˈaɪdəl/',def:'空闲的，闲置的；懒散的',note:'idle = 没事干，闲着',examples:['The machine has been idle for two weeks.','Don\'t leave your computer idle—log out.']},
+{word:'idol',pron:'/ˈaɪdəl/',def:'偶像，崇拜对象',note:'idol = 你崇拜的人',examples:['Steve Jobs is her idol in the design world.','The pop idol has millions of fans.']}
 ],trap:'idle（空闲的）和 idol（偶像）发音几乎一样但拼写不同，意思完全不同。'},
 {id:'marital-martial',type:'confusable',title:'marital · martial',brief:'婚姻的 vs 军事的',words:[
-{word:'marital',def:'婚姻的',note:'marital = marry → 跟结婚有关的',examples:['Marital status: single, married, or divorced.','They sought marital counseling.']},
-{word:'martial',def:'军事的，武术的',note:'martial = Mars（战神）→ 跟打仗有关的',examples:['He practiced martial arts for twenty years.','The government declared martial law.']}
+{word:'marital',pron:'/ˈmærɪtəl/',def:'婚姻的',note:'marital = marry → 跟结婚有关的',examples:['Marital status: single, married, or divorced.','They sought marital counseling.']},
+{word:'martial',pron:'/ˈmɑːrʃəl/',def:'军事的，武术的',note:'martial = Mars（战神）→ 跟打仗有关的',examples:['He practiced martial arts for twenty years.','The government declared martial law.']}
 ],trap:'marital 是婚姻的（填表常见 marital status），martial 是军事的（martial arts 武术）。只差 i 和 h 的位置。'},
 {id:'minor-miner',type:'confusable',title:'minor · miner',brief:'次要的/未成年人 vs 矿工',words:[
-{word:'minor',def:'次要的，较小的；未成年人；辅修',note:'minor = mini → 小的 → 次要的',examples:['It\'s a minor issue—don\'t worry about it.','She chose psychology as her minor in college.']},
-{word:'miner',def:'矿工',note:'miner = mine（矿）+ r → 在矿里干活的人',examples:['Coal miners face serious health risks.','The miners were rescued after three days underground.']}
+{word:'minor',pron:'/ˈmaɪnər/',def:'次要的，较小的；未成年人；辅修',note:'minor = mini → 小的 → 次要的',examples:['It\'s a minor issue—don\'t worry about it.','She chose psychology as her minor in college.']},
+{word:'miner',pron:'/ˈmaɪnər/',def:'矿工',note:'miner = mine（矿）+ r → 在矿里干活的人',examples:['Coal miners face serious health risks.','The miners were rescued after three days underground.']}
 ],trap:'minor（次要的/未成年人）和 miner（矿工）发音完全一样，但拼写和意思不同。'},
 {id:'peak-peek',type:'confusable',title:'peak · peek',brief:'顶峰 vs 偷看',words:[
-{word:'peak',def:'顶峰，高峰；最高点',note:'peak = 山尖尖 → 最高点',examples:['Traffic reaches its peak around 6 PM.','We\'re at peak capacity—no more bookings.']},
-{word:'peek',def:'偷看，窥视',note:'peek = 悄悄看一眼',examples:['She took a peek at the exam results.','Can I peek at your notes before the meeting?']}
+{word:'peak',pron:'/piːk/',def:'顶峰，高峰；最高点',note:'peak = 山尖尖 → 最高点',examples:['Traffic reaches its peak around 6 PM.','We\'re at peak capacity—no more bookings.']},
+{word:'peek',pron:'/piːk/',def:'偷看，窥视',note:'peek = 悄悄看一眼',examples:['She took a peek at the exam results.','Can I peek at your notes before the meeting?']}
 ],trap:'peak 是最高点（peak hours 高峰期），peek 是偷看一眼。sneak peek = 先睹为快。'},
 {id:'plain-plane',type:'confusable',title:'plain · plane',brief:'朴素的/平原 vs 飞机/平面',words:[
-{word:'plain',def:'朴素的，简单的；平原；明显的',note:'plain = 平平的 → 朴素/明显',examples:['Let me make this plain: we need to cut costs.','She prefers plain clothes over flashy outfits.']},
-{word:'plane',def:'飞机；平面；层面',note:'plane = 在平面上飞的 → 飞机',examples:['The plane lands at 8 PM.','On a theoretical plane, the idea works.']}
+{word:'plain',pron:'/pleɪn/',def:'朴素的，简单的；平原；明显的',note:'plain = 平平的 → 朴素/明显',examples:['Let me make this plain: we need to cut costs.','She prefers plain clothes over flashy outfits.']},
+{word:'plane',pron:'/pleɪn/',def:'飞机；平面；层面',note:'plane = 在平面上飞的 → 飞机',examples:['The plane lands at 8 PM.','On a theoretical plane, the idea works.']}
 ],trap:'plain 是"朴素/明显/平原"，plane 是"飞机/平面"。plain language = 简明语言。'},
 {id:'pray-prey',type:'confusable',title:'pray · prey',brief:'祈祷 vs 猎物',words:[
-{word:'pray',def:'祈祷，祈求',note:'pray = 双手合十向上',examples:['They prayed for a successful product launch.','I pray this email finds you well.']},
-{word:'prey',def:'猎物；受害者',note:'prey = 被猎的对象',examples:['Scammers prey on vulnerable elderly people.','The eagle swooped down on its prey.']}
+{word:'pray',pron:'/preɪ/',def:'祈祷，祈求',note:'pray = 双手合十向上',examples:['They prayed for a successful product launch.','I pray this email finds you well.']},
+{word:'prey',pron:'/preɪ/',def:'猎物；受害者',note:'prey = 被猎的对象',examples:['Scammers prey on vulnerable elderly people.','The eagle swooped down on its prey.']}
 ],trap:'pray 是祈祷（向上），prey 是猎物（被抓）。prey on = 捕食/欺骗弱者。'},
 {id:'profit-prophet',type:'confusable',title:'profit · prophet',brief:'利润 vs 先知',words:[
-{word:'profit',def:'利润，收益；受益',note:'profit = pro（向前）+ fit → 向前走的好处 → 利润',examples:['The company reported a 20% increase in profit.','You\'ll profit from reading this book.']},
-{word:'prophet',def:'先知，预言者',note:'prophet = 能提前说出真相的人',examples:['He\'s no prophet—he just reads the data well.','The prophet warned of difficult times ahead.']}
+{word:'profit',pron:'/ˈprɑːfɪt/',def:'利润，收益；受益',note:'profit = pro（向前）+ fit → 向前走的好处 → 利润',examples:['The company reported a 20% increase in profit.','You\'ll profit from reading this book.']},
+{word:'prophet',pron:'/ˈprɑːfɪt/',def:'先知，预言者',note:'prophet = 能提前说出真相的人',examples:['He\'s no prophet—he just reads the data well.','The prophet warned of difficult times ahead.']}
 ],trap:'profit（利润）和 prophet（先知）发音很像。商业语境用 profit，宗教/预言语境用 prophet。'},
 {id:'sweet-sweat',type:'confusable',title:'sweet · sweat',brief:'甜的 vs 汗水',words:[
-{word:'sweet',def:'甜的，甜蜜的',note:'sweet = 吃到嘴里甜甜的',examples:['That\'s so sweet of you to remember my birthday.','The dessert was too sweet for my taste.']},
-{word:'sweat',def:'汗水；出汗；辛苦',note:'sweat = 热了累了流的水',examples:['No sweat—I\'ll handle it.','Don\'t sweat the small stuff.']}
+{word:'sweet',pron:'/swiːt/',def:'甜的，甜蜜的',note:'sweet = 吃到嘴里甜甜的',examples:['That\'s so sweet of you to remember my birthday.','The dessert was too sweet for my taste.']},
+{word:'sweat',pron:'/swɛt/',def:'汗水；出汗；辛苦',note:'sweat = 热了累了流的水',examples:['No sweat—I\'ll handle it.','Don\'t sweat the small stuff.']}
 ],trap:'sweet 是甜（ee 像笑脸），sweat 是汗（ea 像流下的汗）。No sweat = 没问题/小事一桩。'},
 {id:'trail-trial',type:'confusable',title:'trail · trial',brief:'小路/痕迹 vs 审判/试用',words:[
-{word:'trail',def:'小路，踪迹；跟踪',note:'trail = 走过留下的痕迹 → 小路',examples:['We hiked along a mountain trail.','The company is trailing behind its competitors.']},
-{word:'trial',def:'审判；试验，试用',note:'trial = try 的名词 → 尝试/审判',examples:['The free trial expires in 14 days.','The trial revealed new evidence.']}
+{word:'trail',pron:'/treɪl/',def:'小路，踪迹；跟踪',note:'trail = 走过留下的痕迹 → 小路',examples:['We hiked along a mountain trail.','The company is trailing behind its competitors.']},
+{word:'trial',pron:'/ˈtraɪəl/',def:'审判；试验，试用',note:'trial = try 的名词 → 尝试/审判',examples:['The free trial expires in 14 days.','The trial revealed new evidence.']}
 ],trap:'trail 是小路/痕迹，trial 是试用/审判。free trial = 免费试用，不是 free trail。'},
 {id:'vain-vein-vane',type:'confusable',title:'vain · vein · vane',brief:'徒劳的/自负的 · 血管 · 风向标',words:[
-{word:'vain',def:'徒劳的；自负的',note:'vain = 白费了 / 太自恋了',examples:['All our efforts were in vain.','He\'s too vain to admit he was wrong.']},
-{word:'vein',def:'血管，静脉；风格',note:'vein = 身体里流血的管子',examples:['The nurse found a vein and drew blood.','Let\'s continue in this vein for the next section.']},
-{word:'vane',def:'风向标',note:'vane = 屋顶上随风转的那个',examples:['The weather vane pointed north.','Wind vanes are common on old farmhouses.']}
+{word:'vain',pron:'/veɪn/',def:'徒劳的；自负的',note:'vain = 白费了 / 太自恋了',examples:['All our efforts were in vain.','He\'s too vain to admit he was wrong.']},
+{word:'vein',pron:'/veɪn/',def:'血管，静脉；风格',note:'vein = 身体里流血的管子',examples:['The nurse found a vein and drew blood.','Let\'s continue in this vein for the next section.']},
+{word:'vane',pron:'/veɪn/',def:'风向标',note:'vane = 屋顶上随风转的那个',examples:['The weather vane pointed north.','Wind vanes are common on old farmhouses.']}
 ],trap:'三个词发音完全一样：vain（徒劳/自负），vein（血管），vane（风向标）。in vain = 徒劳。'},
 {id:'waist-waste',type:'confusable',title:'waist · waste',brief:'腰 vs 浪费',words:[
-{word:'waist',def:'腰，腰部',note:'waist = 身体中间细的地方',examples:['The dress fits perfectly at the waist.','He measured his waist before ordering pants online.']},
-{word:'waste',def:'浪费；废物',note:'waste = 扔掉的/白花的',examples:['Don\'t waste time on unnecessary meetings.','We need to reduce waste in our production process.']}
+{word:'waist',pron:'/weɪst/',def:'腰，腰部',note:'waist = 身体中间细的地方',examples:['The dress fits perfectly at the waist.','He measured his waist before ordering pants online.']},
+{word:'waste',pron:'/weɪst/',def:'浪费；废物',note:'waste = 扔掉的/白花的',examples:['Don\'t waste time on unnecessary meetings.','We need to reduce waste in our production process.']}
 ],trap:'waist 是腰（ai = 腰身），waste 是浪费（a = 啊，白费了）。'},
 {id:'steal-steel',type:'confusable',title:'steal · steel',brief:'偷 vs 钢铁',words:[
-{word:'steal',def:'偷窃；悄悄移动',note:'steal = 趁人不注意拿走',examples:['Someone stole my idea in the meeting.','She stole a glance at her phone during the presentation.']},
-{word:'steel',def:'钢铁；使坚强',note:'steel = 硬邦邦的金属',examples:['The bridge is made of steel and concrete.','Steel yourself for some tough feedback.']}
+{word:'steal',pron:'/stiːl/',def:'偷窃；悄悄移动',note:'steal = 趁人不注意拿走',examples:['Someone stole my idea in the meeting.','She stole a glance at her phone during the presentation.']},
+{word:'steel',pron:'/stiːl/',def:'钢铁；使坚强',note:'steel = 硬邦邦的金属',examples:['The bridge is made of steel and concrete.','Steel yourself for some tough feedback.']}
 ],trap:'steal（偷）和 steel（钢）发音一样但意思不同。steal the show = 抢风头。'},
 {id:'staff-stuff',type:'confusable',title:'staff · stuff',brief:'员工 vs 东西',words:[
-{word:'staff',def:'员工，工作人员',note:'staff = 帮你干活的一群人',examples:['We need to hire more staff for the new project.','The staff meeting is at 10 AM every Monday.']},
-{word:'stuff',def:'东西，材料；填充',note:'stuff = 各种杂七杂八的东西',examples:['Just leave your stuff on the desk.','I have a lot of stuff to do today.']}
+{word:'staff',pron:'/stæf/',def:'员工，工作人员',note:'staff = 帮你干活的一群人',examples:['We need to hire more staff for the new project.','The staff meeting is at 10 AM every Monday.']},
+{word:'stuff',pron:'/stʌf/',def:'东西，材料；填充',note:'stuff = 各种杂七杂八的东西',examples:['Just leave your stuff on the desk.','I have a lot of stuff to do today.']}
 ],trap:'staff 是人（员工），stuff 是物（东西）。中国学生常把 staff 和 stuff 搞混，注意元音 a vs u。'},
 {id:'sore-soar',type:'confusable',title:'sore · soar',brief:'疼痛的 vs 翱翔',words:[
-{word:'sore',def:'疼痛的，酸痛的',note:'sore = 碰了就疼的地方',examples:['My throat is sore—I think I\'m catching a cold.','It\'s a sore point for him, so don\'t bring it up.']},
-{word:'soar',def:'翱翔；猛增',note:'soar = 像鸟一样飞得很高',examples:['The eagle soared above the mountains.','Prices soared after the announcement.']}
+{word:'sore',pron:'/sɔːr/',def:'疼痛的，酸痛的',note:'sore = 碰了就疼的地方',examples:['My throat is sore—I think I\'m catching a cold.','It\'s a sore point for him, so don\'t bring it up.']},
+{word:'soar',pron:'/sɔːr/',def:'翱翔；猛增',note:'soar = 像鸟一样飞得很高',examples:['The eagle soared above the mountains.','Prices soared after the announcement.']}
 ],trap:'sore 是疼（sore throat 喉咙痛），soar 是飞/猛涨（prices soar 价格飙升）。'},
 {id:'sole-soul',type:'confusable',title:'sole · soul',brief:'唯一的/鞋底 vs 灵魂',words:[
-{word:'sole',def:'唯一的；鞋底',note:'sole = solo → 只有一个的',examples:['She is the sole owner of the company.','The sole purpose of this meeting is to align on priorities.']},
-{word:'soul',def:'灵魂，心灵',note:'soul = 人最深处的东西',examples:['She poured her heart and soul into the project.','Not a soul knew about the secret plan.']}
+{word:'sole',pron:'/soʊl/',def:'唯一的；鞋底',note:'sole = solo → 只有一个的',examples:['She is the sole owner of the company.','The sole purpose of this meeting is to align on priorities.']},
+{word:'soul',pron:'/soʊl/',def:'灵魂，心灵',note:'soul = 人最深处的东西',examples:['She poured her heart and soul into the project.','Not a soul knew about the secret plan.']}
 ],trap:'sole 是唯一的/鞋底，soul 是灵魂。the sole reason = 唯一的原因。'},
 {id:'suit-suite',type:'confusable',title:'suit · suite',brief:'西装/适合 vs 套房/套件',words:[
-{word:'suit',def:'西装；适合；诉讼',note:'suit = 一套正装 / 合适',examples:['He wore a suit to the interview.','Whatever suits you best—I\'m flexible.']},
-{word:'suite',def:'套房；套件（软件/家具）',note:'suite = suit + e → 加了 e 变成"一整套"',examples:['We booked a suite at the hotel for the client.','The Adobe Creative Suite includes Photoshop and Illustrator.']}
+{word:'suit',pron:'/suːt/',def:'西装；适合；诉讼',note:'suit = 一套正装 / 合适',examples:['He wore a suit to the interview.','Whatever suits you best—I\'m flexible.']},
+{word:'suite',pron:'/swiːt/',def:'套房；套件（软件/家具）',note:'suite = suit + e → 加了 e 变成"一整套"',examples:['We booked a suite at the hotel for the client.','The Adobe Creative Suite includes Photoshop and Illustrator.']}
 ],trap:'suit /suːt/ 是西装/适合，suite /swiːt/ 是套房/套件。发音不同！suite 读起来像 sweet。'},
 {id:'flour-floor',type:'confusable',title:'flour · floor',brief:'面粉 vs 地板/楼层',words:[
-{word:'flour',def:'面粉',note:'flour = 做面包用的白色粉末',examples:['We need flour to make the dough.','The recipe calls for two cups of flour.']},
-{word:'floor',def:'地板，地面；楼层',note:'floor = 脚踩的那个平面',examples:['The office is on the 15th floor.','She dropped the files on the floor.']}
+{word:'flour',pron:'/flaʊər/',def:'面粉',note:'flour = 做面包用的白色粉末',examples:['We need flour to make the dough.','The recipe calls for two cups of flour.']},
+{word:'floor',pron:'/flɔːr/',def:'地板，地面；楼层',note:'floor = 脚踩的那个平面',examples:['The office is on the 15th floor.','She dropped the files on the floor.']}
 ],trap:'flour 是面粉（ou 像一碗面粉），floor 是地板/楼层（oo 像两只脚站着）。'},
 {id:'stare-stair',type:'confusable',title:'stare · stair',brief:'盯着看 vs 楼梯',words:[
-{word:'stare',def:'盯着看，凝视',note:'stare = 眼睛直直地看过去',examples:['Don\'t stare at your phone during meetings.','She stared at the screen in disbelief.']},
-{word:'stair',def:'楼梯，台阶',note:'stair = 一级一级往上走的',examples:['Take the stairs instead of the elevator.','She fell down the stairs and hurt her ankle.']}
+{word:'stare',pron:'/stɛr/',def:'盯着看，凝视',note:'stare = 眼睛直直地看过去',examples:['Don\'t stare at your phone during meetings.','She stared at the screen in disbelief.']},
+{word:'stair',pron:'/stɛr/',def:'楼梯，台阶',note:'stair = 一级一级往上走的',examples:['Take the stairs instead of the elevator.','She fell down the stairs and hurt her ankle.']}
 ],trap:'stare 是盯着看（are = 你在看），stair 是楼梯（air = 台阶间的空气）。'},
 {id:'story-storey',type:'confusable',title:'story · storey',brief:'故事 vs 楼层',words:[
-{word:'story',def:'故事，经历；新闻报道',note:'story = 有人物有情节的叙述',examples:['That\'s a long story—I\'ll tell you over lunch.','The news story went viral overnight.']},
-{word:'storey',def:'（建筑物的）楼层（英式拼法）',note:'storey = 建筑的一层（美式用 story）',examples:['The building is a five-storey office block.','They live on the top storey of the apartment.']}
+{word:'story',pron:'/ˈstɔːri/',def:'故事，经历；新闻报道',note:'story = 有人物有情节的叙述',examples:['That\'s a long story—I\'ll tell you over lunch.','The news story went viral overnight.']},
+{word:'storey',pron:'/ˈstɔːri/',def:'（建筑物的）楼层（英式拼法）',note:'storey = 建筑的一层（美式用 story）',examples:['The building is a five-storey office block.','They live on the top storey of the apartment.']}
 ],trap:'story 是故事，storey 是楼层（英式）。新加坡用英式拼法 storey。美式英语楼层也写作 story。'},
 {id:'urban-urbane',type:'confusable',title:'urban · urbane',brief:'城市的 vs 文雅的',words:[
-{word:'urban',def:'城市的，都市的',note:'urban = 跟城市有关的',examples:['Urban areas tend to have better public transport.','She studies urban planning at university.']},
-{word:'urbane',def:'文雅的，温文尔雅的',note:'urbane = 城里人的做派 → 有教养的',examples:['He\'s an urbane gentleman with impeccable manners.','Her urbane wit charmed everyone at the dinner.']}
+{word:'urban',pron:'/ˈɜːrbən/',def:'城市的，都市的',note:'urban = 跟城市有关的',examples:['Urban areas tend to have better public transport.','She studies urban planning at university.']},
+{word:'urbane',pron:'/ɜːrˈbeɪn/',def:'文雅的，温文尔雅的',note:'urbane = 城里人的做派 → 有教养的',examples:['He\'s an urbane gentleman with impeccable manners.','Her urbane wit charmed everyone at the dinner.']}
 ],trap:'urban 是"城市的"（日常词），urbane 是"文雅的"（书面词）。多一个 e，意思大不同。'},
 {id:'popular-populous',type:'confusable',title:'popular · populous',brief:'受欢迎的 vs 人口多的',words:[
-{word:'popular',def:'受欢迎的，流行的',note:'popular = 很多人喜欢的',examples:['This feature is very popular among our users.','He\'s a popular manager—everyone likes working with him.']},
-{word:'populous',def:'人口稠密的',note:'populous = popul（人民）+ ous → 人很多的',examples:['China and India are the most populous countries.','Singapore is one of the most populous cities in the world.']}
+{word:'popular',pron:'/ˈpɑːpjələr/',def:'受欢迎的，流行的',note:'popular = 很多人喜欢的',examples:['This feature is very popular among our users.','He\'s a popular manager—everyone likes working with him.']},
+{word:'populous',pron:'/ˈpɑːpjələs/',def:'人口稠密的',note:'populous = popul（人民）+ ous → 人很多的',examples:['China and India are the most populous countries.','Singapore is one of the most populous cities in the world.']}
 ],trap:'popular 是受欢迎，populous 是人多。a popular city = 热门城市，a populous city = 人口大城市。'},
 {id:'simulate-stimulate',type:'confusable',title:'simulate · stimulate',brief:'模拟 vs 刺激',words:[
-{word:'simulate',def:'模拟，仿真',note:'simulate = similar → 做一个像真的一样的',examples:['We used software to simulate the user experience.','The test simulates real-world conditions.']},
-{word:'stimulate',def:'刺激，激发',note:'stimulate = 戳一下让它动起来',examples:['The new policy aims to stimulate economic growth.','Coffee stimulates the nervous system.']}
+{word:'simulate',pron:'/ˈsɪmjəleɪt/',def:'模拟，仿真',note:'simulate = similar → 做一个像真的一样的',examples:['We used software to simulate the user experience.','The test simulates real-world conditions.']},
+{word:'stimulate',pron:'/ˈstɪmjəleɪt/',def:'刺激，激发',note:'stimulate = 戳一下让它动起来',examples:['The new policy aims to stimulate economic growth.','Coffee stimulates the nervous system.']}
 ],trap:'simulate 是假装/模拟（simulation 模拟），stimulate 是激发/刺激（stimulus 刺激物）。'},
 {id:'statue-status-statute',type:'confusable',title:'statue · status · statute',brief:'雕像 · 状态 · 法规',words:[
-{word:'statue',def:'雕像，塑像',note:'statue = 站在那里不动的人形 → 雕像',examples:['The Statue of Liberty is a famous landmark.','There\'s a statue of the founder in the lobby.']},
-{word:'status',def:'状态，地位',note:'status = 现在是什么情况',examples:['What\'s the status of the project?','She achieved senior status within three years.']},
-{word:'statute',def:'法规，法令',note:'statute = state（国家）制定的规则',examples:['The statute prohibits discrimination in hiring.','According to the statute, the fine is $5,000.']}
+{word:'statue',pron:'/ˈstætʃuː/',def:'雕像，塑像',note:'statue = 站在那里不动的人形 → 雕像',examples:['The Statue of Liberty is a famous landmark.','There\'s a statue of the founder in the lobby.']},
+{word:'status',pron:'/ˈstætəs/',def:'状态，地位',note:'status = 现在是什么情况',examples:['What\'s the status of the project?','She achieved senior status within three years.']},
+{word:'statute',pron:'/ˈstætʃuːt/',def:'法规，法令',note:'statute = state（国家）制定的规则',examples:['The statute prohibits discrimination in hiring.','According to the statute, the fine is $5,000.']}
 ],trap:'statue 雕像，status 状态，statute 法规。三个词看起来像，但意思完全不同。project status = 项目状态。'},
 {id:'sympathetic-synthetic',type:'confusable',title:'sympathetic · synthetic',brief:'同情的 vs 合成的',words:[
-{word:'sympathetic',def:'同情的，有同情心的',note:'sym（共同）+ pathetic（感受）→ 一起感受 → 同情',examples:['She was sympathetic to his difficult situation.','The manager gave a sympathetic response to the complaint.']},
-{word:'synthetic',def:'合成的，人造的',note:'syn（一起）+ thetic（放）→ 拼在一起造的 → 人造的',examples:['The jacket is made of synthetic fabric.','Synthetic data is used to train the AI model.']}
+{word:'sympathetic',pron:'/ˌsɪmpəˈθɛtɪk/',def:'同情的，有同情心的',note:'sym（共同）+ pathetic（感受）→ 一起感受 → 同情',examples:['She was sympathetic to his difficult situation.','The manager gave a sympathetic response to the complaint.']},
+{word:'synthetic',pron:'/sɪnˈθɛtɪk/',def:'合成的，人造的',note:'syn（一起）+ thetic（放）→ 拼在一起造的 → 人造的',examples:['The jacket is made of synthetic fabric.','Synthetic data is used to train the AI model.']}
 ],trap:'sympathetic 是有同情心的，synthetic 是人造合成的。两词看起来像但意思完全不同。'},
 {id:'reign-rein',type:'confusable',title:'reign · rein',brief:'统治 vs 缰绳/控制',words:[
-{word:'reign',def:'统治，在位期间',note:'reign = king 统治 → g 像王冠',examples:['Queen Victoria\'s reign lasted over 60 years.','He reigned as CEO for a decade.']},
-{word:'rein',def:'缰绳；控制',note:'rein = 拉马用的绳子 → 控制',examples:['We need to rein in our spending.','She gave free rein to her creativity.']}
+{word:'reign',pron:'/reɪn/',def:'统治，在位期间',note:'reign = king 统治 → g 像王冠',examples:['Queen Victoria\'s reign lasted over 60 years.','He reigned as CEO for a decade.']},
+{word:'rein',pron:'/reɪn/',def:'缰绳；控制',note:'rein = 拉马用的绳子 → 控制',examples:['We need to rein in our spending.','She gave free rein to her creativity.']}
 ],trap:'reign 是统治（g = 国王 king），rein 是缰绳/控制。rein in = 控制住，free rein = 放手去做。'},
 {id:'receipt-recipe',type:'confusable',title:'receipt · recipe',brief:'收据 vs 食谱',words:[
-{word:'receipt',def:'收据，收条',note:'receipt = receive 的凭证 → 收到东西的证明',examples:['Please keep the receipt for reimbursement.','I\'ll email you the receipt after payment.']},
-{word:'recipe',def:'食谱，配方；秘诀',note:'recipe = 教你怎么做菜的步骤',examples:['Can you share the recipe for that cake?','That\'s a recipe for disaster.']}
+{word:'receipt',pron:'/rɪˈsiːt/',def:'收据，收条',note:'receipt = receive 的凭证 → 收到东西的证明',examples:['Please keep the receipt for reimbursement.','I\'ll email you the receipt after payment.']},
+{word:'recipe',pron:'/ˈrɛsɪpi/',def:'食谱，配方；秘诀',note:'recipe = 教你怎么做菜的步骤',examples:['Can you share the recipe for that cake?','That\'s a recipe for disaster.']}
 ],trap:'receipt 是收据（买完东西给你的小票），recipe 是食谱（教你做菜的）。a recipe for success = 成功的秘诀。'},
 {id:'rational-rationale',type:'confusable',title:'rational · rationale',brief:'理性的 vs 根本原因/理由',words:[
-{word:'rational',def:'理性的，合理的（形容词）',note:'rational = 用理性思考的',examples:['Let\'s make a rational decision based on data.','That doesn\'t seem like a rational approach.']},
-{word:'rationale',def:'根本原因，理由（名词）',note:'rationale = 背后的道理和逻辑',examples:['What\'s the rationale behind this design change?','Please explain the rationale for choosing this vendor.']}
+{word:'rational',pron:'/ˈræʃənəl/',def:'理性的，合理的（形容词）',note:'rational = 用理性思考的',examples:['Let\'s make a rational decision based on data.','That doesn\'t seem like a rational approach.']},
+{word:'rationale',pron:'/ˌræʃəˈnæl/',def:'根本原因，理由（名词）',note:'rationale = 背后的道理和逻辑',examples:['What\'s the rationale behind this design change?','Please explain the rationale for choosing this vendor.']}
 ],trap:'rational 是形容词（理性的），rationale 是名词（理由）。邮件常用 What\'s the rationale? = 理由是什么？'},
 {id:'potent-potential',type:'confusable',title:'potent · potential',brief:'强效的 vs 潜在的',words:[
-{word:'potent',def:'强效的，有力的',note:'potent = 力量很强的',examples:['This is a potent argument against the proposal.','The drug is extremely potent—use with caution.']},
-{word:'potential',def:'潜在的，可能的；潜力',note:'potential = 还没爆发但有可能的',examples:['We see potential in this market.','There are potential risks we haven\'t considered.']}
+{word:'potent',pron:'/ˈpoʊtənt/',def:'强效的，有力的',note:'potent = 力量很强的',examples:['This is a potent argument against the proposal.','The drug is extremely potent—use with caution.']},
+{word:'potential',pron:'/pəˈtɛnʃəl/',def:'潜在的，可能的；潜力',note:'potential = 还没爆发但有可能的',examples:['We see potential in this market.','There are potential risks we haven\'t considered.']}
 ],trap:'potent 是"已经很强"，potential 是"有可能变强"。potent 是现在就厉害，potential 是将来可能厉害。'},
 {id:'interior-inferior',type:'confusable',title:'interior · inferior',brief:'内部的 vs 低劣的',words:[
-{word:'interior',def:'内部的，室内的；内部',note:'interior = inner → 里面的',examples:['The interior design of the office is very modern.','He moved to an interior role away from client-facing work.']},
-{word:'inferior',def:'低劣的，次等的；下级的',note:'inferior = 在下面的 → 不如别人的',examples:['This material is inferior to what we usually use.','She refuses to accept inferior quality from vendors.']}
+{word:'interior',pron:'/ɪnˈtɪriər/',def:'内部的，室内的；内部',note:'interior = inner → 里面的',examples:['The interior design of the office is very modern.','He moved to an interior role away from client-facing work.']},
+{word:'inferior',pron:'/ɪnˈfɪriər/',def:'低劣的，次等的；下级的',note:'inferior = 在下面的 → 不如别人的',examples:['This material is inferior to what we usually use.','She refuses to accept inferior quality from vendors.']}
 ],trap:'interior 是"里面的"（室内设计），inferior 是"差的/低等的"。两词只差两个字母但意思不同。'},
 {id:'intent-intense',type:'confusable',title:'intent · intense',brief:'意图/专注的 vs 强烈的',words:[
-{word:'intent',def:'意图，目的；专注的',note:'intent = 心里打算做的事',examples:['What\'s the intent behind this feature?','She was intent on finishing the report tonight.']},
-{word:'intense',def:'强烈的，剧烈的；紧张的',note:'intense = 程度非常非常高的',examples:['The competition is intense in this market.','He gave her an intense look across the table.']}
+{word:'intent',pron:'/ɪnˈtɛnt/',def:'意图，目的；专注的',note:'intent = 心里打算做的事',examples:['What\'s the intent behind this feature?','She was intent on finishing the report tonight.']},
+{word:'intense',pron:'/ɪnˈtɛns/',def:'强烈的，剧烈的；紧张的',note:'intense = 程度非常非常高的',examples:['The competition is intense in this market.','He gave her an intense look across the table.']}
 ],trap:'intent 是"意图/目的"（user intent 用户意图），intense 是"强烈的/激烈的"。'},
 {id:'instinct-distinct',type:'confusable',title:'instinct · distinct',brief:'本能 vs 明显的/不同的',words:[
-{word:'instinct',def:'本能，直觉',note:'instinct = 不用学就会的反应',examples:['My instinct tells me this deal isn\'t right.','Trust your design instinct on this one.']},
-{word:'distinct',def:'明显的，清晰的；不同的',note:'distinct = dis（分开）→ 分得很清楚 → 明显',examples:['There\'s a distinct difference between the two proposals.','The product has three distinct advantages.']}
+{word:'instinct',pron:'/ˈɪnstɪŋkt/',def:'本能，直觉',note:'instinct = 不用学就会的反应',examples:['My instinct tells me this deal isn\'t right.','Trust your design instinct on this one.']},
+{word:'distinct',pron:'/dɪˈstɪŋkt/',def:'明显的，清晰的；不同的',note:'distinct = dis（分开）→ 分得很清楚 → 明显',examples:['There\'s a distinct difference between the two proposals.','The product has three distinct advantages.']}
 ],trap:'instinct 是本能（in 向内），distinct 是明显的/不同的（dis 分开）。'},
 {id:'generous-genuine',type:'confusable',title:'generous · genuine',brief:'慷慨的 vs 真诚的',words:[
-{word:'generous',def:'慷慨的，大方的',note:'generous = 愿意给别人很多的',examples:['That\'s a very generous offer—thank you.','She\'s generous with her time and expertise.']},
-{word:'genuine',def:'真正的，真诚的；正品的',note:'genuine = 货真价实的，不是装的',examples:['He showed genuine interest in our project.','Is this a genuine leather bag or synthetic?']}
+{word:'generous',pron:'/ˈdʒɛnərəs/',def:'慷慨的，大方的',note:'generous = 愿意给别人很多的',examples:['That\'s a very generous offer—thank you.','She\'s generous with her time and expertise.']},
+{word:'genuine',pron:'/ˈdʒɛnjuɪn/',def:'真正的，真诚的；正品的',note:'genuine = 货真价实的，不是装的',examples:['He showed genuine interest in our project.','Is this a genuine leather bag or synthetic?']}
 ],trap:'generous 是大方慷慨，genuine 是真心真意。generous concern = 热心关心，genuine concern = 真心关心。'},
 {id:'fatal-vital',type:'confusable',title:'fatal · vital',brief:'致命的 vs 至关重要的',words:[
-{word:'fatal',def:'致命的，灾难性的',note:'fatal = fate（命运）→ 要命的',examples:['One fatal flaw brought down the entire system.','The bug caused a fatal error in production.']},
-{word:'vital',def:'至关重要的，必不可少的',note:'vital = vita（生命）→ 跟生命一样重要的',examples:['Quality assurance is vital to our process.','It\'s vital that we meet the deadline.']}
+{word:'fatal',pron:'/ˈfeɪtəl/',def:'致命的，灾难性的',note:'fatal = fate（命运）→ 要命的',examples:['One fatal flaw brought down the entire system.','The bug caused a fatal error in production.']},
+{word:'vital',pron:'/ˈvaɪtəl/',def:'至关重要的，必不可少的',note:'vital = vita（生命）→ 跟生命一样重要的',examples:['Quality assurance is vital to our process.','It\'s vital that we meet the deadline.']}
 ],trap:'fatal 是"致死的/灾难性的"（坏事），vital 是"至关重要的"（好事）。fatal error = 致命错误。'},
 {id:'domestic-dominant',type:'confusable',title:'domestic · dominant',brief:'国内的/家庭的 vs 主导的',words:[
-{word:'domestic',def:'国内的；家庭的',note:'domestic = domus（家）→ 家里的/国内的',examples:['Domestic flights are cheaper than international ones.','They hired a domestic helper for the household.']},
-{word:'dominant',def:'主导的，占优势的',note:'dominant = dominate → 统治别人的 → 主导的',examples:['Apple is the dominant player in the premium phone market.','Blue is the dominant color in this design.']}
+{word:'domestic',pron:'/dəˈmɛstɪk/',def:'国内的；家庭的',note:'domestic = domus（家）→ 家里的/国内的',examples:['Domestic flights are cheaper than international ones.','They hired a domestic helper for the household.']},
+{word:'dominant',pron:'/ˈdɑːmɪnənt/',def:'主导的，占优势的',note:'dominant = dominate → 统治别人的 → 主导的',examples:['Apple is the dominant player in the premium phone market.','Blue is the dominant color in this design.']}
 ],trap:'domestic 是"国内的/家庭的"，dominant 是"主导的/占优势的"。domestic market = 国内市场。'},
 {id:'compile-comply',type:'confusable',title:'compile · comply',brief:'编译/汇编 vs 遵守',words:[
-{word:'compile',def:'编译；汇编，收集',note:'compile = com（一起）+ pile（堆）→ 把东西堆一起 → 汇编',examples:['Please compile the data into a single report.','The code won\'t compile—there\'s a syntax error.']},
-{word:'comply',def:'遵守，服从',note:'comply = com（完全）+ ply（满足）→ 完全满足要求',examples:['All employees must comply with the new policy.','The product complies with international safety standards.']}
+{word:'compile',pron:'/kəmˈpaɪl/',def:'编译；汇编，收集',note:'compile = com（一起）+ pile（堆）→ 把东西堆一起 → 汇编',examples:['Please compile the data into a single report.','The code won\'t compile—there\'s a syntax error.']},
+{word:'comply',pron:'/kəmˈplaɪ/',def:'遵守，服从',note:'comply = com（完全）+ ply（满足）→ 完全满足要求',examples:['All employees must comply with the new policy.','The product complies with international safety standards.']}
 ],trap:'compile 是"汇编/编译"，comply 是"遵守"。comply with = 遵守…规定。'},
 {id:'compel-compete',type:'confusable',title:'compel · compete',brief:'迫使 vs 竞争',words:[
-{word:'compel',def:'迫使，强迫',note:'compel = com + pel（推）→ 硬推着你做',examples:['The evidence compelled us to change our strategy.','I felt compelled to speak up about the issue.']},
-{word:'compete',def:'竞争，比赛',note:'compete = com + pete（追求）→ 大家一起追 → 竞争',examples:['We compete with three major players in this space.','The two teams will compete for the contract.']}
+{word:'compel',pron:'/kəmˈpɛl/',def:'迫使，强迫',note:'compel = com + pel（推）→ 硬推着你做',examples:['The evidence compelled us to change our strategy.','I felt compelled to speak up about the issue.']},
+{word:'compete',pron:'/kəmˈpiːt/',def:'竞争，比赛',note:'compete = com + pete（追求）→ 大家一起追 → 竞争',examples:['We compete with three major players in this space.','The two teams will compete for the contract.']}
 ],trap:'compel 是"强迫"（被逼的），compete 是"竞争"（主动争的）。'},
 {id:'collaborate-corroborate',type:'confusable',title:'collaborate · corroborate',brief:'合作 vs 证实',words:[
-{word:'collaborate',def:'合作，协作',note:'co + labor（劳动）→ 一起干活 → 合作',examples:['Let\'s collaborate on this presentation.','The two teams collaborated across time zones.']},
-{word:'corroborate',def:'证实，确证',note:'cor + robor（力量）→ 加强证据的力量 → 证实',examples:['The data corroborates our hypothesis.','Can anyone corroborate his account of what happened?']}
+{word:'collaborate',pron:'/kəˈlæbəreɪt/',def:'合作，协作',note:'co + labor（劳动）→ 一起干活 → 合作',examples:['Let\'s collaborate on this presentation.','The two teams collaborated across time zones.']},
+{word:'corroborate',pron:'/kəˈrɑːbəreɪt/',def:'证实，确证',note:'cor + robor（力量）→ 加强证据的力量 → 证实',examples:['The data corroborates our hypothesis.','Can anyone corroborate his account of what happened?']}
 ],trap:'collaborate 是"合作"（一起工作），corroborate 是"证实"（证据支持）。两词很长且形似。'},
 {id:'conceive-perceive-deceive',type:'confusable',title:'conceive · perceive · deceive',brief:'构想 · 感知 · 欺骗',words:[
-{word:'conceive',def:'构想，想出；怀孕',note:'con（完全）+ ceive（拿）→ 在脑子里拿出来 → 构想',examples:['I can\'t conceive of a better solution.','The project was conceived by the design team.']},
-{word:'perceive',def:'感知，察觉；认为',note:'per（通过）+ ceive → 通过感官接收 → 感知',examples:['Customers perceive our brand as premium.','She perceived a subtle change in his tone.']},
-{word:'deceive',def:'欺骗，蒙骗',note:'de（离开）+ ceive → 把你带偏 → 骗你',examples:['Don\'t be deceived by the low price—quality matters.','Appearances can deceive.']}
+{word:'conceive',pron:'/kənˈsiːv/',def:'构想，想出；怀孕',note:'con（完全）+ ceive（拿）→ 在脑子里拿出来 → 构想',examples:['I can\'t conceive of a better solution.','The project was conceived by the design team.']},
+{word:'perceive',pron:'/pərˈsiːv/',def:'感知，察觉；认为',note:'per（通过）+ ceive → 通过感官接收 → 感知',examples:['Customers perceive our brand as premium.','She perceived a subtle change in his tone.']},
+{word:'deceive',pron:'/dɪˈsiːv/',def:'欺骗，蒙骗',note:'de（离开）+ ceive → 把你带偏 → 骗你',examples:['Don\'t be deceived by the low price—quality matters.','Appearances can deceive.']}
 ],trap:'三个 -ceive 词：conceive 构想，perceive 感知，deceive 欺骗。前缀决定含义。'},
 {id:'confirm-conform',type:'confusable',title:'confirm · conform',brief:'确认 vs 遵从/符合',words:[
-{word:'confirm',def:'确认，证实',note:'confirm = con + firm（坚定）→ 让事情变确定',examples:['Can you confirm the meeting time?','I\'d like to confirm my reservation.']},
-{word:'conform',def:'遵从，符合；顺从',note:'conform = con + form（形式）→ 跟着形式走 → 符合',examples:['The design must conform to accessibility standards.','She refused to conform to social expectations.']}
+{word:'confirm',pron:'/kənˈfɜːrm/',def:'确认，证实',note:'confirm = con + firm（坚定）→ 让事情变确定',examples:['Can you confirm the meeting time?','I\'d like to confirm my reservation.']},
+{word:'conform',pron:'/kənˈfɔːrm/',def:'遵从，符合；顺从',note:'conform = con + form（形式）→ 跟着形式走 → 符合',examples:['The design must conform to accessibility standards.','She refused to conform to social expectations.']}
 ],trap:'confirm 是"确认"（邮件高频词），conform 是"符合/遵从"。confirm a booking vs conform to standards。'},
 {id:'confront-comfort',type:'confusable',title:'confront · comfort',brief:'面对/质问 vs 安慰/舒适',words:[
-{word:'confront',def:'面对，对抗；质问',note:'con + front（前面）→ 正面怼上去',examples:['We need to confront this issue head-on.','She confronted her manager about the unfair treatment.']},
-{word:'comfort',def:'安慰；舒适',note:'com + fort（力量）→ 给你力量 → 安慰',examples:['He tried to comfort her after the bad news.','The hotel offers all the comforts of home.']}
+{word:'confront',pron:'/kənˈfrʌnt/',def:'面对，对抗；质问',note:'con + front（前面）→ 正面怼上去',examples:['We need to confront this issue head-on.','She confronted her manager about the unfair treatment.']},
+{word:'comfort',pron:'/ˈkʌmfərt/',def:'安慰；舒适',note:'com + fort（力量）→ 给你力量 → 安慰',examples:['He tried to comfort her after the bad news.','The hotel offers all the comforts of home.']}
 ],trap:'confront 是"直面/对抗"（硬的），comfort 是"安慰/舒适"（软的）。意思相反但拼写接近。'},
 {id:'curious-furious',type:'confusable',title:'curious · furious',brief:'好奇的 vs 狂怒的',words:[
-{word:'curious',def:'好奇的；奇怪的',note:'curious = 像猫一样想知道',examples:['I\'m curious about how the algorithm works.','That\'s curious—the numbers don\'t add up.']},
-{word:'furious',def:'狂怒的，暴怒的',note:'furious = fury（狂怒）→ 气炸了',examples:['The client was furious about the delayed delivery.','She was furious when she discovered the error.']}
+{word:'curious',pron:'/ˈkjʊriəs/',def:'好奇的；奇怪的',note:'curious = 像猫一样想知道',examples:['I\'m curious about how the algorithm works.','That\'s curious—the numbers don\'t add up.']},
+{word:'furious',pron:'/ˈfjʊriəs/',def:'狂怒的，暴怒的',note:'furious = fury（狂怒）→ 气炸了',examples:['The client was furious about the delayed delivery.','She was furious when she discovered the error.']}
 ],trap:'curious 是好奇（正面），furious 是暴怒（负面）。中国学生因发音相似容易混淆。'},
 {id:'moral-mortal',type:'confusable',title:'moral · mortal',brief:'道德的 vs 凡人的/致命的',words:[
-{word:'moral',def:'道德的；寓意',note:'moral = 关于对错的判断',examples:['It\'s a moral obligation to report safety issues.','The moral of the story is: always back up your files.']},
-{word:'mortal',def:'凡人的，终有一死的；致命的',note:'mortal = mort（死）→ 会死的 → 凡人',examples:['We\'re all mortal—don\'t take work too seriously.','The company suffered a mortal blow to its reputation.']}
+{word:'moral',pron:'/ˈmɔːrəl/',def:'道德的；寓意',note:'moral = 关于对错的判断',examples:['It\'s a moral obligation to report safety issues.','The moral of the story is: always back up your files.']},
+{word:'mortal',pron:'/ˈmɔːrtəl/',def:'凡人的，终有一死的；致命的',note:'mortal = mort（死）→ 会死的 → 凡人',examples:['We\'re all mortal—don\'t take work too seriously.','The company suffered a mortal blow to its reputation.']}
 ],trap:'moral 是道德的（道德标准），mortal 是致命的/凡人的（mortal enemy = 死敌）。'},
 {id:'precious-previous',type:'confusable',title:'precious · previous',brief:'珍贵的 vs 之前的',words:[
-{word:'precious',def:'珍贵的，宝贵的',note:'precious = price → 贵得不得了 → 珍贵',examples:['Time is precious—let\'s not waste it.','These files contain precious data we can\'t afford to lose.']},
-{word:'previous',def:'之前的，先前的',note:'previous = pre（前）+ vious → 在前面的 → 之前的',examples:['As mentioned in my previous email...','She has previous experience in project management.']}
+{word:'precious',pron:'/ˈprɛʃəs/',def:'珍贵的，宝贵的',note:'precious = price → 贵得不得了 → 珍贵',examples:['Time is precious—let\'s not waste it.','These files contain precious data we can\'t afford to lose.']},
+{word:'previous',pron:'/ˈpriːviəs/',def:'之前的，先前的',note:'previous = pre（前）+ vious → 在前面的 → 之前的',examples:['As mentioned in my previous email...','She has previous experience in project management.']}
 ],trap:'precious 是"珍贵的"，previous 是"之前的"。previous email = 上一封邮件，不是 precious email。'},
 {id:'patient-patent',type:'confusable',title:'patient · patent',brief:'耐心的/病人 vs 专利',words:[
-{word:'patient',def:'耐心的；病人',note:'patient = 能等的人 / 等着治的人',examples:['Please be patient—the update will take a few minutes.','The hospital treats over 500 patients daily.']},
-{word:'patent',def:'专利；明显的',note:'patent = 公开给你看的独占权利 → 专利',examples:['We filed a patent for the new technology.','It was a patent violation of the agreement.']}
+{word:'patient',pron:'/ˈpeɪʃənt/',def:'耐心的；病人',note:'patient = 能等的人 / 等着治的人',examples:['Please be patient—the update will take a few minutes.','The hospital treats over 500 patients daily.']},
+{word:'patent',pron:'/ˈpætənt/',def:'专利；明显的',note:'patent = 公开给你看的独占权利 → 专利',examples:['We filed a patent for the new technology.','It was a patent violation of the agreement.']}
 ],trap:'patient 是耐心/病人，patent 是专利。file a patent = 申请专利，be patient = 耐心点。'},
 {id:'content-context',type:'confusable',title:'content · context',brief:'内容/满足的 vs 上下文',words:[
-{word:'content',def:'内容；满足的',note:'content = 容器里装的东西 → 内容',examples:['The content of the report needs updating.','She seems content with her current role.']},
-{word:'context',def:'上下文，语境；背景',note:'context = con + text（文本）→ 文字周围的环境',examples:['You need to understand the context before making a decision.','Taken out of context, that quote sounds terrible.']}
+{word:'content',pron:'/ˈkɑːntɛnt/',def:'内容；满足的',note:'content = 容器里装的东西 → 内容',examples:['The content of the report needs updating.','She seems content with her current role.']},
+{word:'context',pron:'/ˈkɑːntɛkst/',def:'上下文，语境；背景',note:'context = con + text（文本）→ 文字周围的环境',examples:['You need to understand the context before making a decision.','Taken out of context, that quote sounds terrible.']}
 ],trap:'content 是"内容"或"满足的"，context 是"上下文/背景"。Please provide more context = 请提供更多背景。'},
 {id:'altar-alter',type:'confusable',title:'altar · alter',brief:'祭坛 vs 改变',words:[
-{word:'altar',def:'祭坛，圣坛',note:'altar = 教堂里那个台子',examples:['They exchanged vows at the altar.','He wouldn\'t sacrifice quality at the altar of speed.']},
-{word:'alter',def:'改变，修改',note:'alter = alternative → 变成另一个样子',examples:['We need to alter the design based on user feedback.','The tailor altered the suit to fit perfectly.']}
+{word:'altar',pron:'/ˈɔːltər/',def:'祭坛，圣坛',note:'altar = 教堂里那个台子',examples:['They exchanged vows at the altar.','He wouldn\'t sacrifice quality at the altar of speed.']},
+{word:'alter',pron:'/ˈɔːltər/',def:'改变，修改',note:'alter = alternative → 变成另一个样子',examples:['We need to alter the design based on user feedback.','The tailor altered the suit to fit perfectly.']}
 ],trap:'altar 是祭坛（名词），alter 是改变（动词）。alter a plan = 修改计划。'},
 {id:'born-borne',type:'confusable',title:'born · borne',brief:'出生的 vs 承受的/传播的',words:[
-{word:'born',def:'出生的，天生的',note:'born = 生出来的',examples:['She was born in Singapore.','He\'s a born leader.']},
-{word:'borne',def:'承受的；由…传播的（bear 的过去分词）',note:'borne = bear（承受）的过去分词',examples:['The costs will be borne by the company.','Water-borne diseases are a major concern.']}
+{word:'born',pron:'/bɔːrn/',def:'出生的，天生的',note:'born = 生出来的',examples:['She was born in Singapore.','He\'s a born leader.']},
+{word:'borne',pron:'/bɔːrn/',def:'承受的；由…传播的（bear 的过去分词）',note:'borne = bear（承受）的过去分词',examples:['The costs will be borne by the company.','Water-borne diseases are a major concern.']}
 ],trap:'born 是"出生"（be born），borne 是"承受/传播"（be borne by / air-borne）。'},
 {id:'dual-duel',type:'confusable',title:'dual · duel',brief:'双重的 vs 决斗',words:[
-{word:'dual',def:'双重的，双重的',note:'dual = duo（二）→ 两个的',examples:['She plays a dual role as designer and researcher.','The phone has a dual-camera setup.']},
-{word:'duel',def:'决斗；竞争',note:'duel = 两个人对着干 → 决斗',examples:['The debate turned into a verbal duel.','The two companies are in a duel for market share.']}
+{word:'dual',pron:'/ˈduːəl/',def:'双重的，双重的',note:'dual = duo（二）→ 两个的',examples:['She plays a dual role as designer and researcher.','The phone has a dual-camera setup.']},
+{word:'duel',pron:'/ˈduːəl/',def:'决斗；竞争',note:'duel = 两个人对着干 → 决斗',examples:['The debate turned into a verbal duel.','The two companies are in a duel for market share.']}
 ],trap:'dual 是"双重的"（dual citizenship 双重国籍），duel 是"决斗"。'},
 {id:'elusive-illusive',type:'confusable',title:'elusive · illusive',brief:'难以捉摸的 vs 幻觉的',words:[
-{word:'elusive',def:'难以捉摸的，难以实现的',note:'elusive = elude（逃避）→ 你抓不住的',examples:['The answer remains elusive.','Success can be elusive without the right strategy.']},
-{word:'illusive',def:'虚幻的，产生幻觉的',note:'illusive = illusion（幻觉）→ 不真实的',examples:['The illusive promise of easy money trapped many investors.','The oasis turned out to be illusive—just a mirage.']}
+{word:'elusive',pron:'/ɪˈluːsɪv/',def:'难以捉摸的，难以实现的',note:'elusive = elude（逃避）→ 你抓不住的',examples:['The answer remains elusive.','Success can be elusive without the right strategy.']},
+{word:'illusive',pron:'/ɪˈluːsɪv/',def:'虚幻的，产生幻觉的',note:'illusive = illusion（幻觉）→ 不真实的',examples:['The illusive promise of easy money trapped many investors.','The oasis turned out to be illusive—just a mirage.']}
 ],trap:'elusive 是"抓不住的"（真实但难得到），illusive 是"虚假的"（根本不存在）。'},
 {id:'gorilla-guerrilla',type:'confusable',title:'gorilla · guerrilla',brief:'大猩猩 vs 游击队',words:[
-{word:'gorilla',def:'大猩猩',note:'gorilla = 那个大黑猩猩',examples:['The 800-pound gorilla in the room is our competitor.','Gorillas are gentle giants despite their size.']},
-{word:'guerrilla',def:'游击队（员）；游击式的',note:'guerrilla = 西班牙语"小战争" → 游击战',examples:['They used guerrilla marketing tactics to build buzz.','Guerrilla warfare relies on surprise attacks.']}
+{word:'gorilla',pron:'/ɡəˈrɪlə/',def:'大猩猩',note:'gorilla = 那个大黑猩猩',examples:['The 800-pound gorilla in the room is our competitor.','Gorillas are gentle giants despite their size.']},
+{word:'guerrilla',pron:'/ɡəˈrɪlə/',def:'游击队（员）；游击式的',note:'guerrilla = 西班牙语"小战争" → 游击战',examples:['They used guerrilla marketing tactics to build buzz.','Guerrilla warfare relies on surprise attacks.']}
 ],trap:'gorilla 是大猩猩，guerrilla 是游击队。guerrilla marketing = 游击营销（低成本创意推广）。'},
 {id:'hangar-hanger',type:'confusable',title:'hangar · hanger',brief:'飞机库 vs 衣架',words:[
-{word:'hangar',def:'飞机库，机棚',note:'hangar = 装飞机的大房子（ar 结尾）',examples:['The plane was moved into the hangar for maintenance.','The airport has three aircraft hangars.']},
-{word:'hanger',def:'衣架',note:'hanger = hang（挂）+ er → 用来挂衣服的',examples:['Put your coat on the hanger by the door.','We need more hangers in the closet.']}
+{word:'hangar',pron:'/ˈhæŋər/',def:'飞机库，机棚',note:'hangar = 装飞机的大房子（ar 结尾）',examples:['The plane was moved into the hangar for maintenance.','The airport has three aircraft hangars.']},
+{word:'hanger',pron:'/ˈhæŋər/',def:'衣架',note:'hanger = hang（挂）+ er → 用来挂衣服的',examples:['Put your coat on the hanger by the door.','We need more hangers in the closet.']}
 ],trap:'hangar 是飞机库（-ar），hanger 是衣架（-er）。cliffhanger = 悬念。'},
 {id:'heroin-heroine',type:'confusable',title:'heroin · heroine',brief:'海洛因 vs 女英雄',words:[
-{word:'heroin',def:'海洛因（毒品）',note:'heroin = 没有 e → 不好的东西',examples:['Heroin is one of the most addictive substances.','The film explores the impact of heroin addiction.']},
-{word:'heroine',def:'女英雄，女主角',note:'heroine = 有 e → 有灵魂的 → 女英雄',examples:['She\'s the heroine of the story.','The heroine overcomes all obstacles to save her team.']}
+{word:'heroin',pron:'/ˈhɛroʊɪn/',def:'海洛因（毒品）',note:'heroin = 没有 e → 不好的东西',examples:['Heroin is one of the most addictive substances.','The film explores the impact of heroin addiction.']},
+{word:'heroine',pron:'/ˈhɛroʊɪn/',def:'女英雄，女主角',note:'heroine = 有 e → 有灵魂的 → 女英雄',examples:['She\'s the heroine of the story.','The heroine overcomes all obstacles to save her team.']}
 ],trap:'heroin 是海洛因（毒品），heroine 是女英雄。少一个 e 意思天差地别，写作时务必注意。'},
 {id:'human-humane',type:'confusable',title:'human · humane',brief:'人类的 vs 人道的',words:[
-{word:'human',def:'人类的；人',note:'human = 跟人这个物种有关的',examples:['Human error caused the system outage.','She\'s only human—mistakes happen.']},
-{word:'humane',def:'人道的，仁慈的',note:'humane = human + e → 有人性光辉的',examples:['The company promotes humane treatment of animals.','We need a more humane approach to layoffs.']}
+{word:'human',pron:'/ˈhjuːmən/',def:'人类的；人',note:'human = 跟人这个物种有关的',examples:['Human error caused the system outage.','She\'s only human—mistakes happen.']},
+{word:'humane',pron:'/hjuːˈmeɪn/',def:'人道的，仁慈的',note:'humane = human + e → 有人性光辉的',examples:['The company promotes humane treatment of animals.','We need a more humane approach to layoffs.']}
 ],trap:'human 是"人类的"（human resources 人力资源），humane 是"人道的"（有同情心的）。'},
 {id:'pedal-peddle',type:'confusable',title:'pedal · peddle',brief:'踏板 vs 兜售',words:[
-{word:'pedal',def:'踏板；踩踏板',note:'pedal = ped（脚）→ 用脚踩的板',examples:['She pedaled her bicycle to work every day.','Press the brake pedal slowly.']},
-{word:'peddle',def:'兜售，贩卖',note:'peddle = 走来走去卖东西',examples:['Street vendors peddle their goods near the station.','Don\'t peddle misinformation to the team.']}
+{word:'pedal',pron:'/ˈpɛdəl/',def:'踏板；踩踏板',note:'pedal = ped（脚）→ 用脚踩的板',examples:['She pedaled her bicycle to work every day.','Press the brake pedal slowly.']},
+{word:'peddle',pron:'/ˈpɛdəl/',def:'兜售，贩卖',note:'peddle = 走来走去卖东西',examples:['Street vendors peddle their goods near the station.','Don\'t peddle misinformation to the team.']}
 ],trap:'pedal 是踏板（用脚踩），peddle 是兜售（到处卖）。soft-pedal = 轻描淡写。'},
 {id:'cue-queue',type:'confusable',title:'cue · queue',brief:'提示 vs 队列',words:[
-{word:'cue',def:'提示，暗号；球杆',note:'cue = 给你一个信号，该你上了',examples:['That\'s my cue to start the presentation.','Take your cue from the senior designer in the room.']},
-{word:'queue',def:'队列，排队',note:'queue = 一堆 ueue 排着队',examples:['There\'s a long queue at the immigration counter.','Your request has been added to the queue.']}
+{word:'cue',pron:'/kjuː/',def:'提示，暗号；球杆',note:'cue = 给你一个信号，该你上了',examples:['That\'s my cue to start the presentation.','Take your cue from the senior designer in the room.']},
+{word:'queue',pron:'/kjuː/',def:'队列，排队',note:'queue = 一堆 ueue 排着队',examples:['There\'s a long queue at the immigration counter.','Your request has been added to the queue.']}
 ],trap:'cue 是提示/信号，queue 是排队/队列。right on cue = 正好在这时候。queue up = 排队。'},
 {id:'drought-draught',type:'confusable',title:'drought · draught',brief:'干旱 vs 草稿/生啤/穿堂风',words:[
-{word:'drought',def:'干旱，旱灾',note:'drought = dry → 干到不行',examples:['The drought lasted for three months.','There\'s a drought of talent in the industry.']},
-{word:'draught',def:'草稿（=draft）；生啤；穿堂风',note:'draught = draft 的英式拼法',examples:['I\'ll have a draught beer, please.','Close the window—there\'s a draught.']}
+{word:'drought',pron:'/draʊt/',def:'干旱，旱灾',note:'drought = dry → 干到不行',examples:['The drought lasted for three months.','There\'s a drought of talent in the industry.']},
+{word:'draught',pron:'/dræft/',def:'草稿（=draft）；生啤；穿堂风',note:'draught = draft 的英式拼法',examples:['I\'ll have a draught beer, please.','Close the window—there\'s a draught.']}
 ],trap:'drought 是干旱，draught 是 draft 的英式拼法（草稿/生啤/穿堂风）。拼写极其接近。'},
 {id:'peal-peel',type:'confusable',title:'peal · peel',brief:'钟声 vs 剥皮',words:[
-{word:'peal',def:'（钟声）鸣响；一阵（笑声等）',note:'peal = 钟声响亮地传开',examples:['Peals of laughter echoed through the office.','The church bells pealed at noon.']},
-{word:'peel',def:'剥皮，剥落；果皮',note:'peel = 把外面那层皮扒掉',examples:['Please peel the oranges for the fruit platter.','The paint is starting to peel off the walls.']}
+{word:'peal',pron:'/piːl/',def:'（钟声）鸣响；一阵（笑声等）',note:'peal = 钟声响亮地传开',examples:['Peals of laughter echoed through the office.','The church bells pealed at noon.']},
+{word:'peel',pron:'/piːl/',def:'剥皮，剥落；果皮',note:'peel = 把外面那层皮扒掉',examples:['Please peel the oranges for the fruit platter.','The paint is starting to peel off the walls.']}
 ],trap:'peal 是钟声/一阵声响，peel 是剥皮。peals of laughter = 一阵阵笑声。'},
 {id:'hoard-horde',type:'confusable',title:'hoard · horde',brief:'囤积 vs 一大群',words:[
-{word:'hoard',def:'囤积，储藏；储藏物',note:'hoard = 偷偷藏起来很多东西',examples:['People began to hoard supplies during the crisis.','She discovered a hoard of old design files on the server.']},
-{word:'horde',def:'一大群（人），部落',note:'horde = 乌压压一大群人涌过来',examples:['Hordes of shoppers crowded the mall during the sale.','A horde of tourists descended on the small town.']}
+{word:'hoard',pron:'/hɔːrd/',def:'囤积，储藏；储藏物',note:'hoard = 偷偷藏起来很多东西',examples:['People began to hoard supplies during the crisis.','She discovered a hoard of old design files on the server.']},
+{word:'horde',pron:'/hɔːrd/',def:'一大群（人），部落',note:'horde = 乌压压一大群人涌过来',examples:['Hordes of shoppers crowded the mall during the sale.','A horde of tourists descended on the small town.']}
 ],trap:'hoard 是"囤积"（动词/名词），horde 是"一大群人"。hoard supplies = 囤货。'},
 {id:'perpetrate-perpetuate',type:'confusable',title:'perpetrate · perpetuate',brief:'犯（罪）vs 使永久化',words:[
-{word:'perpetrate',def:'犯（罪行），做（坏事）',note:'perpetrate → perpetrator 犯罪者',examples:['The fraud was perpetrated by a former employee.','Who perpetrated this terrible design decision?']},
-{word:'perpetuate',def:'使永久化，使持续',note:'perpetuate = perpetual（永久的）→ 让它一直持续下去',examples:['We shouldn\'t perpetuate outdated stereotypes.','This policy perpetuates inequality in the workplace.']}
+{word:'perpetrate',pron:'/ˈpɜːrpətreɪt/',def:'犯（罪行），做（坏事）',note:'perpetrate → perpetrator 犯罪者',examples:['The fraud was perpetrated by a former employee.','Who perpetrated this terrible design decision?']},
+{word:'perpetuate',pron:'/pərˈpɛtʃueɪt/',def:'使永久化，使持续',note:'perpetuate = perpetual（永久的）→ 让它一直持续下去',examples:['We shouldn\'t perpetuate outdated stereotypes.','This policy perpetuates inequality in the workplace.']}
 ],trap:'perpetrate 是"犯罪/做坏事"，perpetuate 是"使持续存在"。两个词很长且形似，注意区分。'},
 {id:'foul-fowl',type:'confusable',title:'foul · fowl',brief:'犯规的/恶臭的 vs 家禽',words:[
-{word:'foul',def:'犯规的；恶臭的；恶劣的',note:'foul = 又臭又犯规',examples:['There\'s a foul smell coming from the kitchen.','He was in a foul mood all day.']},
-{word:'fowl',def:'家禽，禽类',note:'fowl = 鸡鸭鹅这些鸟类',examples:['The restaurant specializes in roast fowl.','They raise fowl on their farm.']}
+{word:'foul',pron:'/faʊl/',def:'犯规的；恶臭的；恶劣的',note:'foul = 又臭又犯规',examples:['There\'s a foul smell coming from the kitchen.','He was in a foul mood all day.']},
+{word:'fowl',pron:'/faʊl/',def:'家禽，禽类',note:'fowl = 鸡鸭鹅这些鸟类',examples:['The restaurant specializes in roast fowl.','They raise fowl on their farm.']}
 ],trap:'foul 是"恶臭/犯规"，fowl 是"家禽"。foul play = 犯规行为/谋杀嫌疑。'},
 
 // ── CALQUES BATCH 2 (100) ──
